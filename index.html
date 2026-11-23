@@ -1,0 +1,3048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official FC Barcelona Website | Barça</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Google Fonts for Condensed Athletic Display & Clean UI Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --bg-deep: #121126;
+      --bg-navy: #181733;
+      --bg-navy-light: #201f42;
+      --bg-white: #ffffff;
+      --bg-offwhite: #f4f5f7;
+      --bg-card-gray: #e9ebef;
+
+      --fcb-blue: #004d98;
+      --fcb-blue-bright: #1559d6;
+      --fcb-red: #a50044;
+      --fcb-crimson: #cf122d;
+      --fcb-gold: #fdc52c;
+      --fcb-gold-hover: #e5b020;
+
+      --text-dark: #181733;
+      --text-muted: #5a5d72;
+      --text-light: #ffffff;
+      --text-light-muted: #b0b3c6;
+
+      --border-light: #e2e4ea;
+      --border-dark: rgba(255, 255, 255, 0.12);
+
+      --font-display: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --container-max: 1280px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --transition: 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: var(--transition);
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    /* ==========================================================================
+       2. HEADER & NAVIGATION (TOP UTILITY + MAIN BAR)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--bg-navy);
+      color: var(--text-light);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Top Utility Bar */
+    .top-bar {
+      background-color: var(--bg-deep);
+      border-bottom: 1px solid var(--border-dark);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .top-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 36px;
+      padding: 0 24px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .promo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 11px;
+    }
+
+    .promo-badge {
+      background: var(--fcb-gold);
+      color: #121126;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .top-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #e2e4f0;
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    .top-link:hover {
+      color: var(--fcb-gold);
+    }
+
+    .btn-culer-top {
+      background: var(--fcb-crimson);
+      color: #fff;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-culer-top:hover {
+      background: #e31735;
+    }
+
+    .lang-selector {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .lang-selector option {
+      background: var(--bg-navy);
+      color: #fff;
+    }
+
+    /* Main Nav Bar */
+    .main-nav-bar {
+      position: relative;
+      background: linear-gradient(90deg, #181733 0%, #1d1b3d 50%, #181733 100%);
+      border-bottom: 2px solid;
+      border-image: linear-gradient(90deg, var(--fcb-blue), var(--fcb-red), var(--fcb-gold)) 1;
+    }
+
+    .main-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+      padding: 0 24px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .brand-logo img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+      transition: transform 0.2s ease;
+    }
+
+    .brand-logo:hover img {
+      transform: scale(1.05);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+      padding: 20px 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--fcb-gold);
+      border-bottom-color: var(--fcb-gold);
+    }
+
+    /* Dropdown Menu */
+    .dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: var(--bg-navy);
+      border: 1px solid var(--border-dark);
+      border-top: 2px solid var(--fcb-gold);
+      border-radius: 0 0 6px 6px;
+      padding: 10px 0;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s ease;
+      z-index: 999;
+    }
+
+    .nav-item:hover .dropdown-panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-panel a {
+      display: block;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #e4e6f2;
+    }
+
+    .dropdown-panel a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--fcb-gold);
+      padding-left: 22px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-secondary-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-sec-link {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #d6d9ea;
+    }
+
+    .nav-sec-link:hover,
+    .nav-sec-link.active {
+      color: var(--fcb-gold);
+    }
+
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .icon-btn:hover {
+      background: var(--fcb-gold);
+      color: var(--bg-deep);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+    }
+
+    /* Search Drawer */
+    .search-bar-overlay {
+      display: none;
+      background: var(--bg-deep);
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .search-bar-overlay.open {
+      display: block;
+    }
+
+    .search-form-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .search-input::placeholder {
+      color: #9fa3bc;
+    }
+
+    .search-submit-btn {
+      background: var(--fcb-gold);
+      color: var(--bg-deep);
+      font-weight: 800;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      padding: 0 22px;
+      border-radius: 4px;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION & FEATURED NEWS CARDS
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      background-color: var(--bg-deep);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero-banner {
+      position: relative;
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding: 60px 24px 36px;
+      background: linear-gradient(180deg, rgba(18,17,38,0.2) 0%, rgba(18,17,38,0.75) 70%, #121126 100%);
+    }
+
+    .hero-bg-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      z-index: 0;
+      opacity: 0.72;
+    }
+
+    .hero-overlay-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18, 17, 38, 0.25) 0%, rgba(18, 17, 38, 0.65) 62%, #121126 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 0.98;
+      color: #fff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+      margin-bottom: 12px;
+    }
+
+    .hero-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #d4d7ea;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-meta .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--fcb-gold);
+    }
+
+    /* 3-Column Hero Sub-Cards */
+    .hero-cards-wrapper {
+      position: relative;
+      z-index: 3;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 12px 24px 32px;
+    }
+
+    .hero-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .hero-subcard {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hero-subcard:hover {
+      transform: translateY(-4px);
+      border-color: var(--fcb-gold);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .hero-subcard-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #1e1c3a;
+    }
+
+    .hero-subcard-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .hero-subcard:hover .hero-subcard-thumb img {
+      transform: scale(1.05);
+    }
+
+    .hero-subcard-body {
+      padding: 14px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-subcard-title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .hero-subcard-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-light-muted);
+      font-weight: 600;
+    }
+
+    .meta-pill-red {
+      color: #ff4d6d;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 10px;
+    }
+
+    /* Main Partners Mini Strip */
+    .hero-partners-strip {
+      border-top: 1px solid var(--border-dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      background: #0f0e20;
+    }
+
+    .partner-mini-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8f93b0;
+    }
+
+    .partner-mini-logos {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #fff;
+      opacity: 0.88;
+    }
+
+    /* ==========================================================================
+       4. SECTION HEADINGS & CONTROLS
+       ========================================================================== */
+    .section-block {
+      padding: 48px 0;
+    }
+
+    .section-block-gray {
+      background-color: var(--bg-offwhite);
+    }
+
+    .section-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .section-header-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      right: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .carousel-arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #d0d3de;
+      background: #fff;
+      color: var(--text-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .carousel-arrow:hover {
+      background: var(--bg-navy);
+      color: #fff;
+      border-color: var(--bg-navy);
+    }
+
+    .btn-outline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border: 1px solid #c9cddb;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dark);
+      background: #fff;
+    }
+
+    .btn-outline-pill:hover {
+      border-color: var(--fcb-blue);
+      color: var(--fcb-blue);
+    }
+
+    .btn-blue-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 20px;
+      background: var(--fcb-blue-bright);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .btn-blue-pill:hover {
+      background: #0e46b5;
+    }
+
+    /* ==========================================================================
+       5. BARÇA TICKETS 6-CARD ROW
+       ========================================================================== */
+    .tickets-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .ticket-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4.2;
+      background: var(--bg-navy);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 6px 16px rgba(18, 17, 38, 0.14);
+      cursor: pointer;
+    }
+
+    .ticket-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .ticket-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .ticket-card-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18,17,38,0.05) 35%, rgba(18,17,38,0.92) 100%);
+    }
+
+    .ticket-card-info {
+      position: relative;
+      z-index: 2;
+      padding: 14px 12px;
+    }
+
+    .ticket-card-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 4px;
+    }
+
+    .ticket-card-sub {
+      font-size: 11px;
+      color: var(--fcb-gold);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       6. CALENDAR & NEXT MATCHES SECTION
+       ========================================================================== */
+    .calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .calendar-title-group {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .countdown-digits {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+
+    .cd-unit small {
+      font-family: var(--font-sans);
+      font-size: 8px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .matches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 230px;
+      gap: 18px;
+    }
+
+    .match-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .match-card-top {
+      background: var(--bg-navy);
+      color: #fff;
+      padding: 18px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+    }
+
+    .team-badge-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 84px;
+      text-align: center;
+    }
+
+    .crest-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .crest-circle img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .team-name-small {
+      font-size: 11px;
+      font-weight: 700;
+      color: #e4e6f2;
+    }
+
+    .vs-badge {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--fcb-gold);
+    }
+
+    .match-card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .match-comp {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--fcb-blue);
+      margin-bottom: 4px;
+    }
+
+    .match-fixture-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .match-details-list {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+
+    .btn-tickets-gold {
+      width: 100%;
+      padding: 9px 14px;
+      background: var(--fcb-gold);
+      color: var(--bg-deep);
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .btn-tickets-gold:hover {
+      background: var(--fcb-gold-hover);
+    }
+
+    .btn-match-ghost {
+      width: 100%;
+      padding: 8px 14px;
+      border: 1px solid #d5d8e2;
+      color: var(--text-dark);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .btn-match-ghost:hover {
+      background: var(--bg-offwhite);
+    }
+
+    /* Best Games Promo Card */
+    .best-games-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--fcb-red), var(--bg-navy));
+      color: #fff;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+    }
+
+    .best-games-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+    }
+
+    .best-games-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .best-games-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       7. BARÇA OFFICIAL WORLDWIDE STORE
+       ========================================================================== */
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .store-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .store-banner {
+      height: 135px;
+      overflow: hidden;
+      background: #181733;
+    }
+
+    .store-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .store-card:hover .store-banner img {
+      transform: scale(1.04);
+    }
+
+    .store-product-row {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .store-cutout {
+      width: 72px;
+      height: 82px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background: #f8f9fb;
+      border-radius: 6px;
+      padding: 4px;
+    }
+
+    .store-info h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .store-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .store-cta-link {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--fcb-blue-bright);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .store-cta-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       8. BECOME A CULER PREMIUM BANNER
+       ========================================================================== */
+    .culer-banner-section {
+      padding: 24px 0 44px;
+    }
+
+    .culer-banner {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: radial-gradient(circle at 70% 50%, #1c2459 0%, #0d0c1d 75%);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      padding: 40px 48px;
+      color: #fff;
+    }
+
+    .culer-banner-img {
+      position: absolute;
+      right: 8%;
+      bottom: 0;
+      height: 95%;
+      max-width: 48%;
+      object-fit: contain;
+      object-position: bottom center;
+      z-index: 1;
+    }
+
+    .culer-banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 480px;
+    }
+
+    .culer-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .culer-banner-desc {
+      font-size: 14px;
+      color: #d6d9ec;
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       9. BARÇA NEWS (8-CARD 4x2 GRID)
+       ========================================================================== */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .news-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(18, 17, 38, 0.08);
+    }
+
+    .news-thumb {
+      aspect-ratio: 16 / 10;
+      background: #ebedf2;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .news-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .news-thumb-placeholder {
+      width: 44px;
+      height: 44px;
+      opacity: 0.25;
+      object-fit: contain;
+    }
+
+    .news-card-body {
+      padding: 14px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .news-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.38;
+      margin-bottom: 12px;
+    }
+
+    .news-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      border-top: 1px solid #f0f1f5;
+      padding-top: 8px;
+    }
+
+    .news-tag {
+      color: var(--fcb-red);
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       10. WIN THE NEW HOME KIT PROMO BANNER
+       ========================================================================== */
+    .kit-promo-section {
+      padding: 12px 0 48px;
+    }
+
+    .kit-promo-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .kit-promo-media {
+      background: radial-gradient(circle at center, #b80d28 0%, #6b0514 100%);
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .kit-promo-media img {
+      max-height: 210px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.45));
+    }
+
+    .kit-promo-body {
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .kit-promo-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .kit-promo-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* ==========================================================================
+       11. PLAYERS CAROUSEL SECTION
+       ========================================================================== */
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .player-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4 / 4.3;
+      background: linear-gradient(135deg, #a50044 0%, #004d98 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+    }
+
+    .player-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.35s ease;
+    }
+
+    .player-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .player-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18,17,38,0) 45%, rgba(18,17,38,0.95) 100%);
+    }
+
+    .player-card-info {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .player-number-bg {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.18);
+      line-height: 0.8;
+    }
+
+    .player-name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-top: -10px;
+    }
+
+    .player-pos {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--fcb-gold);
+      margin-top: 4px;
+    }
+
+    /* ==========================================================================
+       12. TROPHY SHOWCASE STRIP
+       ========================================================================== */
+    .trophies-section {
+      background-color: var(--bg-navy);
+      padding: 36px 0 24px;
+      border-top: 3px solid var(--fcb-gold);
+    }
+
+    .trophies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .trophy-banner {
+      background: linear-gradient(90deg, #25132e 0%, #1a1e47 50%, #25132e 100%);
+      border: 1px solid rgba(253, 197, 44, 0.25);
+      border-radius: 6px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: #fff;
+    }
+
+    .trophy-label {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #e4e6f2;
+    }
+
+    .trophy-count {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--fcb-gold);
+      line-height: 1;
+    }
+
+    /* ==========================================================================
+       13. MAIN PARTNERS & SOCIAL BAR
+       ========================================================================== */
+    .partners-footer-band {
+      background-color: var(--bg-deep);
+      color: #fff;
+      padding: 36px 0 28px;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .partners-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .partners-heading {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ba0be;
+    }
+
+    .btn-view-partners {
+      position: absolute;
+      right: 0;
+      background: var(--fcb-crimson);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 3px;
+    }
+
+    .partners-logos-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 36px;
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+
+    .partner-wordmark {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0.92;
+    }
+
+    .social-row {
+      text-align: center;
+    }
+
+    .social-label {
+      font-size: 11px;
+      color: #9ba0be;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .social-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .social-circle:hover {
+      background: var(--fcb-gold);
+      color: var(--bg-deep);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       14. MULTI-COLUMN SITE FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-navy);
+      color: #cfd2e6;
+      padding: 48px 0 28px;
+      font-size: 12px;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 20px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .footer-col a {
+      color: #a3a7c2;
+      font-size: 11px;
+    }
+
+    .footer-col a:hover {
+      color: var(--fcb-gold);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand-left img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+
+    .footer-legal-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11px;
+      color: #8c90ab;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal-links a:hover {
+      color: #fff;
+    }
+
+    /* ==========================================================================
+       15. SPA SUB-PAGES & MODALS
+       ========================================================================== */
+    .page-view {
+      display: none;
+    }
+
+    .page-view.active {
+      display: block;
+    }
+
+    .subpage-hero {
+      background: linear-gradient(135deg, var(--bg-navy) 0%, #27153b 100%);
+      color: #fff;
+      padding: 48px 0;
+      border-bottom: 3px solid var(--fcb-gold);
+    }
+
+    .subpage-hero h1 {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .subpage-hero p {
+      color: #d0d3e6;
+      max-width: 680px;
+      margin-top: 8px;
+    }
+
+    /* Modal System */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 9, 24, 0.8);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #fff;
+      color: var(--text-dark);
+      border-radius: 10px;
+      max-width: 520px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-header {
+      background: var(--bg-navy);
+      color: #fff;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-header h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .modal-close {
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd0de;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--fcb-blue);
+    }
+
+    .form-feedback {
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .form-feedback.error {
+      display: block;
+      background: #fde8ec;
+      color: #b01030;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: #e6f7ed;
+      color: #0e6b38;
+    }
+
+    /* Mobile Menu Drawer */
+    .mobile-drawer {
+      display: none;
+      background: var(--bg-navy);
+      border-top: 1px solid var(--border-dark);
+      padding: 16px 24px 24px;
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer a {
+      display: block;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    /* ==========================================================================
+       16. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1120px) {
+      .tickets-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .matches-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-columns {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-menu,
+      .nav-secondary-links,
+      .promo-pill {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .hero-cards-grid,
+      .store-grid,
+      .players-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .kit-promo-card {
+        grid-template-columns: 1fr;
+      }
+
+      .culer-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .culer-banner-img {
+        position: static;
+        max-width: 240px;
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tickets-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .matches-grid,
+      .news-grid,
+      .trophies-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .btn-view-partners {
+        position: static;
+        margin-top: 10px;
+      }
+
+      .partners-top-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <a href="#tickets" class="promo-pill" data-route="tickets">
+          <span>⚽</span>
+          <span>FC BARCELONA vs ATLÉTICO DE MADRID</span>
+          <span class="promo-badge">TICKETS ON SALE</span>
+        </a>
+
+        <div class="top-actions">
+          <button type="button" class="top-link" onclick="openAuthModal('login')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+            <span>Login</span>
+          </button>
+
+          <button type="button" class="btn-culer-top" onclick="openAuthModal('register')">
+            <span>★</span>
+            <span>Become a Culer</span>
+          </button>
+
+          <select aria-label="Language" class="lang-selector" id="langSelector">
+            <option value="EN">EN</option>
+            <option value="ES">ES</option>
+            <option value="CA">CA</option>
+            <option value="FR">FR</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="main-nav-bar">
+      <div class="main-nav-inner">
+        <div class="nav-left">
+          <a href="#home" class="brand-logo" data-route="home" aria-label="FC Barcelona Home">
+            <img src="logo.png" alt="FC Barcelona Crest" onerror="this.style.background='#004d98';this.style.borderRadius='50%';" />
+          </a>
+
+          <nav aria-label="Primary Navigation">
+            <ul class="nav-menu">
+              <li class="nav-item">
+                <a href="#first-team" class="nav-link" data-route="first-team">First Team ▾</a>
+                <div class="dropdown-panel">
+                  <a href="#first-team" data-route="first-team">Latest News</a>
+                  <a href="#first-team" data-route="first-team">Schedule &amp; Results</a>
+                  <a href="#first-team" data-route="first-team">Standings</a>
+                  <a href="#first-team" data-route="first-team">Players &amp; Squad</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="#club" class="nav-link" data-route="club">Club ▾</a>
+                <div class="dropdown-panel">
+                  <a href="#club" data-route="club">Espai Barça</a>
+                  <a href="#club" data-route="club">History &amp; Honours</a>
+                  <a href="#club" data-route="club">Barça Foundation</a>
+                  <a href="#club" data-route="club">La Masia</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="#culers" class="nav-link" data-route="culers">Culers ▾</a>
+                <div class="dropdown-panel">
+                  <a href="#culers" data-route="culers">Culer Membership</a>
+                  <a href="#culers" data-route="culers">Barça One</a>
+                  <a href="#culers" data-route="culers">Penyes &amp; Supporters</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="#news" class="nav-link" data-route="news">News</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="nav-right">
+          <div class="nav-secondary-links">
+            <a href="#tickets" class="nav-sec-link" data-route="tickets">Tickets &amp; Museum</a>
+            <a href="#shop" class="nav-sec-link" data-route="shop">Shop</a>
+            <a href="#first-team" class="nav-sec-link" data-route="first-team">Teams</a>
+            <a href="#culers" class="nav-sec-link" data-route="culers">Barça One</a>
+          </div>
+
+          <button type="button" class="icon-btn" id="searchToggleBtn" aria-label="Search site">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          </button>
+
+          <button type="button" class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Drawer -->
+      <div class="search-bar-overlay" id="searchBarOverlay">
+        <form class="search-form-inner" onsubmit="handleSiteSearch(event)">
+          <input type="search" id="siteSearchInput" class="search-input" placeholder="Search players, fixtures, tickets, news..." required />
+          <button type="submit" class="search-submit-btn">Search</button>
+        </form>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#home" data-route="home">Home</a>
+        <a href="#first-team" data-route="first-team">First Team</a>
+        <a href="#tickets" data-route="tickets">Tickets &amp; Museum</a>
+        <a href="#shop" data-route="shop">Barça Official Store</a>
+        <a href="#culers" data-route="culers">Culers &amp; Barça One</a>
+        <a href="#club" data-route="club">Club &amp; History</a>
+        <a href="#news" data-route="news">All News</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       PAGE 1: HOMEPAGE VIEW (PRIMARY SCREENSHOT REPLICA)
+       ======================================================================== -->
+  <main id="page-home" class="page-view active">
+
+    <!-- 1. HERO SECTION + 3 FEATURED CARDS -->
+    <section class="hero-section">
+      <div class="hero-banner">
+        <img src="images01.jpg" alt="Squad for the trip to Baku" class="hero-bg-media" />
+        <div class="hero-overlay-grad"></div>
+
+        <div class="hero-content">
+          <h1 class="hero-title">SQUAD FOR THE TRIP TO BAKU</h1>
+          <div class="hero-meta">
+            <span class="tag-dot"></span>
+            <span>FIRST TEAM</span>
+            <span>•</span>
+            <span>23 NOV 26</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-cards-wrapper">
+        <div class="hero-cards-grid">
+          <article class="hero-subcard" onclick="openArticleModal('Squad for the trip to Baku', 'Hansi Flick has named the travelling squad for the upcoming European away fixture in Baku, featuring returning midfielders and La Masia talents.', 'images02.jpg')">
+            <div class="hero-subcard-thumb">
+              <img src="images02.jpg" alt="Training session ahead of Baku" />
+            </div>
+            <div class="hero-subcard-body">
+              <h2 class="hero-subcard-title">Final training session at Ciutat Esportiva before departure</h2>
+              <div class="hero-subcard-meta">
+                <span class="meta-pill-red">FIRST TEAM</span>
+                <span>• 2 hrs ago</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-subcard" onclick="openArticleModal('Inside the flight with Pedri and Gavi', 'Behind-the-scenes access as the Barça squad boards the charter flight with smiles and focus ahead of matchday.', 'images03.jpg')">
+            <div class="hero-subcard-thumb">
+              <img src="images03.jpg" alt="Players on team flight" />
+            </div>
+            <div class="hero-subcard-body">
+              <h2 class="hero-subcard-title">All smiles on board as the squad heads east for European action</h2>
+              <div class="hero-subcard-meta">
+                <span class="meta-pill-red">BARÇA ONE</span>
+                <span>• 4 hrs ago</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-subcard" onclick="navigateTo('shop')">
+            <div class="hero-subcard-thumb">
+              <img src="images04.jpg" alt="Barça Black Friday Official Offer" />
+            </div>
+            <div class="hero-subcard-body">
+              <h2 class="hero-subcard-title">Black Friday Week: Up to 40% off official kits and training wear</h2>
+              <div class="hero-subcard-meta">
+                <span class="meta-pill-red">BARÇA STORE</span>
+                <span>• Limited Offer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Main Partners Mini Strip -->
+      <div class="hero-partners-strip">
+        <span class="partner-mini-label">MAIN PARTNERS</span>
+        <div class="partner-mini-logos">
+          <span style="font-weight:900;font-style:italic;letter-spacing:0.06em;">NIKE</span>
+          <span style="font-weight:800;letter-spacing:0.04em;">Spotify</span>
+          <span style="font-weight:800;letter-spacing:0.04em;">Midea</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BARÇA TICKETS CAROUSEL -->
+    <section class="section-block">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">BARÇA TICKETS</h2>
+          <div class="carousel-controls">
+            <button type="button" class="carousel-arrow" onclick="shiftTickets(-1)" aria-label="Previous tickets">‹</button>
+            <button type="button" class="carousel-arrow" onclick="shiftTickets(1)" aria-label="Next tickets">›</button>
+          </div>
+        </div>
+
+        <div class="tickets-grid" id="ticketsGrid">
+          <a href="#tickets" class="ticket-card" data-route="tickets">
+            <img src="images05.jpg" alt="Men's Football Tickets" />
+            <div class="ticket-card-gradient"></div>
+            <div class="ticket-card-info">
+              <div class="ticket-card-title">MEN'S FOOTBALL</div>
+              <div class="ticket-card-sub">Buy Tickets →</div>
+            </div>
+          </a>
+
+          <a href="#tickets" class="ticket-card" data-route="tickets">
+            <img src="images06.jpg" alt="Barça Immersive Tour" />
+            <div class="ticket-card-gradient"></div>
+            <div class="ticket-card-info">
+              <div class="ticket-card-title">BARÇA MUSEUM</div>
+              <div class="ticket-card-sub">Immersive Tour →</div>
+            </div>
+          </a>
+
+          <a href="#tickets" class="ticket-card" data-route="tickets">
+            <img src="images07.jpg" alt="VIP Experience" />
+            <div class="ticket-card-gradient"></div>
+            <div class="ticket-card-info">
+              <div class="ticket-card-title">VIP EXPERIENCE</div>
+              <div class="ticket-card-sub">Hospitality →</div>
+            </div>
+          </a>
+
+          <a href="#tickets" class="ticket-card" data-route="tickets">
+            <img src="images08.jpg" alt="Women's Football Tickets" />
+            <div class="ticket-card-gradient"></div>
+            <div class="ticket-card-info">
+              <div class="ticket-card-title">WOMEN'S FOOTBALL</div>
+              <div class="ticket-card-sub">Estadi Johan Cruyff →</div>
+            </div>
+          </a>
+
+          <a href="#tickets" class="ticket-card" data-route="tickets">
+            <img src="images09.jpg" alt="Spotify Camp Nou Experience" />
+            <div class="ticket-card-gradient"></div>
+            <div class="ticket-card-info">
+              <div class="ticket-card-title">ESPAI BARÇA</div>
+              <div class="ticket-card-sub">Discover More →</div>
+            </div>
+          </a>
+
+          <a href="#tickets" class="ticket-card" data-route="tickets">
+            <img src="images10.jpg" alt="Basketball Palau Blaugrana" />
+            <div class="ticket-card-gradient"></div>
+            <div class="ticket-card-info">
+              <div class="ticket-card-title">BASKETBALL</div>
+              <div class="ticket-card-sub">Palau Blaugrana →</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CALENDAR & NEXT MATCHES -->
+    <section class="section-block section-block-gray">
+      <div class="container">
+        <div class="calendar-header">
+          <div class="calendar-title-group">
+            <h2 class="section-title">CALENDAR</h2>
+
+            <div class="countdown-box" aria-label="Next match countdown">
+              <span class="countdown-label">NEXT MATCH</span>
+              <div class="countdown-digits" id="matchCountdown">
+                <div class="cd-unit"><span id="cdDays">01</span><small>DAYS</small></div>
+                <span>:</span>
+                <div class="cd-unit"><span id="cdHours">20</span><small>HRS</small></div>
+                <span>:</span>
+                <div class="cd-unit"><span id="cdMins">28</span><small>MIN</small></div>
+                <span>:</span>
+                <div class="cd-unit"><span id="cdSecs">11</span><small>SEC</small></div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#first-team" class="btn-outline-pill" data-route="first-team">FULL SCHEDULE →</a>
+        </div>
+
+        <div class="matches-grid">
+          <!-- Match Card 1 -->
+          <article class="match-card">
+            <div class="match-card-top">
+              <div class="team-badge-box">
+                <div class="crest-circle">QFK</div>
+                <span class="team-name-small">Qarabağ FK</span>
+              </div>
+              <span class="vs-badge">VS</span>
+              <div class="team-badge-box">
+                <div class="crest-circle"><img src="logo.png" alt="FCB" /></div>
+                <span class="team-name-small">FC Barcelona</span>
+              </div>
+            </div>
+            <div class="match-card-body">
+              <div>
+                <div class="match-comp">UEFA Champions League • Matchday 5</div>
+                <div class="match-fixture-name">Qarabağ FK vs FC Barcelona</div>
+                <div class="match-details-list">
+                  <span>📅 Wednesday, 25 Nov • 18:45 CET</span>
+                  <span>📍 Tofiq Bahramov Stadium, Baku</span>
+                </div>
+              </div>
+              <button type="button" class="btn-match-ghost" onclick="openArticleModal('Match Preview: Qarabağ FK vs FC Barcelona', 'Kick-off at 18:45 CET in Baku. Follow live audio commentary and real-time match stats on Barça One.', 'images01.jpg')">MATCH CENTER</button>
+            </div>
+          </article>
+
+          <!-- Match Card 2 -->
+          <article class="match-card">
+            <div class="match-card-top">
+              <div class="team-badge-box">
+                <div class="crest-circle">RCD</div>
+                <span class="team-name-small">RCD Mallorca</span>
+              </div>
+              <span class="vs-badge">VS</span>
+              <div class="team-badge-box">
+                <div class="crest-circle"><img src="logo.png" alt="FCB" /></div>
+                <span class="team-name-small">FC Barcelona</span>
+              </div>
+            </div>
+            <div class="match-card-body">
+              <div>
+                <div class="match-comp">LaLiga EA Sports • Matchday 15</div>
+                <div class="match-fixture-name">RCD Mallorca vs FC Barcelona</div>
+                <div class="match-details-list">
+                  <span>📅 Sunday, 29 Nov • 16:15 CET</span>
+                  <span>📍 Estadi Mallorca Son Moix</span>
+                </div>
+              </div>
+              <button type="button" class="btn-match-ghost" onclick="openArticleModal('Match Preview: RCD Mallorca vs FC Barcelona', 'LaLiga Matchday 15 clash away in Palma de Mallorca. Lineups announced 75 minutes before kick-off.', 'images02.jpg')">MATCH CENTER</button>
+            </div>
+          </article>
+
+          <!-- Match Card 3 (Gold Tickets CTA) -->
+          <article class="match-card">
+            <div class="match-card-top">
+              <div class="team-badge-box">
+                <div class="crest-circle"><img src="logo.png" alt="FCB" /></div>
+                <span class="team-name-small">FC Barcelona</span>
+              </div>
+              <span class="vs-badge">VS</span>
+              <div class="team-badge-box">
+                <div class="crest-circle">ATM</div>
+                <span class="team-name-small">Atlético Madrid</span>
+              </div>
+            </div>
+            <div class="match-card-body">
+              <div>
+                <div class="match-comp">LaLiga EA Sports • Matchday 16</div>
+                <div class="match-fixture-name">FC Barcelona vs Atlético de Madrid</div>
+                <div class="match-details-list">
+                  <span>📅 Sunday, 06 Dec • 21:00 CET</span>
+                  <span>📍 Spotify Camp Nou</span>
+                </div>
+              </div>
+              <a href="#tickets" class="btn-tickets-gold" data-route="tickets">TICKETS</a>
+            </div>
+          </article>
+
+          <!-- Best Games Promo Card -->
+          <aside class="best-games-card">
+            <img src="images11.jpg" alt="Best Games of the Season" />
+            <div class="best-games-content">
+              <div>
+                <span class="promo-badge" style="margin-bottom:8px;display:inline-block;">SEASON PASS</span>
+                <div class="best-games-title">BEST GAMES</div>
+              </div>
+              <a href="#tickets" class="btn-tickets-gold" data-route="tickets">GET PACKS</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BARÇA OFFICIAL WORLDWIDE STORE -->
+    <section class="section-block">
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-title">BARÇA OFFICIAL WORLDWIDE STORE</h2>
+          <a href="#shop" class="btn-blue-pill" data-route="shop">VISIT BARÇA STORE</a>
+        </div>
+
+        <div class="store-grid">
+          <article class="store-card">
+            <div class="store-banner">
+              <img src="images12.jpg" alt="2025/26 Home Kit Collection" />
+            </div>
+            <div class="store-product-row">
+              <img src="images13.jpg" alt="Home Match Jersey" class="store-cutout" />
+              <div class="store-info">
+                <h3>KITS</h3>
+                <p>Personalize your 2025/26 home, away &amp; third match jerseys with official badges.</p>
+                <a href="#shop" class="store-cta-link" data-route="shop">SHOP NOW →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="store-card">
+            <div class="store-banner">
+              <img src="images14.jpg" alt="CAT Mascot Collection" />
+            </div>
+            <div class="store-product-row">
+              <img src="images15.jpg" alt="CAT Plush Mascot" class="store-cutout" />
+              <div class="store-info">
+                <h3>CAT COLLECTION</h3>
+                <p>Discover the official 125th anniversary CAT mascot plushies, apparel and gifts.</p>
+                <a href="#shop" class="store-cta-link" data-route="shop">SHOP NOW →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="store-card">
+            <div class="store-banner">
+              <img src="images16.jpg" alt="Winter & Retro Apparel" />
+            </div>
+            <div class="store-product-row">
+              <img src="images17.jpg" alt="Retro Blaugrana Jacket" class="store-cutout" />
+              <div class="store-info">
+                <h3>APPAREL &amp; RETRO</h3>
+                <p>Classic Blaugrana heritage jackets, hoodies and winter lifestyle essentials.</p>
+                <a href="#shop" class="store-cta-link" data-route="shop">SHOP NOW →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BECOME A CULER PREMIUM BANNER -->
+    <section class="culer-banner-section">
+      <div class="container">
+        <div class="culer-banner">
+          <div class="culer-banner-content">
+            <h2 class="culer-banner-title">BECOME A CULER PREMIUM</h2>
+            <p class="culer-banner-desc">
+              Enjoy unlimited access to Barça One, priority ticket pre-sales, exclusive discounts at the Barça Store, and members-only giveaways.
+            </p>
+            <button type="button" class="btn-blue-pill" onclick="openAuthModal('register')">JOIN NOW</button>
+          </div>
+          <img src="images18.jpg" alt="Lamine Yamal Culer Premium" class="culer-banner-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BARÇA NEWS (4x2 GRID) -->
+    <section class="section-block section-block-gray">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">BARÇA NEWS</h2>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card" onclick="openArticleModal('Hansi Flick: We respect every opponent in Europe', 'Full press conference transcript ahead of the UEFA Champions League matchday 5 encounter.', 'images01.jpg')">
+            <div class="news-thumb">
+              <img src="images19.jpg" alt="Press Conference" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+              <img src="logo.png" alt="" class="news-thumb-placeholder" style="display:none;" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">Hansi Flick: "We arrive in great shape and full of ambition"</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">FIRST TEAM</span>
+                <span>23 NOV 26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" onclick="openArticleModal('Medical report on first team squad fitness', 'Latest update from the FC Barcelona Medical Services following morning recovery sessions.', 'images02.jpg')">
+            <div class="news-thumb">
+              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">Medical news ahead of the midweek European fixture</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">FIRST TEAM</span>
+                <span>23 NOV 26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" onclick="openArticleModal('Barça Femení extend unbeaten league run', 'Another dominant display at Estadi Johan Cruyff keeps the team clear at the top of Liga F.', 'images08.jpg')">
+            <div class="news-thumb">
+              <img src="images20.jpg" alt="Barça Femení" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+              <img src="logo.png" alt="" class="news-thumb-placeholder" style="display:none;" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">Barça Femení maintain 100% home record in front of packed crowd</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">WOMEN'S</span>
+                <span>22 NOV 26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" onclick="openArticleModal('La Masia weekly roundup: U19s shine', 'Highlights and goalscorers from all youth academy fixtures across the weekend.', 'images02.jpg')">
+            <div class="news-thumb">
+              <img src="images21.jpg" alt="La Masia Youth Team" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+              <img src="logo.png" alt="" class="news-thumb-placeholder" style="display:none;" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">La Masia weekend review: Goals and victories across all age groups</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">LA MASIA</span>
+                <span>22 NOV 26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" onclick="openArticleModal('Spotify Camp Nou redevelopment milestone reached', 'New structural tiers and roof cables continue on schedule as work progresses.', 'images09.jpg')">
+            <div class="news-thumb">
+              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">Espai Barça: New milestone completed on Spotify Camp Nou third tier</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">CLUB</span>
+                <span>21 NOV 26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" onclick="openArticleModal('Barça Basket prepare for EuroLeague double week', 'Coach and players preview back-to-back continental clashes at Palau Blaugrana.', 'images10.jpg')">
+            <div class="news-thumb">
+              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">Barça Basket gear up for decisive EuroLeague double-header</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">BASKETBALL</span>
+                <span>21 NOV 26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" onclick="openArticleModal('Barça Foundation launches new community program', 'Supporting youth inclusion and sports education programs across Catalonia and worldwide.', 'images06.jpg')">
+            <div class="news-thumb">
+              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">Barça Foundation expands international youth sports initiative</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">FOUNDATION</span>
+                <span>20 NOV 26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" onclick="openArticleModal('Special Black Friday tour packages at Barça Museum', 'Limited-time family bundles for the Barça Immersive Tour available online.', 'images06.jpg')">
+            <div class="news-thumb">
+              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-card-title">Barça Immersive Tour unveils exclusive holiday experiences</h3>
+              <div class="news-card-footer">
+                <span class="news-tag">MUSEUM</span>
+                <span>20 NOV 26</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. WIN THE NEW HOME KIT PROMO -->
+    <section class="kit-promo-section">
+      <div class="container">
+        <div class="kit-promo-card">
+          <div class="kit-promo-media">
+            <img src="images22.jpg" alt="New FC Barcelona Home Kit" />
+          </div>
+          <div class="kit-promo-body">
+            <h2 class="kit-promo-title">WIN THE NEW HOME KIT</h2>
+            <p class="kit-promo-text">
+              Enter our official Culer draw for a chance to win a signed 2025/26 FC Barcelona home jersey delivered to your door.
+            </p>
+            <button type="button" class="btn-blue-pill" onclick="openAuthModal('register')">PARTICIPATE NOW</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PLAYERS CAROUSEL -->
+    <section class="section-block section-block-gray">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">PLAYERS</h2>
+          <div class="carousel-controls">
+            <button type="button" class="carousel-arrow" onclick="rotatePlayers(-1)" aria-label="Previous player">‹</button>
+            <button type="button" class="carousel-arrow" onclick="rotatePlayers(1)" aria-label="Next player">›</button>
+          </div>
+        </div>
+
+        <div class="players-grid" id="playersGrid">
+          <!-- Rendered dynamically via JS so carousel arrows cycle smoothly -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. TROPHY SHOWCASE STRIP -->
+    <section class="trophies-section" aria-label="Club Honours">
+      <div class="container">
+        <div class="trophies-grid">
+          <div class="trophy-banner">
+            <span class="trophy-label">LALIGA</span>
+            <span style="font-size:22px;">🏆</span>
+            <span class="trophy-count">29</span>
+          </div>
+
+          <div class="trophy-banner">
+            <span class="trophy-label">CHAMPIONS LEAGUE</span>
+            <span style="font-size:22px;">🏆</span>
+            <span class="trophy-count">5</span>
+          </div>
+
+          <div class="trophy-banner">
+            <span class="trophy-label">FIFA CLUB WORLD CUP</span>
+            <span style="font-size:22px;">🏆</span>
+            <span class="trophy-count">3</span>
+          </div>
+
+          <div class="trophy-banner">
+            <span class="trophy-label">COPA DEL REY</span>
+            <span style="font-size:22px;">🏆</span>
+            <span class="trophy-count">32</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SECONDARY SPA VIEWS (ALL NAVIGATION LINKS FUNCTIONAL)
+       ======================================================================== -->
+  <section id="page-first-team" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>FIRST TEAM — SQUAD &amp; SCHEDULE</h1>
+        <p>Official 2025/26 FC Barcelona First Team roster, coaching staff, upcoming fixtures and competition standings.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <div class="players-grid" style="margin-bottom:32px;">
+          <div class="player-card">
+            <img src="images23.jpg" alt="Raphinha" />
+            <div class="player-card-overlay"></div>
+            <div class="player-card-info">
+              <div class="player-number-bg">11</div>
+              <div class="player-name">RAPHINHA</div>
+              <div class="player-pos">Forward • Brazil</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <img src="images24.jpg" alt="Lamine Yamal" />
+            <div class="player-card-overlay"></div>
+            <div class="player-card-info">
+              <div class="player-number-bg">19</div>
+              <div class="player-name">LAMINE YAMAL</div>
+              <div class="player-pos">Forward • Spain</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <img src="images25.jpg" alt="Frenkie de Jong" />
+            <div class="player-card-overlay"></div>
+            <div class="player-card-info">
+              <div class="player-number-bg">21</div>
+              <div class="player-name">FRENKIE DE JONG</div>
+              <div class="player-pos">Midfielder • Netherlands</div>
+            </div>
+          </div>
+        </div>
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-tickets" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>TICKETS &amp; BARÇA IMMERSIVE TOUR</h1>
+        <p>Select your matchday experience, VIP hospitality package, or museum visit.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <div class="matches-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:28px;">
+          <div class="match-card">
+            <div class="match-card-top">
+              <span class="vs-badge">FC BARCELONA vs ATLÉTICO DE MADRID</span>
+            </div>
+            <div class="match-card-body">
+              <div class="match-comp">LaLiga EA Sports • 06 Dec 2026</div>
+              <div class="match-fixture-name">General &amp; VIP Hospitality Seats</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">From €89 • Instant mobile ticket delivery.</p>
+              <button type="button" class="btn-tickets-gold" onclick="openTicketBooking('FC Barcelona vs Atlético de Madrid')">SELECT SEATS</button>
+            </div>
+          </div>
+          <div class="match-card">
+            <div class="match-card-top">
+              <span class="vs-badge">BARÇA IMMERSIVE TOUR</span>
+            </div>
+            <div class="match-card-body">
+              <div class="match-comp">Open Daily • 10:00 – 19:00</div>
+              <div class="match-fixture-name">Trophy Gallery &amp; 360° Stadium Experience</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">From €28 • Includes Spotify Camp Nou viewpoint.</p>
+              <button type="button" class="btn-tickets-gold" onclick="openTicketBooking('Barça Immersive Tour')">BOOK VISIT</button>
+            </div>
+          </div>
+        </div>
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-shop" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>BARÇA OFFICIAL WORLDWIDE STORE</h1>
+        <p>Authentic 2025/26 Nike Match Kits, CAT Collection, and Official Club Merchandising.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <div class="store-grid" style="margin-bottom:28px;">
+          <div class="store-card">
+            <div class="store-banner"><img src="images12.jpg" alt="Home Jersey" /></div>
+            <div class="store-product-row">
+              <img src="images13.jpg" alt="Home Kit" class="store-cutout" />
+              <div class="store-info">
+                <h3>2025/26 HOME JERSEY</h3>
+                <p>€99.99 • Official Dri-FIT Stadium Shirt</p>
+                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('2025/26 Home Jersey (€99.99)')">ADD TO BAG</button>
+              </div>
+            </div>
+          </div>
+          <div class="store-card">
+            <div class="store-banner"><img src="images14.jpg" alt="CAT Collection" /></div>
+            <div class="store-product-row">
+              <img src="images15.jpg" alt="CAT Mascot" class="store-cutout" />
+              <div class="store-info">
+                <h3>CAT MASCOT PLUSH</h3>
+                <p>€34.99 • Official Collector Edition</p>
+                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('CAT Mascot Plush (€34.99)')">ADD TO BAG</button>
+              </div>
+            </div>
+          </div>
+          <div class="store-card">
+            <div class="store-banner"><img src="images16.jpg" alt="Retro Jacket" /></div>
+            <div class="store-product-row">
+              <img src="images17.jpg" alt="Retro Jacket" class="store-cutout" />
+              <div class="store-info">
+                <h3>BLAUGRANA TRACK JACKET</h3>
+                <p>€84.99 • Heritage Fleece</p>
+                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Blaugrana Track Jacket (€84.99)')">ADD TO BAG</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-club" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>MÉS QUE UN CLUB</h1>
+        <p>Founded in 1899 by Joan Gamper. Over 125 years of sporting excellence, values, and community.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <p style="margin-bottom:20px;max-width:800px;color:var(--text-muted);">
+          FC Barcelona is owned by its more than 140,000 members (Socis). Through La Masia, the Barça Foundation, and the landmark Espai Barça transformation of Spotify Camp Nou, the Club continues to lead world football on and off the pitch.
+        </p>
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-culers" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>CULERS MEMBERSHIP &amp; BARÇA ONE</h1>
+        <p>Stream exclusive documentaries, live press conferences, and match replays anywhere in the world.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <button type="button" class="btn-tickets-gold" style="max-width:260px;margin-bottom:20px;display:block;" onclick="openAuthModal('register')">CREATE FREE CULER ID</button>
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-news" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>OFFICIAL CLUB NEWS</h1>
+        <p>All breaking announcements, match reports, and interviews from across FC Barcelona.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <p style="margin-bottom:20px;">Showing latest updates for 23 November 2026.</p>
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. MAIN PARTNERS & SOCIAL MEDIA FOOTER BAND
+       ======================================================================== -->
+  <section class="partners-footer-band">
+    <div class="container">
+      <div class="partners-top-row">
+        <span class="partners-heading">MAIN PARTNERS</span>
+        <a href="#club" class="btn-view-partners" data-route="club">View all partners</a>
+      </div>
+
+      <div class="partners-logos-row">
+        <div class="partner-wordmark" style="font-style:italic;">NIKE</div>
+        <div class="partner-wordmark">Spotify</div>
+        <div class="partner-wordmark">Midea</div>
+      </div>
+
+      <div class="social-row">
+        <div class="social-label">Follow FC Barcelona on social media</div>
+        <div class="social-icons">
+          <a href="#culers" class="social-circle" data-route="culers" aria-label="Facebook">f</a>
+          <a href="#culers" class="social-circle" data-route="culers" aria-label="X">𝕏</a>
+          <a href="#culers" class="social-circle" data-route="culers" aria-label="YouTube">▶</a>
+          <a href="#culers" class="social-circle" data-route="culers" aria-label="Instagram">◎</a>
+          <a href="#culers" class="social-circle" data-route="culers" aria-label="Barça One">B1</a>
+          <a href="#culers" class="social-circle" data-route="culers" aria-label="Spotify">♫</a>
+          <a href="#culers" class="social-circle" data-route="culers" aria-label="TikTok">♪</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       11. MULTI-COLUMN SITE FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>GOALKEEPERS</h4>
+          <ul>
+            <li><a href="#first-team" data-route="first-team">Marc-André ter Stegen</a></li>
+            <li><a href="#first-team" data-route="first-team">Iñaki Peña</a></li>
+            <li><a href="#first-team" data-route="first-team">Wojciech Szczęsny</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>DEFENDERS</h4>
+          <ul>
+            <li><a href="#first-team" data-route="first-team">Pau Cubarsí</a></li>
+            <li><a href="#first-team" data-route="first-team">Alejandro Balde</a></li>
+            <li><a href="#first-team" data-route="first-team">Ronald Araujo</a></li>
+            <li><a href="#first-team" data-route="first-team">Iñigo Martínez</a></li>
+            <li><a href="#first-team" data-route="first-team">Andreas Christensen</a></li>
+            <li><a href="#first-team" data-route="first-team">Jules Koundé</a></li>
+            <li><a href="#first-team" data-route="first-team">Eric García</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>MIDFIELDERS</h4>
+          <ul>
+            <li><a href="#first-team" data-route="first-team">Gavi</a></li>
+            <li><a href="#first-team" data-route="first-team">Pedri</a></li>
+            <li><a href="#first-team" data-route="first-team">Pablo Torre</a></li>
+            <li><a href="#first-team" data-route="first-team">Fermín López</a></li>
+            <li><a href="#first-team" data-route="first-team">Marc Casadó</a></li>
+            <li><a href="#first-team" data-route="first-team">Dani Olmo</a></li>
+            <li><a href="#first-team" data-route="first-team">Frenkie de Jong</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>FORWARDS</h4>
+          <ul>
+            <li><a href="#first-team" data-route="first-team">Ferran Torres</a></li>
+            <li><a href="#first-team" data-route="first-team">Robert Lewandowski</a></li>
+            <li><a href="#first-team" data-route="first-team">Ansu Fati</a></li>
+            <li><a href="#first-team" data-route="first-team">Raphinha</a></li>
+            <li><a href="#first-team" data-route="first-team">Pau Víctor</a></li>
+            <li><a href="#first-team" data-route="first-team">Lamine Yamal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>BARÇA PRODUCTS</h4>
+          <ul>
+            <li><a href="#culers" data-route="culers">Culers Membership</a></li>
+            <li><a href="#culers" data-route="culers">Barça One</a></li>
+            <li><a href="#tickets" data-route="tickets">Tickets &amp; Museum</a></li>
+            <li><a href="#shop" data-route="shop">Barça App</a></li>
+            <li><a href="#shop" data-route="shop">Online Store</a></li>
+            <li><a href="#club" data-route="club">Barça Academies</a></li>
+            <li><a href="#club" data-route="club">Barça Foundation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CLUB</h4>
+          <ul>
+            <li><a href="#club" data-route="club">Spotify Camp Nou</a></li>
+            <li><a href="#club" data-route="club">Espai Barça</a></li>
+            <li><a href="#club" data-route="club">History</a></li>
+            <li><a href="#club" data-route="club">Identity</a></li>
+            <li><a href="#club" data-route="club">Work at Barça</a></li>
+            <li><a href="#club" data-route="club">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>HISTORY</h4>
+          <ul>
+            <li><a href="#club" data-route="club">2015-2026. Era of Renewal</a></li>
+            <li><a href="#club" data-route="club">2008-2015. The Best Years</a></li>
+            <li><a href="#club" data-route="club">1996-2008. Centenary</a></li>
+            <li><a href="#club" data-route="club">1988-1996. Dream Team</a></li>
+            <li><a href="#club" data-route="club">1978-1988. Núñez Era</a></li>
+            <li><a href="#club" data-route="club">1899-1922. Foundation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-brand-row">
+          <div class="footer-brand-left">
+            <img src="logo.png" alt="FC Barcelona" />
+            <span class="footer-brand-name">FC BARCELONA</span>
+          </div>
+          <span style="font-family:var(--font-display);font-weight:900;letter-spacing:0.06em;color:#fff;">BARÇA</span>
+        </div>
+
+        <div class="footer-legal-row">
+          <span>© Copyright FC Barcelona Official website of FC Barcelona</span>
+          <div class="footer-legal-links">
+            <a href="#club" data-route="club">Legal Terms</a>
+            <a href="#club" data-route="club">Privacy Policy</a>
+            <a href="#club" data-route="club">Cookies</a>
+            <a href="#club" data-route="club">Accessibility</a>
+            <a href="#club" data-route="club">Contact Us</a>
+            <a href="#club" data-route="club">Support/FAQs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       INTERACTIVE MODALS (AUTH, ARTICLE READER, TICKET/STORE RESERVATION)
+       ======================================================================== -->
+  <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="authModalTitle">CULER ACCOUNT LOGIN</h3>
+        <button type="button" class="modal-close" onclick="closeModal('authModal')" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="authForm" onsubmit="handleAuthSubmit(event)">
+          <div class="form-group" id="nameFieldGroup" style="display:none;">
+            <label for="culerName">Full Name</label>
+            <input type="text" id="culerName" class="form-control" placeholder="Enter your full name" />
+          </div>
+          <div class="form-group">
+            <label for="culerEmail">Email Address</label>
+            <input type="email" id="culerEmail" class="form-control" placeholder="culer@fcbarcelona.cat" required />
+          </div>
+          <div class="form-group">
+            <label for="culerPassword">Password</label>
+            <input type="password" id="culerPassword" class="form-control" placeholder="Minimum 6 characters" required />
+          </div>
+          <button type="submit" class="btn-tickets-gold" id="authSubmitBtn">SIGN IN</button>
+          <div id="authFeedback" class="form-feedback"></div>
+        </form>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:14px;">
+          Note: Frontend authentication interface ready for FC Barcelona SSO / backend API integration.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="articleModal" role="dialog" aria-modal="true" aria-labelledby="articleModalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="articleModalTitle">BARÇA NEWS</h3>
+        <button type="button" class="modal-close" onclick="closeModal('articleModal')" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="articleModalImg" src="images01.jpg" alt="" style="width:100%;height:190px;object-fit:cover;border-radius:6px;margin-bottom:14px;" />
+        <p id="articleModalText" style="font-size:14px;color:var(--text-dark);line-height:1.6;margin-bottom:18px;"></p>
+        <button type="button" class="btn-blue-pill" onclick="closeModal('articleModal')">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       VANILLA JAVASCRIPT (ROUTING, COUNTDOWN, CAROUSELS, FORMS)
+       ======================================================================== -->
+  <script>
+    // 1. Players Roster Data for Interactive Carousel
+    const playersData = [
+      { number: '11', name: 'RAPHINHA', pos: 'Forward', img: 'images23.jpg' },
+      { number: '19', name: 'LAMINE YAMAL', pos: 'Forward', img: 'images24.jpg' },
+      { number: '21', name: 'FRENKIE DE JONG', pos: 'Midfielder', img: 'images25.jpg' },
+      { number: '08', name: 'PEDRI', pos: 'Midfielder', img: 'images03.jpg' },
+      { number: '09', name: 'ROBERT LEWANDOWSKI', pos: 'Forward', img: 'images05.jpg' }
+    ];
+    let playerOffset = 0;
+
+    function renderPlayers() {
+      const grid = document.getElementById('playersGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      for (let i = 0; i < 3; i++) {
+        const p = playersData[(playerOffset + i) % playersData.length];
+        const card = document.createElement('article');
+        card.className = 'player-card';
+        card.onclick = () => navigateTo('first-team');
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.name}" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-info">
+            <div class="player-number-bg">${p.number}</div>
+            <div class="player-name">${p.name}</div>
+            <div class="player-pos">${p.pos}</div>
+          </div>
+        `;
+        grid.appendChild(card);
+      }
+    }
+
+    function rotatePlayers(dir) {
+      playerOffset = (playerOffset + dir + playersData.length) % playersData.length;
+      renderPlayers();
+    }
+
+    // 2. Tickets Grid Shift
+    function shiftTickets(dir) {
+      const grid = document.getElementById('ticketsGrid');
+      if (!grid) return;
+      const cards = Array.from(grid.children);
+      if (dir > 0 && cards.length > 0) {
+        grid.appendChild(cards[0]);
+      } else if (dir < 0 && cards.length > 0) {
+        grid.insertBefore(cards[cards.length - 1], cards[0]);
+      }
+    }
+
+    // 3. Live Match Countdown Timer (01 : 20 : 28 : 11 initial matching screenshot)
+    let remainingSeconds = (1 * 86400) + (20 * 3600) + (28 * 60) + 11;
+    function updateCountdown() {
+      if (remainingSeconds <= 0) return;
+      remainingSeconds--;
+      const d = Math.floor(remainingSeconds / 86400);
+      const h = Math.floor((remainingSeconds % 86400) / 3600);
+      const m = Math.floor((remainingSeconds % 3600) / 60);
+      const s = remainingSeconds % 60;
+
+      const elD = document.getElementById('cdDays');
+      const elH = document.getElementById('cdHours');
+      const elM = document.getElementById('cdMins');
+      const elS = document.getElementById('cdSecs');
+      if (elD) elD.textContent = String(d).padStart(2, '0');
+      if (elH) elH.textContent = String(h).padStart(2, '0');
+      if (elM) elM.textContent = String(m).padStart(2, '0');
+      if (elS) elS.textContent = String(s).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+
+    // 4. Hash-Based Multi-Page SPA Router
+    const validRoutes = ['home', 'first-team', 'tickets', 'shop', 'club', 'culers', 'news'];
+
+    function navigateTo(routeName) {
+      const target = validRoutes.includes(routeName) ? routeName : 'home';
+      document.querySelectorAll('.page-view').forEach(sec => sec.classList.remove('active'));
+      const activeSection = document.getElementById('page-' + target);
+      if (activeSection) activeSection.classList.add('active');
+
+      document.querySelectorAll('[data-route]').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-route') === target);
+      });
+
+      document.getElementById('mobileDrawer').classList.remove('open');
+      if (window.location.hash !== '#' + target) {
+        history.pushState(null, '', '#' + target);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('click', (e) => {
+      const routeLink = e.target.closest('[data-route]');
+      if (routeLink) {
+        e.preventDefault();
+        navigateTo(routeLink.getAttribute('data-route'));
+      }
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hashRoute = window.location.hash.replace('#', '') || 'home';
+      navigateTo(hashRoute);
+    });
+
+    // 5. Header Controls (Search & Mobile Menu)
+    document.getElementById('searchToggleBtn').addEventListener('click', () => {
+      const bar = document.getElementById('searchBarOverlay');
+      bar.classList.toggle('open');
+      if (bar.classList.contains('open')) {
+        document.getElementById('siteSearchInput').focus();
+      }
+    });
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileDrawer').classList.toggle('open');
+    });
+
+    function handleSiteSearch(e) {
+      e.preventDefault();
+      const q = document.getElementById('siteSearchInput').value.trim();
+      if (!q) return;
+      openArticleModal('Search Results for "' + q + '"', 'Showing official FC Barcelona matches, news articles, and store items matching "' + q + '".', 'images01.jpg');
+      document.getElementById('searchBarOverlay').classList.remove('open');
+    }
+
+    // 6. Modals & Form Validation
+    let currentAuthMode = 'login';
+    function openAuthModal(mode) {
+      currentAuthMode = mode;
+      const modal = document.getElementById('authModal');
+      const title = document.getElementById('authModalTitle');
+      const nameGroup = document.getElementById('nameFieldGroup');
+      const btn = document.getElementById('authSubmitBtn');
+      const fb = document.getElementById('authFeedback');
+
+      fb.className = 'form-feedback';
+      fb.textContent = '';
+
+      if (mode === 'register') {
+        title.textContent = 'BECOME A CULER';
+        nameGroup.style.display = 'block';
+        btn.textContent = 'CREATE CULER ACCOUNT';
+      } else {
+        title.textContent = 'CULER ACCOUNT LOGIN';
+        nameGroup.style.display = 'none';
+        btn.textContent = 'SIGN IN';
+      }
+      modal.classList.add('open');
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('culerEmail').value.trim();
+      const pass = document.getElementById('culerPassword').value;
+      const name = document.getElementById('culerName').value.trim();
+      const fb = document.getElementById('authFeedback');
+
+      if (currentAuthMode === 'register' && name.length < 2) {
+        fb.className = 'form-feedback error';
+        fb.textContent = 'Please enter your full name.';
+        return;
+      }
+      if (!email.includes('@')) {
+        fb.className = 'form-feedback error';
+        fb.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      if (pass.length < 6) {
+        fb.className = 'form-feedback error';
+        fb.textContent = 'Password must be at least 6 characters.';
+        return;
+      }
+
+      fb.className = 'form-feedback success';
+      fb.textContent = currentAuthMode === 'register'
+        ? 'Welcome to FC Barcelona, ' + name + '! Your Culer ID request has been validated.'
+        : 'Welcome back! Signed in as ' + email + '.';
+    }
+
+    function openArticleModal(title, text, imgSrc) {
+      document.getElementById('articleModalTitle').textContent = title;
+      document.getElementById('articleModalText').textContent = text;
+      document.getElementById('articleModalImg').src = imgSrc;
+      document.getElementById('articleModal').classList.add('open');
+    }
+
+    function openTicketBooking(itemTitle) {
+      openArticleModal('Reservation: ' + itemTitle, 'Item added to your session summary. Complete checkout via the official FC Barcelona ticketing & e-commerce payment gateway.', 'images05.jpg');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+    }
+
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) backdrop.classList.remove('open');
+      });
+    });
+
+    // Initialize on Load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPlayers();
+      const initialHash = window.location.hash.replace('#', '');
+      if (initialHash && validRoutes.includes(initialHash)) {
+        navigateTo(initialHash);
+      }
+    });
+  </script>
+</body>
+</html>
