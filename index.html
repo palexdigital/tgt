@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Official FC Barcelona Website | Barça</title>
+  <title>Official TGT Discovery Academy Website | Unleashing Raw Talent</title>
   <link rel="icon" type="image/png" href="logo.png" />
 
   <!-- Google Fonts for Condensed Athletic Display & Clean UI Typography -->
@@ -13,30 +13,33 @@
 
   <style>
     /* ==========================================================================
-       1. CSS VARIABLES & RESET
+       1. CSS VARIABLES & RESET (UPDATED TO TGT DISCOVERY ACADEMY PALETTE)
        ========================================================================== */
     :root {
-      --bg-deep: #121126;
-      --bg-navy: #181733;
-      --bg-navy-light: #201f42;
+      --bg-deep: #080808;
+      --bg-navy: #14265B;
+      --bg-navy-light: #1c3375;
       --bg-white: #ffffff;
-      --bg-offwhite: #f4f5f7;
-      --bg-card-gray: #e9ebef;
+      --bg-offwhite: #f7f8f5;
+      --bg-card-gray: #ebede8;
 
-      --fcb-blue: #004d98;
-      --fcb-blue-bright: #1559d6;
-      --fcb-red: #a50044;
-      --fcb-crimson: #cf122d;
-      --fcb-gold: #fdc52c;
-      --fcb-gold-hover: #e5b020;
+      --tgt-navy: #14265B;
+      --tgt-green: #80A92F;
+      --tgt-green-hover: #6d9126;
+      --tgt-red: #B51F32;
+      --tgt-crimson: #B51F32;
+      --tgt-yellow: #F5D927;
+      --tgt-yellow-hover: #dfc316;
+      --tgt-cream: #FFF8B5;
+      --tgt-black: #080808;
 
-      --text-dark: #181733;
-      --text-muted: #5a5d72;
+      --text-dark: #080808;
+      --text-muted: #4a5060;
       --text-light: #ffffff;
-      --text-light-muted: #b0b3c6;
+      --text-light-muted: #d5d9e6;
 
-      --border-light: #e2e4ea;
-      --border-dark: rgba(255, 255, 255, 0.12);
+      --border-light: #dfe2ea;
+      --border-dark: rgba(255, 255, 255, 0.14);
 
       --font-display: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -118,7 +121,7 @@
       z-index: 1000;
       background-color: var(--bg-navy);
       color: var(--text-light);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 4px 20px rgba(8, 8, 8, 0.4);
     }
 
     /* Top Utility Bar */
@@ -145,7 +148,7 @@
       align-items: center;
       gap: 8px;
       background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       padding: 3px 10px;
       border-radius: 999px;
       color: #fff;
@@ -153,8 +156,8 @@
     }
 
     .promo-badge {
-      background: var(--fcb-gold);
-      color: #121126;
+      background: var(--tgt-yellow);
+      color: #080808;
       font-weight: 800;
       padding: 1px 6px;
       border-radius: 3px;
@@ -178,11 +181,11 @@
     }
 
     .top-link:hover {
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
     }
 
     .btn-culer-top {
-      background: var(--fcb-crimson);
+      background: var(--tgt-red);
       color: #fff;
       font-weight: 700;
       font-size: 11px;
@@ -194,13 +197,13 @@
     }
 
     .btn-culer-top:hover {
-      background: #e31735;
+      background: #961828;
     }
 
     .lang-selector {
       background: rgba(255, 255, 255, 0.08);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 3px;
       padding: 2px 6px;
       font-size: 10px;
@@ -216,9 +219,9 @@
     /* Main Nav Bar */
     .main-nav-bar {
       position: relative;
-      background: linear-gradient(90deg, #181733 0%, #1d1b3d 50%, #181733 100%);
-      border-bottom: 2px solid;
-      border-image: linear-gradient(90deg, var(--fcb-blue), var(--fcb-red), var(--fcb-gold)) 1;
+      background: linear-gradient(90deg, #14265B 0%, #193072 50%, #14265B 100%);
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, var(--tgt-green), var(--tgt-red), var(--tgt-yellow)) 1;
     }
 
     .main-nav-inner {
@@ -246,8 +249,8 @@
     }
 
     .brand-logo img {
-      width: 52px;
-      height: 52px;
+      width: 50px;
+      height: 50px;
       object-fit: contain;
       filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
       transition: transform 0.2s ease;
@@ -255,6 +258,26 @@
 
     .brand-logo:hover img {
       transform: scale(1.05);
+    }
+
+    .brand-logo-text {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .brand-logo-text span {
+      display: block;
+      font-size: 10px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--tgt-yellow);
+      letter-spacing: 0.08em;
+      margin-top: 2px;
     }
 
     .nav-menu {
@@ -283,8 +306,8 @@
 
     .nav-link:hover,
     .nav-link.active {
-      color: var(--fcb-gold);
-      border-bottom-color: var(--fcb-gold);
+      color: var(--tgt-yellow);
+      border-bottom-color: var(--tgt-yellow);
     }
 
     /* Dropdown Menu */
@@ -292,13 +315,13 @@
       position: absolute;
       top: 100%;
       left: 0;
-      min-width: 220px;
+      min-width: 230px;
       background: var(--bg-navy);
       border: 1px solid var(--border-dark);
-      border-top: 2px solid var(--fcb-gold);
+      border-top: 2px solid var(--tgt-yellow);
       border-radius: 0 0 6px 6px;
       padding: 10px 0;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 14px 32px rgba(8, 8, 8, 0.5);
       opacity: 0;
       visibility: hidden;
       transform: translateY(8px);
@@ -322,7 +345,7 @@
 
     .dropdown-panel a:hover {
       background: rgba(255, 255, 255, 0.08);
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
       padding-left: 22px;
     }
 
@@ -344,12 +367,12 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #d6d9ea;
+      color: #e4e8f5;
     }
 
     .nav-sec-link:hover,
     .nav-sec-link.active {
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
     }
 
     .icon-btn {
@@ -360,11 +383,11 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .icon-btn:hover {
-      background: var(--fcb-gold);
+      background: var(--tgt-yellow);
       color: var(--bg-deep);
     }
 
@@ -375,7 +398,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 6px;
     }
 
@@ -413,7 +436,7 @@
     }
 
     .search-submit-btn {
-      background: var(--fcb-gold);
+      background: var(--tgt-yellow);
       color: var(--bg-deep);
       font-weight: 800;
       font-family: var(--font-display);
@@ -443,7 +466,7 @@
       align-items: center;
       text-align: center;
       padding: 60px 24px 36px;
-      background: linear-gradient(180deg, rgba(18,17,38,0.2) 0%, rgba(18,17,38,0.75) 70%, #121126 100%);
+      background: linear-gradient(180deg, rgba(20,38,91,0.3) 0%, rgba(8,8,8,0.8) 70%, #080808 100%);
     }
 
     .hero-bg-media {
@@ -454,20 +477,20 @@
       object-fit: cover;
       object-position: center top;
       z-index: 0;
-      opacity: 0.72;
+      opacity: 0.68;
     }
 
     .hero-overlay-grad {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(18, 17, 38, 0.25) 0%, rgba(18, 17, 38, 0.65) 62%, #121126 100%);
+      background: linear-gradient(180deg, rgba(20, 38, 91, 0.35) 0%, rgba(8, 8, 8, 0.72) 62%, #080808 100%);
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      max-width: 920px;
     }
 
     .hero-title {
@@ -478,7 +501,7 @@
       letter-spacing: 0.01em;
       line-height: 0.98;
       color: #fff;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
       margin-bottom: 12px;
     }
 
@@ -487,17 +510,17 @@
       align-items: center;
       gap: 10px;
       font-size: 12px;
-      font-weight: 600;
-      color: #d4d7ea;
+      font-weight: 700;
+      color: var(--tgt-cream);
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
 
     .hero-meta .tag-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--fcb-gold);
+      background: var(--tgt-green);
     }
 
     /* 3-Column Hero Sub-Cards */
@@ -516,8 +539,8 @@
     }
 
     .hero-subcard {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(20, 38, 91, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 6px;
       overflow: hidden;
       display: flex;
@@ -527,15 +550,15 @@
 
     .hero-subcard:hover {
       transform: translateY(-4px);
-      border-color: var(--fcb-gold);
-      background: rgba(255, 255, 255, 0.07);
+      border-color: var(--tgt-yellow);
+      background: rgba(20, 38, 91, 0.55);
     }
 
     .hero-subcard-thumb {
       position: relative;
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      background: #1e1c3a;
+      background: #14265B;
     }
 
     .hero-subcard-thumb img {
@@ -575,13 +598,13 @@
     }
 
     .meta-pill-red {
-      color: #ff4d6d;
+      color: var(--tgt-yellow);
       text-transform: uppercase;
       font-weight: 800;
       font-size: 10px;
     }
 
-    /* Main Partners Mini Strip */
+    /* Academy Pillars Mini Strip */
     .hero-partners-strip {
       border-top: 1px solid var(--border-dark);
       padding: 16px 24px;
@@ -590,7 +613,7 @@
       justify-content: center;
       gap: 32px;
       flex-wrap: wrap;
-      background: #0f0e20;
+      background: #080808;
     }
 
     .partner-mini-label {
@@ -598,7 +621,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #8f93b0;
+      color: var(--tgt-green);
     }
 
     .partner-mini-logos {
@@ -606,7 +629,8 @@
       align-items: center;
       gap: 28px;
       color: #fff;
-      opacity: 0.88;
+      opacity: 0.92;
+      font-size: 13px;
     }
 
     /* ==========================================================================
@@ -626,6 +650,8 @@
       justify-content: space-between;
       margin-bottom: 24px;
       position: relative;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .section-header-center {
@@ -642,7 +668,7 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      color: var(--text-dark);
+      color: var(--tgt-navy);
       line-height: 1;
     }
 
@@ -658,9 +684,9 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      border: 1px solid #d0d3de;
+      border: 1px solid #c9cedb;
       background: #fff;
-      color: var(--text-dark);
+      color: var(--tgt-navy);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -668,9 +694,9 @@
     }
 
     .carousel-arrow:hover {
-      background: var(--bg-navy);
+      background: var(--tgt-navy);
       color: #fff;
-      border-color: var(--bg-navy);
+      border-color: var(--tgt-navy);
     }
 
     .btn-outline-pill {
@@ -682,13 +708,13 @@
       border-radius: 4px;
       font-size: 12px;
       font-weight: 700;
-      color: var(--text-dark);
+      color: var(--tgt-navy);
       background: #fff;
     }
 
     .btn-outline-pill:hover {
-      border-color: var(--fcb-blue);
-      color: var(--fcb-blue);
+      border-color: var(--tgt-green);
+      color: var(--tgt-green);
     }
 
     .btn-blue-pill {
@@ -697,7 +723,7 @@
       justify-content: center;
       gap: 6px;
       padding: 9px 20px;
-      background: var(--fcb-blue-bright);
+      background: var(--tgt-navy);
       color: #fff;
       border-radius: 4px;
       font-size: 12px;
@@ -707,11 +733,12 @@
     }
 
     .btn-blue-pill:hover {
-      background: #0e46b5;
+      background: var(--tgt-green);
+      color: #fff;
     }
 
     /* ==========================================================================
-       5. BARÇA TICKETS 6-CARD ROW
+       5. ACADEMY PROGRAMS & AGE GROUPS 6-CARD ROW
        ========================================================================== */
     .tickets-grid {
       display: grid;
@@ -724,12 +751,12 @@
       border-radius: 8px;
       overflow: hidden;
       aspect-ratio: 3 / 4.2;
-      background: var(--bg-navy);
+      background: var(--tgt-navy);
       color: #fff;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      box-shadow: 0 6px 16px rgba(18, 17, 38, 0.14);
+      box-shadow: 0 6px 16px rgba(20, 38, 91, 0.16);
       cursor: pointer;
     }
 
@@ -749,7 +776,7 @@
     .ticket-card-gradient {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(18,17,38,0.05) 35%, rgba(18,17,38,0.92) 100%);
+      background: linear-gradient(180deg, rgba(20,38,91,0.12) 30%, rgba(8,8,8,0.92) 100%);
     }
 
     .ticket-card-info {
@@ -769,12 +796,12 @@
 
     .ticket-card-sub {
       font-size: 11px;
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
       font-weight: 700;
     }
 
     /* ==========================================================================
-       6. CALENDAR & NEXT MATCHES SECTION
+       6. TRAINING SCHEDULE & SESSIONS SECTION
        ========================================================================== */
     .calendar-header {
       display: flex;
@@ -804,7 +831,7 @@
       font-size: 10px;
       font-weight: 800;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--tgt-red);
       letter-spacing: 0.08em;
     }
 
@@ -815,7 +842,7 @@
       font-family: var(--font-display);
       font-size: 24px;
       font-weight: 800;
-      color: var(--text-dark);
+      color: var(--tgt-navy);
     }
 
     .cd-unit {
@@ -851,13 +878,14 @@
     }
 
     .match-card-top {
-      background: var(--bg-navy);
+      background: var(--tgt-navy);
       color: #fff;
       padding: 18px 16px;
       display: flex;
       align-items: center;
       justify-content: space-around;
       position: relative;
+      border-bottom: 3px solid var(--tgt-green);
     }
 
     .team-badge-box {
@@ -865,7 +893,7 @@
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      width: 84px;
+      width: 96px;
       text-align: center;
     }
 
@@ -873,14 +901,14 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 12px;
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.22);
     }
 
     .crest-circle img {
@@ -899,7 +927,7 @@
       font-family: var(--font-display);
       font-size: 20px;
       font-weight: 800;
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
     }
 
     .match-card-body {
@@ -914,7 +942,7 @@
       font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
-      color: var(--fcb-blue);
+      color: var(--tgt-green);
       margin-bottom: 4px;
     }
 
@@ -937,7 +965,7 @@
     .btn-tickets-gold {
       width: 100%;
       padding: 9px 14px;
-      background: var(--fcb-gold);
+      background: var(--tgt-yellow);
       color: var(--bg-deep);
       font-family: var(--font-display);
       font-size: 15px;
@@ -949,14 +977,14 @@
     }
 
     .btn-tickets-gold:hover {
-      background: var(--fcb-gold-hover);
+      background: var(--tgt-yellow-hover);
     }
 
     .btn-match-ghost {
       width: 100%;
       padding: 8px 14px;
       border: 1px solid #d5d8e2;
-      color: var(--text-dark);
+      color: var(--tgt-navy);
       font-size: 12px;
       font-weight: 700;
       border-radius: 4px;
@@ -964,15 +992,16 @@
     }
 
     .btn-match-ghost:hover {
-      background: var(--bg-offwhite);
+      background: var(--tgt-cream);
+      border-color: var(--tgt-navy);
     }
 
-    /* Best Games Promo Card */
+    /* Academy Venue Promo Card */
     .best-games-card {
       position: relative;
       border-radius: 8px;
       overflow: hidden;
-      background: linear-gradient(160deg, var(--fcb-red), var(--bg-navy));
+      background: linear-gradient(160deg, var(--tgt-red), var(--tgt-navy));
       color: #fff;
       padding: 18px;
       display: flex;
@@ -987,7 +1016,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.55;
+      opacity: 0.48;
     }
 
     .best-games-content {
@@ -1008,7 +1037,7 @@
     }
 
     /* ==========================================================================
-       7. BARÇA OFFICIAL WORLDWIDE STORE
+       7. ACADEMY KITS, APPAREL & EQUIPMENT
        ========================================================================== */
     .store-grid {
       display: grid;
@@ -1029,7 +1058,7 @@
     .store-banner {
       height: 135px;
       overflow: hidden;
-      background: #181733;
+      background: var(--tgt-navy);
     }
 
     .store-banner img {
@@ -1055,7 +1084,7 @@
       height: 82px;
       object-fit: contain;
       flex-shrink: 0;
-      background: #f8f9fb;
+      background: var(--tgt-cream);
       border-radius: 6px;
       padding: 4px;
     }
@@ -1065,7 +1094,7 @@
       font-size: 20px;
       font-weight: 800;
       text-transform: uppercase;
-      color: var(--text-dark);
+      color: var(--tgt-navy);
       margin-bottom: 4px;
     }
 
@@ -1079,7 +1108,7 @@
     .store-cta-link {
       font-size: 12px;
       font-weight: 800;
-      color: var(--fcb-blue-bright);
+      color: var(--tgt-red);
       text-transform: uppercase;
       display: inline-flex;
       align-items: center;
@@ -1091,7 +1120,7 @@
     }
 
     /* ==========================================================================
-       8. BECOME A CULER PREMIUM BANNER
+       8. JOIN TGT DISCOVERY ACADEMY BANNER
        ========================================================================== */
     .culer-banner-section {
       padding: 24px 0 44px;
@@ -1101,7 +1130,8 @@
       position: relative;
       border-radius: 10px;
       overflow: hidden;
-      background: radial-gradient(circle at 70% 50%, #1c2459 0%, #0d0c1d 75%);
+      background: radial-gradient(circle at 75% 50%, #1d3987 0%, #14265B 55%, #080808 100%);
+      border: 2px solid var(--tgt-green);
       min-height: 320px;
       display: flex;
       align-items: center;
@@ -1111,19 +1141,21 @@
 
     .culer-banner-img {
       position: absolute;
-      right: 8%;
+      right: 6%;
       bottom: 0;
-      height: 95%;
-      max-width: 48%;
-      object-fit: contain;
-      object-position: bottom center;
+      height: 92%;
+      max-width: 44%;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      object-position: top center;
       z-index: 1;
+      opacity: 0.92;
     }
 
     .culer-banner-content {
       position: relative;
       z-index: 2;
-      max-width: 480px;
+      max-width: 520px;
     }
 
     .culer-banner-title {
@@ -1133,17 +1165,18 @@
       text-transform: uppercase;
       line-height: 1;
       margin-bottom: 12px;
+      color: var(--tgt-cream);
     }
 
     .culer-banner-desc {
       font-size: 14px;
-      color: #d6d9ec;
+      color: #e4e8f5;
       margin-bottom: 22px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* ==========================================================================
-       9. BARÇA NEWS (8-CARD 4x2 GRID)
+       9. ACADEMY UPDATES, VALUES & PATHWAYS (4x2 GRID)
        ========================================================================== */
     .news-grid {
       display: grid;
@@ -1163,12 +1196,13 @@
 
     .news-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(18, 17, 38, 0.08);
+      border-color: var(--tgt-green);
+      box-shadow: 0 10px 24px rgba(20, 38, 91, 0.1);
     }
 
     .news-thumb {
       aspect-ratio: 16 / 10;
-      background: #ebedf2;
+      background: var(--tgt-cream);
       position: relative;
       overflow: hidden;
       display: flex;
@@ -1183,9 +1217,9 @@
     }
 
     .news-thumb-placeholder {
-      width: 44px;
-      height: 44px;
-      opacity: 0.25;
+      width: 46px;
+      height: 46px;
+      opacity: 0.35;
       object-fit: contain;
     }
 
@@ -1218,12 +1252,12 @@
     }
 
     .news-tag {
-      color: var(--fcb-red);
+      color: var(--tgt-red);
       font-weight: 800;
     }
 
     /* ==========================================================================
-       10. WIN THE NEW HOME KIT PROMO BANNER
+       10. PARTNERSHIPS & SPONSORSHIP PROMO BANNER
        ========================================================================== */
     .kit-promo-section {
       padding: 12px 0 48px;
@@ -1240,7 +1274,7 @@
     }
 
     .kit-promo-media {
-      background: radial-gradient(circle at center, #b80d28 0%, #6b0514 100%);
+      background: radial-gradient(circle at center, var(--tgt-red) 0%, #6b0f1b 100%);
       min-height: 240px;
       display: flex;
       align-items: center;
@@ -1251,6 +1285,7 @@
     .kit-promo-media img {
       max-height: 210px;
       object-fit: contain;
+      border-radius: 6px;
       filter: drop-shadow(0 12px 24px rgba(0,0,0,0.45));
     }
 
@@ -1260,6 +1295,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      background: linear-gradient(180deg, #ffffff 0%, #fffdf0 100%);
     }
 
     .kit-promo-title {
@@ -1267,7 +1303,7 @@
       font-size: 32px;
       font-weight: 900;
       text-transform: uppercase;
-      color: var(--text-dark);
+      color: var(--tgt-navy);
       margin-bottom: 8px;
     }
 
@@ -1275,10 +1311,11 @@
       font-size: 14px;
       color: var(--text-muted);
       margin-bottom: 20px;
+      line-height: 1.55;
     }
 
     /* ==========================================================================
-       11. PLAYERS CAROUSEL SECTION
+       11. COACHES, PERSONNEL & PLAYER PATHWAY CAROUSEL SECTION
        ========================================================================== */
     .players-grid {
       display: grid;
@@ -1291,7 +1328,7 @@
       border-radius: 8px;
       overflow: hidden;
       aspect-ratio: 4 / 4.3;
-      background: linear-gradient(135deg, #a50044 0%, #004d98 100%);
+      background: linear-gradient(135deg, var(--tgt-navy) 0%, var(--tgt-green) 100%);
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -1316,7 +1353,7 @@
     .player-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(18,17,38,0) 45%, rgba(18,17,38,0.95) 100%);
+      background: linear-gradient(180deg, rgba(8,8,8,0.05) 40%, rgba(8,8,8,0.95) 100%);
     }
 
     .player-card-info {
@@ -1328,36 +1365,37 @@
 
     .player-number-bg {
       font-family: var(--font-display);
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 900;
-      color: rgba(255, 255, 255, 0.18);
-      line-height: 0.8;
+      color: rgba(255, 248, 181, 0.25);
+      line-height: 0.9;
+      text-transform: uppercase;
     }
 
     .player-name {
       font-family: var(--font-display);
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      line-height: 1;
-      margin-top: -10px;
+      line-height: 1.05;
+      margin-top: -6px;
     }
 
     .player-pos {
       font-size: 12px;
       font-weight: 600;
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
       margin-top: 4px;
     }
 
     /* ==========================================================================
-       12. TROPHY SHOWCASE STRIP
+       12. ACHIEVEMENTS & HONOURS SHOWCASE STRIP
        ========================================================================== */
     .trophies-section {
-      background-color: var(--bg-navy);
+      background-color: var(--tgt-navy);
       padding: 36px 0 24px;
-      border-top: 3px solid var(--fcb-gold);
+      border-top: 3px solid var(--tgt-yellow);
     }
 
     .trophies-grid {
@@ -1367,8 +1405,8 @@
     }
 
     .trophy-banner {
-      background: linear-gradient(90deg, #25132e 0%, #1a1e47 50%, #25132e 100%);
-      border: 1px solid rgba(253, 197, 44, 0.25);
+      background: linear-gradient(90deg, #080808 0%, #193072 50%, #080808 100%);
+      border: 1px solid rgba(245, 217, 39, 0.32);
       border-radius: 6px;
       padding: 14px 24px;
       display: flex;
@@ -1376,27 +1414,28 @@
       justify-content: center;
       gap: 14px;
       color: #fff;
+      text-align: center;
     }
 
     .trophy-label {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #e4e6f2;
+      letter-spacing: 0.05em;
+      color: var(--tgt-cream);
     }
 
     .trophy-count {
       font-family: var(--font-display);
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 900;
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
       line-height: 1;
     }
 
     /* ==========================================================================
-       13. MAIN PARTNERS & SOCIAL BAR
+       13. PARTNERSHIP OPPORTUNITIES & SOCIAL BAR
        ========================================================================== */
     .partners-footer-band {
       background-color: var(--bg-deep);
@@ -1419,13 +1458,13 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: #9ba0be;
+      color: var(--tgt-green);
     }
 
     .btn-view-partners {
       position: absolute;
       right: 0;
-      background: var(--fcb-crimson);
+      background: var(--tgt-red);
       color: #fff;
       font-size: 11px;
       font-weight: 700;
@@ -1438,21 +1477,22 @@
       align-items: center;
       justify-content: space-around;
       flex-wrap: wrap;
-      gap: 36px;
-      max-width: 900px;
+      gap: 32px;
+      max-width: 960px;
       margin: 0 auto 32px;
     }
 
     .partner-wordmark {
       font-family: var(--font-display);
-      font-size: 32px;
+      font-size: 26px;
       font-weight: 900;
       letter-spacing: 0.04em;
-      color: #fff;
+      color: var(--tgt-cream);
       display: inline-flex;
       align-items: center;
       gap: 10px;
       opacity: 0.92;
+      text-transform: uppercase;
     }
 
     .social-row {
@@ -1460,8 +1500,8 @@
     }
 
     .social-label {
-      font-size: 11px;
-      color: #9ba0be;
+      font-size: 12px;
+      color: #d5d9e6;
       margin-bottom: 14px;
       font-weight: 600;
     }
@@ -1487,7 +1527,7 @@
     }
 
     .social-circle:hover {
-      background: var(--fcb-gold);
+      background: var(--tgt-yellow);
       color: var(--bg-deep);
       transform: translateY(-2px);
     }
@@ -1496,7 +1536,7 @@
        14. MULTI-COLUMN SITE FOOTER
        ========================================================================== */
     .site-footer {
-      background-color: var(--bg-navy);
+      background-color: var(--tgt-navy);
       color: #cfd2e6;
       padding: 48px 0 28px;
       font-size: 12px;
@@ -1516,7 +1556,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: #fff;
+      color: var(--tgt-yellow);
       margin-bottom: 12px;
     }
 
@@ -1526,13 +1566,13 @@
       gap: 7px;
     }
 
-    .footer-col a {
-      color: #a3a7c2;
+    .footer-col a, .footer-col li {
+      color: #d5d9e6;
       font-size: 11px;
     }
 
     .footer-col a:hover {
-      color: var(--fcb-gold);
+      color: var(--tgt-yellow);
     }
 
     .footer-bottom {
@@ -1546,6 +1586,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .footer-brand-left {
@@ -1555,8 +1597,8 @@
     }
 
     .footer-brand-left img {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       object-fit: contain;
     }
 
@@ -1575,7 +1617,7 @@
       flex-wrap: wrap;
       gap: 12px;
       font-size: 11px;
-      color: #8c90ab;
+      color: #b0b6cc;
     }
 
     .footer-legal-links {
@@ -1586,11 +1628,11 @@
     }
 
     .footer-legal-links a:hover {
-      color: #fff;
+      color: var(--tgt-yellow);
     }
 
     /* ==========================================================================
-       15. SPA SUB-PAGES & MODALS
+       15. SPA SUB-PAGES, STRUCTURED CARDS & MODALS
        ========================================================================== */
     .page-view {
       display: none;
@@ -1601,10 +1643,10 @@
     }
 
     .subpage-hero {
-      background: linear-gradient(135deg, var(--bg-navy) 0%, #27153b 100%);
+      background: linear-gradient(135deg, var(--tgt-navy) 0%, #0d193d 65%, #080808 100%);
       color: #fff;
       padding: 48px 0;
-      border-bottom: 3px solid var(--fcb-gold);
+      border-bottom: 3px solid var(--tgt-yellow);
     }
 
     .subpage-hero h1 {
@@ -1612,19 +1654,93 @@
       font-size: 44px;
       font-weight: 900;
       text-transform: uppercase;
+      color: var(--tgt-cream);
     }
 
     .subpage-hero p {
-      color: #d0d3e6;
-      max-width: 680px;
+      color: #e4e8f5;
+      max-width: 740px;
       margin-top: 8px;
+      font-size: 15px;
+    }
+
+    .info-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .info-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .info-panel {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-top: 4px solid var(--tgt-navy);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .info-panel.accent-green {
+      border-top-color: var(--tgt-green);
+    }
+
+    .info-panel.accent-red {
+      border-top-color: var(--tgt-red);
+    }
+
+    .info-panel.accent-yellow {
+      border-top-color: var(--tgt-yellow);
+    }
+
+    .info-panel h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--tgt-navy);
+      margin-bottom: 10px;
+    }
+
+    .info-panel p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .styled-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-dark);
+    }
+
+    .styled-list li {
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .styled-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--tgt-green);
+      font-weight: 900;
     }
 
     /* Modal System */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(10, 9, 24, 0.8);
+      background: rgba(8, 8, 8, 0.82);
       backdrop-filter: blur(4px);
       display: none;
       align-items: center;
@@ -1641,19 +1757,20 @@
       background: #fff;
       color: var(--text-dark);
       border-radius: 10px;
-      max-width: 520px;
+      max-width: 540px;
       width: 100%;
       overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
     }
 
     .modal-header {
-      background: var(--bg-navy);
+      background: var(--tgt-navy);
       color: #fff;
       padding: 18px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 3px solid var(--tgt-yellow);
     }
 
     .modal-header h3 {
@@ -1695,7 +1812,7 @@
 
     .form-control:focus {
       outline: none;
-      border-color: var(--fcb-blue);
+      border-color: var(--tgt-navy);
     }
 
     .form-feedback {
@@ -1710,19 +1827,19 @@
     .form-feedback.error {
       display: block;
       background: #fde8ec;
-      color: #b01030;
+      color: var(--tgt-red);
     }
 
     .form-feedback.success {
       display: block;
-      background: #e6f7ed;
-      color: #0e6b38;
+      background: #eef7df;
+      color: #466312;
     }
 
     /* Mobile Menu Drawer */
     .mobile-drawer {
       display: none;
-      background: var(--bg-navy);
+      background: var(--tgt-navy);
       border-top: 1px solid var(--border-dark);
       padding: 16px 24px 24px;
     }
@@ -1734,7 +1851,7 @@
     .mobile-drawer a {
       display: block;
       padding: 11px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       font-family: var(--font-display);
       font-size: 18px;
       font-weight: 700;
@@ -1772,7 +1889,9 @@
 
       .hero-cards-grid,
       .store-grid,
-      .players-grid {
+      .players-grid,
+      .info-grid-2,
+      .info-grid-3 {
         grid-template-columns: 1fr;
       }
 
@@ -1792,7 +1911,7 @@
 
       .culer-banner-img {
         position: static;
-        max-width: 240px;
+        max-width: 260px;
         margin-top: 20px;
       }
     }
@@ -1832,28 +1951,26 @@
     <!-- Top Utility Bar -->
     <div class="top-bar">
       <div class="top-bar-inner">
-        <a href="#tickets" class="promo-pill" data-route="tickets">
+        <a href="#training" class="promo-pill" data-route="training">
           <span>⚽</span>
-          <span>FC BARCELONA vs ATLÉTICO DE MADRID</span>
-          <span class="promo-badge">TICKETS ON SALE</span>
+          <span>TRAINING: WEDNESDAYS &amp; FRIDAYS • 16:00 – 18:30 (HILLVIEW HIGH SCHOOL)</span>
+          <span class="promo-badge">AGES 8–21</span>
         </a>
 
         <div class="top-actions">
-          <button type="button" class="top-link" onclick="openAuthModal('login')">
+          <button type="button" class="top-link" onclick="openAuthModal('coaching')">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
-            <span>Login</span>
+            <span>Coach Application</span>
           </button>
 
           <button type="button" class="btn-culer-top" onclick="openAuthModal('register')">
             <span>★</span>
-            <span>Become a Culer</span>
+            <span>Join Academy</span>
           </button>
 
           <select aria-label="Language" class="lang-selector" id="langSelector">
             <option value="EN">EN</option>
-            <option value="ES">ES</option>
-            <option value="CA">CA</option>
-            <option value="FR">FR</option>
+            <option value="ZA">ZA</option>
           </select>
         </div>
       </div>
@@ -1863,40 +1980,44 @@
     <div class="main-nav-bar">
       <div class="main-nav-inner">
         <div class="nav-left">
-          <a href="#home" class="brand-logo" data-route="home" aria-label="FC Barcelona Home">
-            <img src="logo.png" alt="FC Barcelona Crest" onerror="this.style.background='#004d98';this.style.borderRadius='50%';" />
+          <a href="#home" class="brand-logo" data-route="home" aria-label="TGT Discovery Academy Home">
+            <img src="logo.png" alt="TGT Discovery Academy Crest" onerror="this.style.background='#14265B';this.style.borderRadius='50%';" />
+            <div class="brand-logo-text">
+              TGT DISCOVERY
+              <span>UNLEASHING RAW TALENT</span>
+            </div>
           </a>
 
           <nav aria-label="Primary Navigation">
             <ul class="nav-menu">
               <li class="nav-item">
-                <a href="#first-team" class="nav-link" data-route="first-team">First Team ▾</a>
+                <a href="#programs" class="nav-link" data-route="programs">Development ▾</a>
                 <div class="dropdown-panel">
-                  <a href="#first-team" data-route="first-team">Latest News</a>
-                  <a href="#first-team" data-route="first-team">Schedule &amp; Results</a>
-                  <a href="#first-team" data-route="first-team">Standings</a>
-                  <a href="#first-team" data-route="first-team">Players &amp; Squad</a>
+                  <a href="#programs" data-route="programs">Player Development Pillars</a>
+                  <a href="#programs" data-route="programs">Age Groups (8–21 Years)</a>
+                  <a href="#programs" data-route="programs">Player Progression &amp; Scouting</a>
+                  <a href="#training" data-route="training">Training Schedule &amp; Venue</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a href="#club" class="nav-link" data-route="club">Club ▾</a>
+                <a href="#about" class="nav-link" data-route="about">About Us ▾</a>
                 <div class="dropdown-panel">
-                  <a href="#club" data-route="club">Espai Barça</a>
-                  <a href="#club" data-route="club">History &amp; Honours</a>
-                  <a href="#club" data-route="club">Barça Foundation</a>
-                  <a href="#club" data-route="club">La Masia</a>
+                  <a href="#about" data-route="about">Our Story &amp; Registration</a>
+                  <a href="#about" data-route="about">Vision &amp; Mission</a>
+                  <a href="#about" data-route="about">Core Values</a>
+                  <a href="#about" data-route="about">Community Development</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a href="#culers" class="nav-link" data-route="culers">Culers ▾</a>
+                <a href="#coaches" class="nav-link" data-route="coaches">Coaches &amp; Stars ▾</a>
                 <div class="dropdown-panel">
-                  <a href="#culers" data-route="culers">Culer Membership</a>
-                  <a href="#culers" data-route="culers">Barça One</a>
-                  <a href="#culers" data-route="culers">Penyes &amp; Supporters</a>
+                  <a href="#coaches" data-route="coaches">Coaching Opportunities</a>
+                  <a href="#coaches" data-route="coaches">Academy Graduates &amp; Recruits</a>
+                  <a href="#achievements" data-route="achievements">Honours &amp; Achievements</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a href="#news" class="nav-link" data-route="news">News</a>
+                <a href="#achievements" class="nav-link" data-route="achievements">Achievements</a>
               </li>
             </ul>
           </nav>
@@ -1904,10 +2025,10 @@
 
         <div class="nav-right">
           <div class="nav-secondary-links">
-            <a href="#tickets" class="nav-sec-link" data-route="tickets">Tickets &amp; Museum</a>
-            <a href="#shop" class="nav-sec-link" data-route="shop">Shop</a>
-            <a href="#first-team" class="nav-sec-link" data-route="first-team">Teams</a>
-            <a href="#culers" class="nav-sec-link" data-route="culers">Barça One</a>
+            <a href="#training" class="nav-sec-link" data-route="training">Training &amp; Venue</a>
+            <a href="#kits" class="nav-sec-link" data-route="kits">Kits &amp; Apparel</a>
+            <a href="#partners" class="nav-sec-link" data-route="partners">Partnerships</a>
+            <a href="#contact" class="nav-sec-link" data-route="contact">Contact</a>
           </div>
 
           <button type="button" class="icon-btn" id="searchToggleBtn" aria-label="Search site">
@@ -1923,7 +2044,7 @@
       <!-- Search Drawer -->
       <div class="search-bar-overlay" id="searchBarOverlay">
         <form class="search-form-inner" onsubmit="handleSiteSearch(event)">
-          <input type="search" id="siteSearchInput" class="search-input" placeholder="Search players, fixtures, tickets, news..." required />
+          <input type="search" id="siteSearchInput" class="search-input" placeholder="Search age groups, training hours, achievements, kits, partnerships..." required />
           <button type="submit" class="search-submit-btn">Search</button>
         </form>
       </div>
@@ -1931,326 +2052,329 @@
       <!-- Mobile Drawer -->
       <div class="mobile-drawer" id="mobileDrawer">
         <a href="#home" data-route="home">Home</a>
-        <a href="#first-team" data-route="first-team">First Team</a>
-        <a href="#tickets" data-route="tickets">Tickets &amp; Museum</a>
-        <a href="#shop" data-route="shop">Barça Official Store</a>
-        <a href="#culers" data-route="culers">Culers &amp; Barça One</a>
-        <a href="#club" data-route="club">Club &amp; History</a>
-        <a href="#news" data-route="news">All News</a>
+        <a href="#about" data-route="about">About Us &amp; Values</a>
+        <a href="#programs" data-route="programs">Development Programme (8–21)</a>
+        <a href="#training" data-route="training">Training &amp; Venue</a>
+        <a href="#kits" data-route="kits">Kits &amp; Apparel</a>
+        <a href="#coaches" data-route="coaches">Coaches &amp; Player Pathways</a>
+        <a href="#achievements" data-route="achievements">Achievements &amp; Honours</a>
+        <a href="#partners" data-route="partners">Partnerships &amp; Sponsorship</a>
+        <a href="#contact" data-route="contact">Contact Us</a>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================
-       PAGE 1: HOMEPAGE VIEW (PRIMARY SCREENSHOT REPLICA)
+       PAGE 1: HOMEPAGE VIEW (PRIMARY STRUCTURE PRESERVED)
        ======================================================================== -->
   <main id="page-home" class="page-view active">
 
     <!-- 1. HERO SECTION + 3 FEATURED CARDS -->
     <section class="hero-section">
       <div class="hero-banner">
-        <img src="images01.jpg" alt="Squad for the trip to Baku" class="hero-bg-media" />
+        <img src="images01.jpg" alt="TGT Discovery Academy Training & Development" class="hero-bg-media" />
         <div class="hero-overlay-grad"></div>
 
         <div class="hero-content">
-          <h1 class="hero-title">SQUAD FOR THE TRIP TO BAKU</h1>
+          <h1 class="hero-title">UNLEASHING RAW TALENT</h1>
           <div class="hero-meta">
             <span class="tag-dot"></span>
-            <span>FIRST TEAM</span>
+            <span>TGT DISCOVERY ACADEMY / NPC</span>
             <span>•</span>
-            <span>23 NOV 26</span>
+            <span>ROSEVILLE, PRETORIA</span>
           </div>
         </div>
       </div>
 
       <div class="hero-cards-wrapper">
         <div class="hero-cards-grid">
-          <article class="hero-subcard" onclick="openArticleModal('Squad for the trip to Baku', 'Hansi Flick has named the travelling squad for the upcoming European away fixture in Baku, featuring returning midfielders and La Masia talents.', 'images02.jpg')">
+          <article class="hero-subcard" onclick="openArticleModal('2026 Pretoria LFA FAP League Champions', 'Our Under-19 team once again secured first position in the 2026 Pretoria LFA FAP League, following their 2023 title triumph and proving TGT Discovery Academy is a force to be reckoned with.', 'images02.jpg')">
             <div class="hero-subcard-thumb">
-              <img src="images02.jpg" alt="Training session ahead of Baku" />
+              <img src="images02.jpg" alt="Pretoria LFA FAP League Champions" />
             </div>
             <div class="hero-subcard-body">
-              <h2 class="hero-subcard-title">Final training session at Ciutat Esportiva before departure</h2>
+              <h2 class="hero-subcard-title">U19s crowned 2026 Pretoria LFA FAP League Champions once again</h2>
               <div class="hero-subcard-meta">
-                <span class="meta-pill-red">FIRST TEAM</span>
-                <span>• 2 hrs ago</span>
+                <span class="meta-pill-red">ACHIEVEMENTS</span>
+                <span>• 2023 &amp; 2026 Champions</span>
               </div>
             </div>
           </article>
 
-          <article class="hero-subcard" onclick="openArticleModal('Inside the flight with Pedri and Gavi', 'Behind-the-scenes access as the Barça squad boards the charter flight with smiles and focus ahead of matchday.', 'images03.jpg')">
+          <article class="hero-subcard" onclick="openArticleModal('Player Progression: Polokwane City & Tuks', 'Former U19 captain and goalkeeper Lethabo Mashifane has signed with Polokwane City (DDC DSTV feeder team), while three academy players were recently recruited by Tuks.', 'images03.jpg')">
             <div class="hero-subcard-thumb">
-              <img src="images03.jpg" alt="Players on team flight" />
+              <img src="images03.jpg" alt="Academy Graduates Signing Opportunities" />
             </div>
             <div class="hero-subcard-body">
-              <h2 class="hero-subcard-title">All smiles on board as the squad heads east for European action</h2>
+              <h2 class="hero-subcard-title">Lethabo Mashifane signs for Polokwane City; three recruited by Tuks</h2>
               <div class="hero-subcard-meta">
-                <span class="meta-pill-red">BARÇA ONE</span>
-                <span>• 4 hrs ago</span>
+                <span class="meta-pill-red">PLAYER PATHWAYS</span>
+                <span>• Academy Recognition</span>
               </div>
             </div>
           </article>
 
-          <article class="hero-subcard" onclick="navigateTo('shop')">
+          <article class="hero-subcard" onclick="navigateTo('training')">
             <div class="hero-subcard-thumb">
-              <img src="images04.jpg" alt="Barça Black Friday Official Offer" />
+              <img src="images04.jpg" alt="Training Sessions at Hillview High School" />
             </div>
             <div class="hero-subcard-body">
-              <h2 class="hero-subcard-title">Black Friday Week: Up to 40% off official kits and training wear</h2>
+              <h2 class="hero-subcard-title">Join boys &amp; girls aged 8–21 every Wednesday &amp; Friday (16:00 – 18:30)</h2>
               <div class="hero-subcard-meta">
-                <span class="meta-pill-red">BARÇA STORE</span>
-                <span>• Limited Offer</span>
+                <span class="meta-pill-red">HILLVIEW HIGH SCHOOL</span>
+                <span>• Roseville, Pretoria</span>
               </div>
             </div>
           </article>
         </div>
       </div>
 
-      <!-- Main Partners Mini Strip -->
+      <!-- Academy Core Pillars Mini Strip -->
       <div class="hero-partners-strip">
-        <span class="partner-mini-label">MAIN PARTNERS</span>
+        <span class="partner-mini-label">DEVELOPMENT PILLARS</span>
         <div class="partner-mini-logos">
-          <span style="font-weight:900;font-style:italic;letter-spacing:0.06em;">NIKE</span>
-          <span style="font-weight:800;letter-spacing:0.04em;">Spotify</span>
-          <span style="font-weight:800;letter-spacing:0.04em;">Midea</span>
+          <span style="font-weight:800;letter-spacing:0.05em;">TECHNICAL</span>
+          <span style="font-weight:800;letter-spacing:0.05em;">PHYSICAL</span>
+          <span style="font-weight:800;letter-spacing:0.05em;">MENTAL</span>
+          <span style="font-weight:800;letter-spacing:0.05em;">SOCIAL &amp; PERSONAL</span>
         </div>
       </div>
     </section>
 
-    <!-- 2. BARÇA TICKETS CAROUSEL -->
+    <!-- 2. ACADEMY PROGRAMS & AGE GROUPS CAROUSEL -->
     <section class="section-block">
       <div class="container">
         <div class="section-header-center">
-          <h2 class="section-title">BARÇA TICKETS</h2>
+          <h2 class="section-title">ACADEMY PROGRAMMES &amp; PATHWAYS</h2>
           <div class="carousel-controls">
-            <button type="button" class="carousel-arrow" onclick="shiftTickets(-1)" aria-label="Previous tickets">‹</button>
-            <button type="button" class="carousel-arrow" onclick="shiftTickets(1)" aria-label="Next tickets">›</button>
+            <button type="button" class="carousel-arrow" onclick="shiftTickets(-1)" aria-label="Previous programme">‹</button>
+            <button type="button" class="carousel-arrow" onclick="shiftTickets(1)" aria-label="Next programme">›</button>
           </div>
         </div>
 
         <div class="tickets-grid" id="ticketsGrid">
-          <a href="#tickets" class="ticket-card" data-route="tickets">
-            <img src="images05.jpg" alt="Men's Football Tickets" />
+          <a href="#programs" class="ticket-card" data-route="programs">
+            <img src="images05.jpg" alt="Technical Development" />
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
-              <div class="ticket-card-title">MEN'S FOOTBALL</div>
-              <div class="ticket-card-sub">Buy Tickets →</div>
+              <div class="ticket-card-title">TECHNICAL MASTERY</div>
+              <div class="ticket-card-sub">Control, Passing &amp; Finishing →</div>
             </div>
           </a>
 
-          <a href="#tickets" class="ticket-card" data-route="tickets">
-            <img src="images06.jpg" alt="Barça Immersive Tour" />
+          <a href="#programs" class="ticket-card" data-route="programs">
+            <img src="images06.jpg" alt="Physical Conditioning" />
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
-              <div class="ticket-card-title">BARÇA MUSEUM</div>
-              <div class="ticket-card-sub">Immersive Tour →</div>
+              <div class="ticket-card-title">PHYSICAL FITNESS</div>
+              <div class="ticket-card-sub">Speed, Agility &amp; Strength →</div>
             </div>
           </a>
 
-          <a href="#tickets" class="ticket-card" data-route="tickets">
-            <img src="images07.jpg" alt="VIP Experience" />
+          <a href="#programs" class="ticket-card" data-route="programs">
+            <img src="images07.jpg" alt="Mental Strength" />
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
-              <div class="ticket-card-title">VIP EXPERIENCE</div>
-              <div class="ticket-card-sub">Hospitality →</div>
+              <div class="ticket-card-title">MENTAL STRENGTH</div>
+              <div class="ticket-card-sub">Discipline &amp; Resilience →</div>
             </div>
           </a>
 
-          <a href="#tickets" class="ticket-card" data-route="tickets">
-            <img src="images08.jpg" alt="Women's Football Tickets" />
+          <a href="#programs" class="ticket-card" data-route="programs">
+            <img src="images08.jpg" alt="Boys & Girls Aged 8–21" />
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
-              <div class="ticket-card-title">WOMEN'S FOOTBALL</div>
-              <div class="ticket-card-sub">Estadi Johan Cruyff →</div>
+              <div class="ticket-card-title">BOYS &amp; GIRLS 8–21</div>
+              <div class="ticket-card-sub">Beginner to Competitive →</div>
             </div>
           </a>
 
-          <a href="#tickets" class="ticket-card" data-route="tickets">
-            <img src="images09.jpg" alt="Spotify Camp Nou Experience" />
+          <a href="#achievements" class="ticket-card" data-route="achievements">
+            <img src="images09.jpg" alt="Pretoria LFA FAP League" />
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
-              <div class="ticket-card-title">ESPAI BARÇA</div>
-              <div class="ticket-card-sub">Discover More →</div>
+              <div class="ticket-card-title">LEAGUE COMPETITION</div>
+              <div class="ticket-card-sub">Pretoria LFA FAP League →</div>
             </div>
           </a>
 
-          <a href="#tickets" class="ticket-card" data-route="tickets">
-            <img src="images10.jpg" alt="Basketball Palau Blaugrana" />
+          <a href="#coaches" class="ticket-card" data-route="coaches">
+            <img src="images10.jpg" alt="Coaching Opportunities" />
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
-              <div class="ticket-card-title">BASKETBALL</div>
-              <div class="ticket-card-sub">Palau Blaugrana →</div>
+              <div class="ticket-card-title">D-LICENSE COACHING</div>
+              <div class="ticket-card-sub">Join Our Technical Staff →</div>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 3. CALENDAR & NEXT MATCHES -->
+    <!-- 3. TRAINING SCHEDULE & VENUE SECTION -->
     <section class="section-block section-block-gray">
       <div class="container">
         <div class="calendar-header">
           <div class="calendar-title-group">
-            <h2 class="section-title">CALENDAR</h2>
+            <h2 class="section-title">TRAINING SCHEDULE</h2>
 
-            <div class="countdown-box" aria-label="Next match countdown">
-              <span class="countdown-label">NEXT MATCH</span>
+            <div class="countdown-box" aria-label="Next training session countdown">
+              <span class="countdown-label">NEXT SESSION</span>
               <div class="countdown-digits" id="matchCountdown">
                 <div class="cd-unit"><span id="cdDays">01</span><small>DAYS</small></div>
                 <span>:</span>
-                <div class="cd-unit"><span id="cdHours">20</span><small>HRS</small></div>
+                <div class="cd-unit"><span id="cdHours">16</span><small>HRS</small></div>
                 <span>:</span>
-                <div class="cd-unit"><span id="cdMins">28</span><small>MIN</small></div>
+                <div class="cd-unit"><span id="cdMins">52</span><small>MIN</small></div>
                 <span>:</span>
-                <div class="cd-unit"><span id="cdSecs">11</span><small>SEC</small></div>
+                <div class="cd-unit"><span id="cdSecs">30</span><small>SEC</small></div>
               </div>
             </div>
           </div>
 
-          <a href="#first-team" class="btn-outline-pill" data-route="first-team">FULL SCHEDULE →</a>
+          <a href="#training" class="btn-outline-pill" data-route="training">VENUE &amp; DIRECTIONS →</a>
         </div>
 
         <div class="matches-grid">
-          <!-- Match Card 1 -->
+          <!-- Session Card 1 -->
           <article class="match-card">
             <div class="match-card-top">
               <div class="team-badge-box">
-                <div class="crest-circle">QFK</div>
-                <span class="team-name-small">Qarabağ FK</span>
+                <div class="crest-circle"><img src="logo.png" alt="TGT" /></div>
+                <span class="team-name-small">Wednesday Session</span>
               </div>
-              <span class="vs-badge">VS</span>
+              <span class="vs-badge">WED</span>
               <div class="team-badge-box">
-                <div class="crest-circle"><img src="logo.png" alt="FCB" /></div>
-                <span class="team-name-small">FC Barcelona</span>
+                <div class="crest-circle">8–21</div>
+                <span class="team-name-small">Boys &amp; Girls</span>
               </div>
             </div>
             <div class="match-card-body">
               <div>
-                <div class="match-comp">UEFA Champions League • Matchday 5</div>
-                <div class="match-fixture-name">Qarabağ FK vs FC Barcelona</div>
+                <div class="match-comp">Midweek Development • Technical &amp; Fitness</div>
+                <div class="match-fixture-name">Wednesday Academy Training</div>
                 <div class="match-details-list">
-                  <span>📅 Wednesday, 25 Nov • 18:45 CET</span>
-                  <span>📍 Tofiq Bahramov Stadium, Baku</span>
+                  <span>📅 Every Wednesday • 16:00 – 18:30</span>
+                  <span>📍 Hillview High School Grounds, Roseville</span>
                 </div>
               </div>
-              <button type="button" class="btn-match-ghost" onclick="openArticleModal('Match Preview: Qarabağ FK vs FC Barcelona', 'Kick-off at 18:45 CET in Baku. Follow live audio commentary and real-time match stats on Barça One.', 'images01.jpg')">MATCH CENTER</button>
+              <button type="button" class="btn-match-ghost" onclick="openArticleModal('Wednesday Training Session (16:00 – 18:30)', 'Structured technical mastery, ball control, passing, physical conditioning and tactical awareness at Hillview High School Grounds, 72 Franscina Street, Roseville, Pretoria.', 'images01.jpg')">SESSION DETAILS</button>
             </div>
           </article>
 
-          <!-- Match Card 2 -->
+          <!-- Session Card 2 -->
           <article class="match-card">
             <div class="match-card-top">
               <div class="team-badge-box">
-                <div class="crest-circle">RCD</div>
-                <span class="team-name-small">RCD Mallorca</span>
+                <div class="crest-circle"><img src="logo.png" alt="TGT" /></div>
+                <span class="team-name-small">Friday Session</span>
               </div>
-              <span class="vs-badge">VS</span>
+              <span class="vs-badge">FRI</span>
               <div class="team-badge-box">
-                <div class="crest-circle"><img src="logo.png" alt="FCB" /></div>
-                <span class="team-name-small">FC Barcelona</span>
+                <div class="crest-circle">8–21</div>
+                <span class="team-name-small">All Squads</span>
               </div>
             </div>
             <div class="match-card-body">
               <div>
-                <div class="match-comp">LaLiga EA Sports • Matchday 15</div>
-                <div class="match-fixture-name">RCD Mallorca vs FC Barcelona</div>
+                <div class="match-comp">Match Prep • Tactical &amp; Competitive Play</div>
+                <div class="match-fixture-name">Friday Academy Training</div>
                 <div class="match-details-list">
-                  <span>📅 Sunday, 29 Nov • 16:15 CET</span>
-                  <span>📍 Estadi Mallorca Son Moix</span>
+                  <span>📅 Every Friday • 16:00 – 18:30</span>
+                  <span>📍 Hillview High School Grounds, Roseville</span>
                 </div>
               </div>
-              <button type="button" class="btn-match-ghost" onclick="openArticleModal('Match Preview: RCD Mallorca vs FC Barcelona', 'LaLiga Matchday 15 clash away in Palma de Mallorca. Lineups announced 75 minutes before kick-off.', 'images02.jpg')">MATCH CENTER</button>
+              <button type="button" class="btn-match-ghost" onclick="openArticleModal('Friday Training Session (16:00 – 18:30)', 'Focused on match preparation, finishing, teamwork, communication and game intelligence ahead of weekend Pretoria LFA FAP League and tournament fixtures.', 'images02.jpg')">SESSION DETAILS</button>
             </div>
           </article>
 
-          <!-- Match Card 3 (Gold Tickets CTA) -->
+          <!-- Session Card 3 (Register CTA) -->
           <article class="match-card">
             <div class="match-card-top">
               <div class="team-badge-box">
-                <div class="crest-circle"><img src="logo.png" alt="FCB" /></div>
-                <span class="team-name-small">FC Barcelona</span>
+                <div class="crest-circle"><img src="logo.png" alt="TGT" /></div>
+                <span class="team-name-small">Player Intake</span>
               </div>
-              <span class="vs-badge">VS</span>
+              <span class="vs-badge">OPEN</span>
               <div class="team-badge-box">
-                <div class="crest-circle">ATM</div>
-                <span class="team-name-small">Atlético Madrid</span>
+                <div class="crest-circle">FAP</div>
+                <span class="team-name-small">Pretoria LFA</span>
               </div>
             </div>
             <div class="match-card-body">
               <div>
-                <div class="match-comp">LaLiga EA Sports • Matchday 16</div>
-                <div class="match-fixture-name">FC Barcelona vs Atlético de Madrid</div>
+                <div class="match-comp">Beginner, Intermediate &amp; Competitive</div>
+                <div class="match-fixture-name">Open Registration (Ages 8–21)</div>
                 <div class="match-details-list">
-                  <span>📅 Sunday, 06 Dec • 21:00 CET</span>
-                  <span>📍 Spotify Camp Nou</span>
+                  <span>📅 Boys &amp; Girls Welcome</span>
+                  <span>📍 72 Franscina Street, Roseville, Pretoria, 0084</span>
                 </div>
               </div>
-              <a href="#tickets" class="btn-tickets-gold" data-route="tickets">TICKETS</a>
+              <button type="button" class="btn-tickets-gold" onclick="openAuthModal('register')">REGISTER PLAYER</button>
             </div>
           </article>
 
-          <!-- Best Games Promo Card -->
+          <!-- Training Ground Card -->
           <aside class="best-games-card">
-            <img src="images11.jpg" alt="Best Games of the Season" />
+            <img src="images11.jpg" alt="Hillview High School Grounds" />
             <div class="best-games-content">
               <div>
-                <span class="promo-badge" style="margin-bottom:8px;display:inline-block;">SEASON PASS</span>
-                <div class="best-games-title">BEST GAMES</div>
+                <span class="promo-badge" style="margin-bottom:8px;display:inline-block;">HOME GROUND</span>
+                <div class="best-games-title">HILLVIEW GROUNDS</div>
               </div>
-              <a href="#tickets" class="btn-tickets-gold" data-route="tickets">GET PACKS</a>
+              <a href="#training" class="btn-tickets-gold" data-route="training">VIEW LOCATION</a>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- 4. BARÇA OFFICIAL WORLDWIDE STORE -->
+    <!-- 4. ACADEMY KITS, APPAREL & TRAINING GEAR -->
     <section class="section-block">
       <div class="container">
         <div class="section-header-row">
-          <h2 class="section-title">BARÇA OFFICIAL WORLDWIDE STORE</h2>
-          <a href="#shop" class="btn-blue-pill" data-route="shop">VISIT BARÇA STORE</a>
+          <h2 class="section-title">ACADEMY KITS, APPAREL &amp; EQUIPMENT</h2>
+          <a href="#kits" class="btn-blue-pill" data-route="kits">VIEW KITS &amp; GEAR</a>
         </div>
 
         <div class="store-grid">
           <article class="store-card">
             <div class="store-banner">
-              <img src="images12.jpg" alt="2025/26 Home Kit Collection" />
+              <img src="images12.jpg" alt="TGT Discovery Academy Match Kits" />
             </div>
             <div class="store-product-row">
-              <img src="images13.jpg" alt="Home Match Jersey" class="store-cutout" />
+              <img src="images13.jpg" alt="Official Academy Match Jersey" class="store-cutout" />
               <div class="store-info">
-                <h3>KITS</h3>
-                <p>Personalize your 2025/26 home, away &amp; third match jerseys with official badges.</p>
-                <a href="#shop" class="store-cta-link" data-route="shop">SHOP NOW →</a>
+                <h3>OFFICIAL MATCH KITS</h3>
+                <p>Representing TGT Discovery Academy in Navy Blue, Green, Red &amp; Yellow across Pretoria LFA leagues.</p>
+                <a href="#kits" class="store-cta-link" data-route="kits">EXPLORE KITS →</a>
               </div>
             </div>
           </article>
 
           <article class="store-card">
             <div class="store-banner">
-              <img src="images14.jpg" alt="CAT Mascot Collection" />
+              <img src="images14.jpg" alt="Training Apparel & Conditioning Gear" />
             </div>
             <div class="store-product-row">
-              <img src="images15.jpg" alt="CAT Plush Mascot" class="store-cutout" />
+              <img src="images15.jpg" alt="Academy Training Apparel" class="store-cutout" />
               <div class="store-info">
-                <h3>CAT COLLECTION</h3>
-                <p>Discover the official 125th anniversary CAT mascot plushies, apparel and gifts.</p>
-                <a href="#shop" class="store-cta-link" data-route="shop">SHOP NOW →</a>
+                <h3>TRAINING APPAREL</h3>
+                <p>Structured training wear designed for Wednesday and Friday sessions at Hillview High School Grounds.</p>
+                <a href="#kits" class="store-cta-link" data-route="kits">VIEW APPAREL →</a>
               </div>
             </div>
           </article>
 
           <article class="store-card">
             <div class="store-banner">
-              <img src="images16.jpg" alt="Winter & Retro Apparel" />
+              <img src="images16.jpg" alt="Equipment & Kit Sponsorship" />
             </div>
             <div class="store-product-row">
-              <img src="images17.jpg" alt="Retro Blaugrana Jacket" class="store-cutout" />
+              <img src="images17.jpg" alt="Footballs, Cones & Training Gear" class="store-cutout" />
               <div class="store-info">
-                <h3>APPAREL &amp; RETRO</h3>
-                <p>Classic Blaugrana heritage jackets, hoodies and winter lifestyle essentials.</p>
-                <a href="#shop" class="store-cta-link" data-route="shop">SHOP NOW →</a>
+                <h3>KIT &amp; GEAR SUPPORT</h3>
+                <p>Partner with our NPC to equip underserved youth players with match kits, footballs and cones.</p>
+                <a href="#partners" class="store-cta-link" data-route="partners">SPONSOR KITS →</a>
               </div>
             </div>
           </article>
@@ -2258,133 +2382,133 @@
       </div>
     </section>
 
-    <!-- 5. BECOME A CULER PREMIUM BANNER -->
+    <!-- 5. JOIN TGT DISCOVERY ACADEMY BANNER -->
     <section class="culer-banner-section">
       <div class="container">
         <div class="culer-banner">
           <div class="culer-banner-content">
-            <h2 class="culer-banner-title">BECOME A CULER PREMIUM</h2>
+            <h2 class="culer-banner-title">DISCOVER YOUR POTENTIAL</h2>
             <p class="culer-banner-desc">
-              Enjoy unlimited access to Barça One, priority ticket pre-sales, exclusive discounts at the Barça Store, and members-only giveaways.
+              Established on 21 July 2022, TGT Discovery Academy NPC nurtures boys and girls aged 8–21 in Roseville, Pretoria and surrounding townships—building confident, disciplined footballers and future leaders.
             </p>
-            <button type="button" class="btn-blue-pill" onclick="openAuthModal('register')">JOIN NOW</button>
+            <button type="button" class="btn-blue-pill" onclick="openAuthModal('register')">APPLY TO TRAIN</button>
           </div>
-          <img src="images18.jpg" alt="Lamine Yamal Culer Premium" class="culer-banner-img" />
+          <img src="images18.jpg" alt="TGT Discovery Academy Youth Footballers" class="culer-banner-img" />
         </div>
       </div>
     </section>
 
-    <!-- 6. BARÇA NEWS (4x2 GRID) -->
+    <!-- 6. ACADEMY NEWS, VALUES & DEVELOPMENT (4x2 GRID) -->
     <section class="section-block section-block-gray">
       <div class="container">
         <div class="section-header-center">
-          <h2 class="section-title">BARÇA NEWS</h2>
+          <h2 class="section-title">ACADEMY HIGHLIGHTS &amp; DEVELOPMENT</h2>
         </div>
 
         <div class="news-grid">
-          <article class="news-card" onclick="openArticleModal('Hansi Flick: We respect every opponent in Europe', 'Full press conference transcript ahead of the UEFA Champions League matchday 5 encounter.', 'images01.jpg')">
+          <article class="news-card" onclick="openArticleModal('Lethabo Mashifane Signs with Polokwane City', 'Former TGT Discovery Academy Under-19 captain and goalkeeper Lethabo Mashifane has signed with Polokwane City and competes in the DDC DSTV feeder team.', 'images19.jpg')">
             <div class="news-thumb">
-              <img src="images19.jpg" alt="Press Conference" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-              <img src="logo.png" alt="" class="news-thumb-placeholder" style="display:none;" />
+              <img src="images19.jpg" alt="Lethabo Mashifane Polokwane City" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" style="display:none;" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">Hansi Flick: "We arrive in great shape and full of ambition"</h3>
+              <h3 class="news-card-title">Former U19 captain Lethabo Mashifane signs with Polokwane City DDC</h3>
               <div class="news-card-footer">
-                <span class="news-tag">FIRST TEAM</span>
-                <span>23 NOV 26</span>
+                <span class="news-tag">PLAYER PROGRESSION</span>
+                <span>ACADEMY ALUMNI</span>
               </div>
             </div>
           </article>
 
-          <article class="news-card" onclick="openArticleModal('Medical report on first team squad fitness', 'Latest update from the FC Barcelona Medical Services following morning recovery sessions.', 'images02.jpg')">
+          <article class="news-card" onclick="openArticleModal('Three Academy Talents Recruited by Tuks', 'Three players developed through TGT Discovery Academy have recently been recruited by Tuks, reflecting the quality of our technical and physical coaching.', 'images03.jpg')">
             <div class="news-thumb">
-              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">Medical news ahead of the midweek European fixture</h3>
+              <h3 class="news-card-title">Three TGT Discovery Academy players recruited by Tuks</h3>
               <div class="news-card-footer">
-                <span class="news-tag">FIRST TEAM</span>
-                <span>23 NOV 26</span>
+                <span class="news-tag">SCOUTING</span>
+                <span>RECOGNITION</span>
               </div>
             </div>
           </article>
 
-          <article class="news-card" onclick="openArticleModal('Barça Femení extend unbeaten league run', 'Another dominant display at Estadi Johan Cruyff keeps the team clear at the top of Liga F.', 'images08.jpg')">
+          <article class="news-card" onclick="openArticleModal('2026 Pretoria LFA FAP League Champions', 'Following their 2023 championship title, our Under-19 squad once again finished first in the 2026 Pretoria LFA FAP League.', 'images20.jpg')">
             <div class="news-thumb">
-              <img src="images20.jpg" alt="Barça Femení" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-              <img src="logo.png" alt="" class="news-thumb-placeholder" style="display:none;" />
+              <img src="images20.jpg" alt="2026 Pretoria LFA FAP League Winners" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" style="display:none;" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">Barça Femení maintain 100% home record in front of packed crowd</h3>
+              <h3 class="news-card-title">Back-to-back excellence: U19s win 2026 Pretoria LFA FAP League</h3>
               <div class="news-card-footer">
-                <span class="news-tag">WOMEN'S</span>
-                <span>22 NOV 26</span>
+                <span class="news-tag">HONOURS</span>
+                <span>2026 SEASON</span>
               </div>
             </div>
           </article>
 
-          <article class="news-card" onclick="openArticleModal('La Masia weekly roundup: U19s shine', 'Highlights and goalscorers from all youth academy fixtures across the weekend.', 'images02.jpg')">
+          <article class="news-card" onclick="openArticleModal('2023 Shaka Tournament Silver Medallists', 'Our Under-13 squad finished second overall at the 2023 Shaka Tournament, earning silver medals and showcasing our junior talent pipeline.', 'images21.jpg')">
             <div class="news-thumb">
-              <img src="images21.jpg" alt="La Masia Youth Team" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-              <img src="logo.png" alt="" class="news-thumb-placeholder" style="display:none;" />
+              <img src="images21.jpg" alt="Under-13 Shaka Tournament Silver" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" style="display:none;" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">La Masia weekend review: Goals and victories across all age groups</h3>
+              <h3 class="news-card-title">Under-13 squad secures silver medals at the Shaka Tournament</h3>
               <div class="news-card-footer">
-                <span class="news-tag">LA MASIA</span>
-                <span>22 NOV 26</span>
+                <span class="news-tag">YOUTH</span>
+                <span>UNDER-13</span>
               </div>
             </div>
           </article>
 
-          <article class="news-card" onclick="openArticleModal('Spotify Camp Nou redevelopment milestone reached', 'New structural tiers and roof cables continue on schedule as work progresses.', 'images09.jpg')">
+          <article class="news-card" onclick="openArticleModal('Coaching Opportunities — D-License Minimum', 'TGT Discovery Academy welcomes passionate youth coaches holding at least a D-License Coaching Certificate to strengthen our technical team.', 'images10.jpg')">
             <div class="news-thumb">
-              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">Espai Barça: New milestone completed on Spotify Camp Nou third tier</h3>
+              <h3 class="news-card-title">Coaching Opportunities: D-License qualified youth coaches invited</h3>
               <div class="news-card-footer">
-                <span class="news-tag">CLUB</span>
-                <span>21 NOV 26</span>
+                <span class="news-tag">COACHING</span>
+                <span>RECRUITMENT</span>
               </div>
             </div>
           </article>
 
-          <article class="news-card" onclick="openArticleModal('Barça Basket prepare for EuroLeague double week', 'Coach and players preview back-to-back continental clashes at Palau Blaugrana.', 'images10.jpg')">
+          <article class="news-card" onclick="openArticleModal('Community Empowerment Across Underserved Areas', 'We use football to encourage healthy lifestyles, education, discipline and personal growth across Roseville and surrounding townships.', 'images06.jpg')">
             <div class="news-thumb">
-              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">Barça Basket gear up for decisive EuroLeague double-header</h3>
+              <h3 class="news-card-title">Empowering youth across underserved communities and townships</h3>
               <div class="news-card-footer">
-                <span class="news-tag">BASKETBALL</span>
-                <span>21 NOV 26</span>
+                <span class="news-tag">COMMUNITY</span>
+                <span>NPC IMPACT</span>
               </div>
             </div>
           </article>
 
-          <article class="news-card" onclick="openArticleModal('Barça Foundation launches new community program', 'Supporting youth inclusion and sports education programs across Catalonia and worldwide.', 'images06.jpg')">
+          <article class="news-card" onclick="openArticleModal('Four-Pillar Player Development Framework', 'Every training session integrates Technical, Physical, Mental, and Social & Personal development to shape complete athletes and leaders.', 'images05.jpg')">
             <div class="news-thumb">
-              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">Barça Foundation expands international youth sports initiative</h3>
+              <h3 class="news-card-title">Inside our 4-pillar player development methodology</h3>
               <div class="news-card-footer">
-                <span class="news-tag">FOUNDATION</span>
-                <span>20 NOV 26</span>
+                <span class="news-tag">PROGRAMME</span>
+                <span>METHODOLOGY</span>
               </div>
             </div>
           </article>
 
-          <article class="news-card" onclick="openArticleModal('Special Black Friday tour packages at Barça Museum', 'Limited-time family bundles for the Barça Immersive Tour available online.', 'images06.jpg')">
+          <article class="news-card" onclick="openArticleModal('Seven Core Values Guiding Every Player', 'Discipline, Respect, Teamwork, Integrity, Commitment, Inclusivity, and Excellence define life on and off the pitch at TGT Discovery Academy.', 'images07.jpg')">
             <div class="news-thumb">
-              <img src="logo.png" alt="FC Barcelona News" class="news-thumb-placeholder" />
+              <img src="logo.png" alt="TGT Discovery Academy" class="news-thumb-placeholder" />
             </div>
             <div class="news-card-body">
-              <h3 class="news-card-title">Barça Immersive Tour unveils exclusive holiday experiences</h3>
+              <h3 class="news-card-title">Our 7 Core Values: Building responsible leaders on and off the field</h3>
               <div class="news-card-footer">
-                <span class="news-tag">MUSEUM</span>
-                <span>20 NOV 26</span>
+                <span class="news-tag">VALUES</span>
+                <span>ABOUT US</span>
               </div>
             </div>
           </article>
@@ -2392,32 +2516,32 @@
       </div>
     </section>
 
-    <!-- 7. WIN THE NEW HOME KIT PROMO -->
+    <!-- 7. PARTNERSHIP & SPONSORSHIP CALLOUT BANNER -->
     <section class="kit-promo-section">
       <div class="container">
         <div class="kit-promo-card">
           <div class="kit-promo-media">
-            <img src="images22.jpg" alt="New FC Barcelona Home Kit" />
+            <img src="images22.jpg" alt="TGT Discovery Academy Kit & Sponsorship" />
           </div>
           <div class="kit-promo-body">
-            <h2 class="kit-promo-title">WIN THE NEW HOME KIT</h2>
+            <h2 class="kit-promo-title">PARTNER WITH TGT DISCOVERY ACADEMY</h2>
             <p class="kit-promo-text">
-              Enter our official Culer draw for a chance to win a signed 2025/26 FC Barcelona home jersey delivered to your door.
+              Support youth football in Pretoria by sponsoring kits, training equipment, tournament fees, player transport, or educational bursaries for rising talent.
             </p>
-            <button type="button" class="btn-blue-pill" onclick="openAuthModal('register')">PARTICIPATE NOW</button>
+            <a href="#partners" class="btn-blue-pill" data-route="partners">EXPLORE PARTNERSHIPS</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. PLAYERS CAROUSEL -->
+    <!-- 8. COACHES, GRADUATES & PERSONNEL CAROUSEL -->
     <section class="section-block section-block-gray">
       <div class="container">
         <div class="section-header-center">
-          <h2 class="section-title">PLAYERS</h2>
+          <h2 class="section-title">PATHWAY STARS &amp; COACHING STAFF</h2>
           <div class="carousel-controls">
-            <button type="button" class="carousel-arrow" onclick="rotatePlayers(-1)" aria-label="Previous player">‹</button>
-            <button type="button" class="carousel-arrow" onclick="rotatePlayers(1)" aria-label="Next player">›</button>
+            <button type="button" class="carousel-arrow" onclick="rotatePlayers(-1)" aria-label="Previous profile">‹</button>
+            <button type="button" class="carousel-arrow" onclick="rotatePlayers(1)" aria-label="Next profile">›</button>
           </div>
         </div>
 
@@ -2427,32 +2551,32 @@
       </div>
     </section>
 
-    <!-- 9. TROPHY SHOWCASE STRIP -->
-    <section class="trophies-section" aria-label="Club Honours">
+    <!-- 9. ACHIEVEMENTS & HONOURS SHOWCASE STRIP -->
+    <section class="trophies-section" aria-label="Academy Honours">
       <div class="container">
         <div class="trophies-grid">
           <div class="trophy-banner">
-            <span class="trophy-label">LALIGA</span>
+            <span class="trophy-label">PRETORIA LFA FAP LEAGUE (U19)</span>
             <span style="font-size:22px;">🏆</span>
-            <span class="trophy-count">29</span>
+            <span class="trophy-count">2x (2023 &amp; 2026)</span>
           </div>
 
           <div class="trophy-banner">
-            <span class="trophy-label">CHAMPIONS LEAGUE</span>
-            <span style="font-size:22px;">🏆</span>
-            <span class="trophy-count">5</span>
+            <span class="trophy-label">SHAKA TOURNAMENT (U13)</span>
+            <span style="font-size:22px;">🥈</span>
+            <span class="trophy-count">2ND PLACE</span>
           </div>
 
           <div class="trophy-banner">
-            <span class="trophy-label">FIFA CLUB WORLD CUP</span>
-            <span style="font-size:22px;">🏆</span>
-            <span class="trophy-count">3</span>
+            <span class="trophy-label">POLOKWANE CITY DDC SIGNING</span>
+            <span style="font-size:22px;">⚽</span>
+            <span class="trophy-count">1 CAPTAIN</span>
           </div>
 
           <div class="trophy-banner">
-            <span class="trophy-label">COPA DEL REY</span>
-            <span style="font-size:22px;">🏆</span>
-            <span class="trophy-count">32</span>
+            <span class="trophy-label">TUKS ACADEMY RECRUITS</span>
+            <span style="font-size:22px;">⭐</span>
+            <span class="trophy-count">3 PLAYERS</span>
           </div>
         </div>
       </div>
@@ -2462,42 +2586,175 @@
   <!-- ========================================================================
        SECONDARY SPA VIEWS (ALL NAVIGATION LINKS FUNCTIONAL)
        ======================================================================== -->
-  <section id="page-first-team" class="page-view">
+
+  <!-- PAGE: ABOUT US, HISTORY, VISION, MISSION & VALUES -->
+  <section id="page-about" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>FIRST TEAM — SQUAD &amp; SCHEDULE</h1>
-        <p>Official 2025/26 FC Barcelona First Team roster, coaching staff, upcoming fixtures and competition standings.</p>
+        <h1>ABOUT TGT DISCOVERY ACADEMY</h1>
+        <p>TGT Discovery Academy / NPC (Reg: K2025221297) • Established 21 July 2022 in Roseville, Pretoria, South Africa.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
-        <div class="players-grid" style="margin-bottom:32px;">
-          <div class="player-card">
-            <img src="images23.jpg" alt="Raphinha" />
-            <div class="player-card-overlay"></div>
-            <div class="player-card-info">
-              <div class="player-number-bg">11</div>
-              <div class="player-name">RAPHINHA</div>
-              <div class="player-pos">Forward • Brazil</div>
-            </div>
+        <div class="info-grid-2">
+          <div class="info-panel">
+            <h3>OUR BACKGROUND &amp; PURPOSE</h3>
+            <p>
+              TGT Discovery Academy is a community-oriented soccer development academy established on 21 July 2022. Our primary objective is to identify, nurture and develop young football talent, particularly within underserved communities, townships and surrounding areas.
+            </p>
+            <p>
+              We provide young boys and girls with opportunities to discover their potential, improve their football abilities and develop into confident, disciplined and responsible individuals. At TGT Discovery Academy, we believe that talent exists everywhere—our responsibility is to discover it, develop it and create opportunities for it to shine.
+            </p>
           </div>
-          <div class="player-card">
-            <img src="images24.jpg" alt="Lamine Yamal" />
-            <div class="player-card-overlay"></div>
-            <div class="player-card-info">
-              <div class="player-number-bg">19</div>
-              <div class="player-name">LAMINE YAMAL</div>
-              <div class="player-pos">Forward • Spain</div>
-            </div>
+
+          <div class="info-panel accent-green">
+            <h3>OUR VISION &amp; MISSION</h3>
+            <p>
+              <strong>Our Vision:</strong> To develop talented, confident and disciplined footballers who can compete at the highest levels while becoming responsible individuals and future leaders both on and off the field.
+            </p>
+            <p>
+              <strong>Our Mission:</strong> To provide accessible, structured and quality football development programs that focus on technical ability, physical fitness, mental strength and personal development—instilling discipline, teamwork, respect, commitment and a passion for football.
+            </p>
           </div>
-          <div class="player-card">
-            <img src="images25.jpg" alt="Frenkie de Jong" />
-            <div class="player-card-overlay"></div>
-            <div class="player-card-info">
-              <div class="player-number-bg">21</div>
-              <div class="player-name">FRENKIE DE JONG</div>
-              <div class="player-pos">Midfielder • Netherlands</div>
-            </div>
+        </div>
+
+        <div class="info-grid-2">
+          <div class="info-panel accent-yellow">
+            <h3>OUR 7 CORE VALUES</h3>
+            <ul class="styled-list">
+              <li><strong>Discipline:</strong> Encouraging commitment, consistency and accountability.</li>
+              <li><strong>Respect:</strong> Respecting teammates, coaches, opponents and officials.</li>
+              <li><strong>Teamwork:</strong> Building unity and a strong team spirit.</li>
+              <li><strong>Integrity:</strong> Promoting honesty, fairness and good sportsmanship.</li>
+              <li><strong>Commitment:</strong> Remaining dedicated to individual and team goals.</li>
+              <li><strong>Inclusivity:</strong> Creating opportunities for young players from different backgrounds.</li>
+              <li><strong>Excellence:</strong> Striving for continuous improvement and achievement.</li>
+            </ul>
+          </div>
+
+          <div class="info-panel accent-red">
+            <h3>COMMUNITY DEVELOPMENT</h3>
+            <p>
+              TGT Discovery Academy believes that football is more than just a game. It is an opportunity to change lives, build confidence and create positive futures.
+            </p>
+            <p>
+              Through football, we encourage healthy lifestyles, positive behavior, discipline, education and personal growth—contributing toward stronger communities by developing talented footballers and responsible future leaders.
+            </p>
+            <ul class="styled-list">
+              <li><strong>Entity:</strong> TGT Discovery Academy / NPC</li>
+              <li><strong>Registration Number:</strong> K2025221297</li>
+              <li><strong>Established:</strong> 21 July 2022</li>
+              <li><strong>Location:</strong> Roseville, Pretoria, South Africa</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: PLAYER DEVELOPMENT PROGRAMME & AGE GROUPS -->
+  <section id="page-programs" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>PLAYER DEVELOPMENT PROGRAMME (AGES 8–21)</h1>
+        <p>Holistic football training for boys and girls between the ages of 8 and 21 years—from beginners to competitive league athletes.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <div class="info-grid-2">
+          <div class="info-panel">
+            <h3>1. TECHNICAL DEVELOPMENT</h3>
+            <ul class="styled-list">
+              <li>Ball control and coordination</li>
+              <li>Passing and receiving</li>
+              <li>Shooting and finishing</li>
+              <li>Individual football skills</li>
+              <li>Creativity and confidence on the ball</li>
+            </ul>
+          </div>
+
+          <div class="info-panel accent-green">
+            <h3>2. PHYSICAL DEVELOPMENT</h3>
+            <ul class="styled-list">
+              <li>Physical fitness and conditioning</li>
+              <li>Speed and agility</li>
+              <li>Strength and coordination</li>
+              <li>Overall physical well-being</li>
+            </ul>
+          </div>
+
+          <div class="info-panel accent-red">
+            <h3>3. MENTAL DEVELOPMENT</h3>
+            <ul class="styled-list">
+              <li>Confidence and mental toughness</li>
+              <li>Concentration and discipline</li>
+              <li>Resilience and determination</li>
+              <li>Positive attitudes and a growth mindset</li>
+            </ul>
+          </div>
+
+          <div class="info-panel accent-yellow">
+            <h3>4. SOCIAL &amp; PERSONAL DEVELOPMENT</h3>
+            <ul class="styled-list">
+              <li>Teamwork and communication</li>
+              <li>Leadership development</li>
+              <li>Respect and sportsmanship</li>
+              <li>Responsibility and commitment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-panel" style="margin-bottom:28px;">
+          <h3>AGE GROUPS &amp; ELIGIBILITY (8 TO 21 YEARS)</h3>
+          <p>
+            TGT Discovery Academy caters for boys and girls between the ages of <strong>8 and 21 years</strong>. We welcome beginner and intermediate players interested in building their football fundamentals, as well as ambitious young athletes preparing for competitive league play and higher-level scouting opportunities. Our philosophy prioritizes player development while recognizing the importance of competition and winning.
+          </p>
+          <button type="button" class="btn-tickets-gold" style="max-width:260px;" onclick="openAuthModal('register')">REGISTER A PLAYER</button>
+        </div>
+
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: TRAINING FACILITIES, SCHEDULE & VENUE -->
+  <section id="page-training" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>TRAINING FACILITIES &amp; SCHEDULE</h1>
+        <p>Structured training sessions held twice weekly at Hillview High School Grounds in Roseville, Pretoria.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <div class="info-grid-2">
+          <div class="info-panel accent-green">
+            <h3>WEEKLY TRAINING TIMETABLE</h3>
+            <ul class="styled-list" style="margin-bottom:16px;">
+              <li><strong>Training Venue:</strong> Hillview High School Grounds</li>
+              <li><strong>Training Days:</strong> Wednesday &amp; Friday</li>
+              <li><strong>Training Times:</strong> 16:00 – 18:30</li>
+              <li><strong>Age Groups:</strong> Boys &amp; Girls (8 – 21 Years)</li>
+            </ul>
+            <p>
+              Our training sessions provide players with structured opportunities to improve football skills, physical fitness, teamwork and tactical understanding of the game.
+            </p>
+          </div>
+
+          <div class="info-panel">
+            <h3>PHYSICAL ADDRESS &amp; LOCATION</h3>
+            <p>
+              <strong>Hillview High School</strong><br />
+              72 Franscina Street<br />
+              Roseville<br />
+              Pretoria, 0084<br />
+              South Africa
+            </p>
+            <button type="button" class="btn-tickets-gold" style="max-width:260px;" onclick="openAuthModal('register')">BOOK A TRIAL / ENQUIRE</button>
           </div>
         </div>
         <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
@@ -2505,84 +2762,47 @@
     </div>
   </section>
 
-  <section id="page-tickets" class="page-view">
+  <!-- PAGE: KITS & APPAREL -->
+  <section id="page-kits" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>TICKETS &amp; BARÇA IMMERSIVE TOUR</h1>
-        <p>Select your matchday experience, VIP hospitality package, or museum visit.</p>
-      </div>
-    </div>
-    <div class="section-block">
-      <div class="container">
-        <div class="matches-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:28px;">
-          <div class="match-card">
-            <div class="match-card-top">
-              <span class="vs-badge">FC BARCELONA vs ATLÉTICO DE MADRID</span>
-            </div>
-            <div class="match-card-body">
-              <div class="match-comp">LaLiga EA Sports • 06 Dec 2026</div>
-              <div class="match-fixture-name">General &amp; VIP Hospitality Seats</div>
-              <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">From €89 • Instant mobile ticket delivery.</p>
-              <button type="button" class="btn-tickets-gold" onclick="openTicketBooking('FC Barcelona vs Atlético de Madrid')">SELECT SEATS</button>
-            </div>
-          </div>
-          <div class="match-card">
-            <div class="match-card-top">
-              <span class="vs-badge">BARÇA IMMERSIVE TOUR</span>
-            </div>
-            <div class="match-card-body">
-              <div class="match-comp">Open Daily • 10:00 – 19:00</div>
-              <div class="match-fixture-name">Trophy Gallery &amp; 360° Stadium Experience</div>
-              <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">From €28 • Includes Spotify Camp Nou viewpoint.</p>
-              <button type="button" class="btn-tickets-gold" onclick="openTicketBooking('Barça Immersive Tour')">BOOK VISIT</button>
-            </div>
-          </div>
-        </div>
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="page-shop" class="page-view">
-    <div class="subpage-hero">
-      <div class="container">
-        <h1>BARÇA OFFICIAL WORLDWIDE STORE</h1>
-        <p>Authentic 2025/26 Nike Match Kits, CAT Collection, and Official Club Merchandising.</p>
+        <h1>OFFICIAL KITS &amp; ACADEMY APPAREL</h1>
+        <p>Match kits, training wear, and essential football equipment supporting TGT Discovery Academy squads.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
         <div class="store-grid" style="margin-bottom:28px;">
           <div class="store-card">
-            <div class="store-banner"><img src="images12.jpg" alt="Home Jersey" /></div>
+            <div class="store-banner"><img src="images12.jpg" alt="TGT Discovery Academy Match Kit" /></div>
             <div class="store-product-row">
-              <img src="images13.jpg" alt="Home Kit" class="store-cutout" />
+              <img src="images13.jpg" alt="Academy Match Jersey" class="store-cutout" />
               <div class="store-info">
-                <h3>2025/26 HOME JERSEY</h3>
-                <p>€99.99 • Official Dri-FIT Stadium Shirt</p>
-                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('2025/26 Home Jersey (€99.99)')">ADD TO BAG</button>
+                <h3>COMPETITIVE MATCH KIT</h3>
+                <p>Worn by our Under-13 and Pretoria LFA FAP League Champion Under-19 squads.</p>
+                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Official Academy Match Kit Enquiry')">ENQUIRE / SPONSOR</button>
               </div>
             </div>
           </div>
           <div class="store-card">
-            <div class="store-banner"><img src="images14.jpg" alt="CAT Collection" /></div>
+            <div class="store-banner"><img src="images14.jpg" alt="Academy Training Kit" /></div>
             <div class="store-product-row">
-              <img src="images15.jpg" alt="CAT Mascot" class="store-cutout" />
+              <img src="images15.jpg" alt="Training Apparel" class="store-cutout" />
               <div class="store-info">
-                <h3>CAT MASCOT PLUSH</h3>
-                <p>€34.99 • Official Collector Edition</p>
-                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('CAT Mascot Plush (€34.99)')">ADD TO BAG</button>
+                <h3>TRAINING WEAR</h3>
+                <p>Official academy training shirts and shorts for Wednesday &amp; Friday field sessions.</p>
+                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Academy Training Apparel Enquiry')">ENQUIRE / SPONSOR</button>
               </div>
             </div>
           </div>
           <div class="store-card">
-            <div class="store-banner"><img src="images16.jpg" alt="Retro Jacket" /></div>
+            <div class="store-banner"><img src="images16.jpg" alt="Training Equipment & Balls" /></div>
             <div class="store-product-row">
-              <img src="images17.jpg" alt="Retro Jacket" class="store-cutout" />
+              <img src="images17.jpg" alt="Footballs and Cones" class="store-cutout" />
               <div class="store-info">
-                <h3>BLAUGRANA TRACK JACKET</h3>
-                <p>€84.99 • Heritage Fleece</p>
-                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Blaugrana Track Jacket (€84.99)')">ADD TO BAG</button>
+                <h3>TRAINING EQUIPMENT</h3>
+                <p>Match footballs, agility cones, bibs and conditioning equipment for ages 8–21.</p>
+                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Training Equipment Support')">DONATE EQUIPMENT</button>
               </div>
             </div>
           </div>
@@ -2592,79 +2812,232 @@
     </div>
   </section>
 
-  <section id="page-club" class="page-view">
+  <!-- PAGE: COACHES, PERSONNEL & PLAYER PATHWAYS -->
+  <section id="page-coaches" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>MÉS QUE UN CLUB</h1>
-        <p>Founded in 1899 by Joan Gamper. Over 125 years of sporting excellence, values, and community.</p>
+        <h1>COACHES, PERSONNEL &amp; PATHWAY GRADUATES</h1>
+        <p>Dedicated coaching leadership and standout academy players progressing into professional and university football structures.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
-        <p style="margin-bottom:20px;max-width:800px;color:var(--text-muted);">
-          FC Barcelona is owned by its more than 140,000 members (Socis). Through La Masia, the Barça Foundation, and the landmark Espai Barça transformation of Spotify Camp Nou, the Club continues to lead world football on and off the pitch.
-        </p>
+        <div class="players-grid" style="margin-bottom:32px;">
+          <div class="player-card">
+            <img src="images23.jpg" alt="Lethabo Mashifane" />
+            <div class="player-card-overlay"></div>
+            <div class="player-card-info">
+              <div class="player-number-bg">GK / CAPT</div>
+              <div class="player-name">LETHABO MASHIFANE</div>
+              <div class="player-pos">Former U19 Captain • Signed with Polokwane City (DDC DSTV)</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <img src="images24.jpg" alt="Tuks Recruited Players" />
+            <div class="player-card-overlay"></div>
+            <div class="player-card-info">
+              <div class="player-number-bg">3 RECRUITS</div>
+              <div class="player-name">TUKS ACADEMY RECRUITS</div>
+              <div class="player-pos">Three TGT Players Recently Recruited by Tuks</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <img src="images25.jpg" alt="TGT Coaching Staff" />
+            <div class="player-card-overlay"></div>
+            <div class="player-card-info">
+              <div class="player-number-bg">D-LICENSE</div>
+              <div class="player-name">TECHNICAL &amp; COACHING STAFF</div>
+              <div class="player-pos">Qualified Youth Development Coaches • Roseville</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-panel accent-green" style="margin-bottom:28px;">
+          <h3>COACHING OPPORTUNITIES AT TGT DISCOVERY ACADEMY</h3>
+          <p>
+            TGT Discovery Academy recognizes the importance of qualified and committed coaches in developing young football talent. We welcome individuals who are passionate about football, youth development and making a positive contribution to the community.
+          </p>
+          <ul class="styled-list" style="margin-bottom:16px;">
+            <li><strong>Minimum Coaching Requirement:</strong> D-License Coaching Certificate.</li>
+            <li><strong>Coaching Environment:</strong> Promoting quality training, discipline, player development and competitive excellence.</li>
+          </ul>
+          <button type="button" class="btn-tickets-gold" style="max-width:280px;" onclick="openAuthModal('coaching')">APPLY FOR COACHING ROLE</button>
+        </div>
+
         <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
       </div>
     </div>
   </section>
 
-  <section id="page-culers" class="page-view">
+  <!-- PAGE: ACHIEVEMENTS & HONOURS -->
+  <section id="page-achievements" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>CULERS MEMBERSHIP &amp; BARÇA ONE</h1>
-        <p>Stream exclusive documentaries, live press conferences, and match replays anywhere in the world.</p>
+        <h1>ACHIEVEMENTS &amp; ACADEMY RECOGNITION</h1>
+        <p>A force to be reckoned with in the Pretoria LFA FAP League—delivering silverware and real player pathways.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
-        <button type="button" class="btn-tickets-gold" style="max-width:260px;margin-bottom:20px;display:block;" onclick="openAuthModal('register')">CREATE FREE CULER ID</button>
+        <div class="info-grid-3">
+          <div class="info-panel accent-yellow">
+            <h3>2023 • SHAKA TOURNAMENT</h3>
+            <p><strong>Under-13 Team — 2nd Position (Silver Medals)</strong></p>
+            <p>Our Under-13 squad finished as runners-up, securing silver medals and demonstrating the quality and potential of our youngest players.</p>
+          </div>
+
+          <div class="info-panel accent-green">
+            <h3>2023 • PRETORIA LFA FAP LEAGUE</h3>
+            <p><strong>Under-19 Team — 1st Position (Champions)</strong></p>
+            <p>Our Under-19 team captured first place in the 2023 Pretoria LFA FAP League, setting a benchmark for competitive youth football in the region.</p>
+          </div>
+
+          <div class="info-panel accent-red">
+            <h3>2026 • PRETORIA LFA FAP LEAGUE</h3>
+            <p><strong>Under-19 Team — 1st Position (Champions)</strong></p>
+            <p>Our Under-19 team once again secured first position in 2026, demonstrating sustained consistency, discipline and competitiveness.</p>
+          </div>
+        </div>
+
+        <div class="info-panel" style="margin-bottom:28px;">
+          <h3>ACADEMY RECOGNITION &amp; PLAYER PROGRESSION</h3>
+          <p>Beyond trophies and league standings, our proudest milestone is seeing our players advance to established football structures:</p>
+          <ul class="styled-list">
+            <li><strong>Lethabo Mashifane:</strong> Former Under-19 team captain and goalkeeper signed with <strong>Polokwane City</strong>, competing in the DDC DSTV feeder team.</li>
+            <li><strong>Tuks Recruitment:</strong> Three of our academy players have recently been recruited by <strong>Tuks</strong>, reflecting the strength of our development pathway.</li>
+          </ul>
+        </div>
+
         <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
       </div>
     </div>
   </section>
 
-  <section id="page-news" class="page-view">
+  <!-- PAGE: PARTNERSHIPS & SPONSORSHIP -->
+  <section id="page-partners" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>OFFICIAL CLUB NEWS</h1>
-        <p>All breaking announcements, match reports, and interviews from across FC Barcelona.</p>
+        <h1>PARTNERSHIPS &amp; SPONSORSHIP</h1>
+        <p>Collaborate with TGT Discovery Academy NPC to empower youth and unleash future football stars in Pretoria.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
-        <p style="margin-bottom:20px;">Showing latest updates for 23 November 2026.</p>
+        <div class="info-grid-2">
+          <div class="info-panel">
+            <h3>WHO WE PARTNER WITH</h3>
+            <p>Developing young football talent requires the support and collaboration of committed partners. We welcome partnerships with:</p>
+            <ul class="styled-list">
+              <li>Corporate companies and private businesses</li>
+              <li>Professional football clubs and academies</li>
+              <li>Schools and educational institutions</li>
+              <li>Local government and community organizations</li>
+              <li>Sports equipment and apparel suppliers</li>
+              <li>Individual sponsors and community supporters</li>
+            </ul>
+          </div>
+
+          <div class="info-panel accent-green">
+            <h3>AREAS WHERE WE NEED SUPPORT</h3>
+            <p>Your sponsorship directly assists our players and community programmes with:</p>
+            <ul class="styled-list">
+              <li>Football kits and training equipment</li>
+              <li>Footballs, cones and other training materials</li>
+              <li>Training and playing facilities</li>
+              <li>Tournament and league participation costs</li>
+              <li>Player transportation</li>
+              <li>Coaching and development resources</li>
+              <li>Financial assistance for talented players</li>
+              <li>Educational and personal development opportunities</li>
+            </ul>
+          </div>
+        </div>
+
+        <button type="button" class="btn-tickets-gold" style="max-width:280px;margin-bottom:20px;display:block;" onclick="openAuthModal('partner')">BECOME A SPONSOR / PARTNER</button>
+        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: CONTACT US -->
+  <section id="page-contact" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>CONTACT TGT DISCOVERY ACADEMY</h1>
+        <p>Reach out for player trials, D-License coaching applications, or partnership and sponsorship enquiries.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <div class="info-grid-2">
+          <div class="info-panel">
+            <h3>OFFICIAL ACADEMY DETAILS</h3>
+            <ul class="styled-list" style="margin-bottom:16px;">
+              <li><strong>Official Name:</strong> TGT Discovery Academy / NPC</li>
+              <li><strong>Registration Number:</strong> K2025221297</li>
+              <li><strong>Established:</strong> 21 July 2022</li>
+              <li><strong>Training Venue:</strong> Hillview High School Grounds</li>
+              <li><strong>Physical Address:</strong> Hillview High School, 72 Franscina Street, Roseville, Pretoria, 0084, South Africa</li>
+              <li><strong>Training Schedule:</strong> Wednesdays &amp; Fridays, 16:00 – 18:30</li>
+              <li><strong>Age Groups:</strong> Boys &amp; Girls (8 – 21 Years)</li>
+            </ul>
+          </div>
+
+          <div class="info-panel accent-yellow">
+            <h3>SEND AN ENQUIRY</h3>
+            <form onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" class="form-control" placeholder="Full Name" required />
+              </div>
+              <div class="form-group">
+                <label for="contactTopic">Enquiry Type</label>
+                <select id="contactTopic" class="form-control">
+                  <option>Player Registration (Ages 8–21)</option>
+                  <option>Coaching Opportunity (D-License)</option>
+                  <option>Partnership &amp; Sponsorship</option>
+                  <option>General Academy Enquiry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" class="form-control" rows="3" placeholder="Tell us how we can assist..." required></textarea>
+              </div>
+              <button type="submit" class="btn-tickets-gold">SUBMIT ENQUIRY</button>
+              <div id="contactFeedback" class="form-feedback"></div>
+            </form>
+          </div>
+        </div>
         <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================
-       10. MAIN PARTNERS & SOCIAL MEDIA FOOTER BAND
+       10. PARTNERSHIP OPPORTUNITIES & COMMUNITY BAND
        ======================================================================== -->
   <section class="partners-footer-band">
     <div class="container">
       <div class="partners-top-row">
-        <span class="partners-heading">MAIN PARTNERS</span>
-        <a href="#club" class="btn-view-partners" data-route="club">View all partners</a>
+        <span class="partners-heading">PARTNERSHIP &amp; SPONSORSHIP OPPORTUNITIES</span>
+        <a href="#partners" class="btn-view-partners" data-route="partners">Partner with us</a>
       </div>
 
       <div class="partners-logos-row">
-        <div class="partner-wordmark" style="font-style:italic;">NIKE</div>
-        <div class="partner-wordmark">Spotify</div>
-        <div class="partner-wordmark">Midea</div>
+        <div class="partner-wordmark">CORPORATE SPONSORS</div>
+        <div class="partner-wordmark">FOOTBALL CLUBS</div>
+        <div class="partner-wordmark">APPAREL SUPPLIERS</div>
+        <div class="partner-wordmark">COMMUNITY SUPPORTERS</div>
       </div>
 
       <div class="social-row">
-        <div class="social-label">Follow FC Barcelona on social media</div>
+        <div class="social-label">Connect with TGT Discovery Academy NPC • Roseville, Pretoria</div>
         <div class="social-icons">
-          <a href="#culers" class="social-circle" data-route="culers" aria-label="Facebook">f</a>
-          <a href="#culers" class="social-circle" data-route="culers" aria-label="X">𝕏</a>
-          <a href="#culers" class="social-circle" data-route="culers" aria-label="YouTube">▶</a>
-          <a href="#culers" class="social-circle" data-route="culers" aria-label="Instagram">◎</a>
-          <a href="#culers" class="social-circle" data-route="culers" aria-label="Barça One">B1</a>
-          <a href="#culers" class="social-circle" data-route="culers" aria-label="Spotify">♫</a>
-          <a href="#culers" class="social-circle" data-route="culers" aria-label="TikTok">♪</a>
+          <a href="#contact" class="social-circle" data-route="contact" aria-label="Location">📍</a>
+          <a href="#training" class="social-circle" data-route="training" aria-label="Training">⚽</a>
+          <a href="#achievements" class="social-circle" data-route="achievements" aria-label="Honours">🏆</a>
+          <a href="#partners" class="social-circle" data-route="partners" aria-label="Partnerships">🤝</a>
+          <a href="#coaches" class="social-circle" data-route="coaches" aria-label="Coaching">📋</a>
         </div>
       </div>
     </div>
@@ -2677,86 +3050,80 @@
     <div class="container">
       <div class="footer-columns">
         <div class="footer-col">
-          <h4>GOALKEEPERS</h4>
+          <h4>ABOUT ACADEMY</h4>
           <ul>
-            <li><a href="#first-team" data-route="first-team">Marc-André ter Stegen</a></li>
-            <li><a href="#first-team" data-route="first-team">Iñaki Peña</a></li>
-            <li><a href="#first-team" data-route="first-team">Wojciech Szczęsny</a></li>
+            <li><a href="#about" data-route="about">Who We Are</a></li>
+            <li><a href="#about" data-route="about">Vision &amp; Mission</a></li>
+            <li><a href="#about" data-route="about">Community Development</a></li>
+            <li><a href="#about" data-route="about">Est. 21 July 2022</a></li>
+            <li><a href="#about" data-route="about">Reg: K2025221297</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>DEFENDERS</h4>
+          <h4>DEVELOPMENT PILLARS</h4>
           <ul>
-            <li><a href="#first-team" data-route="first-team">Pau Cubarsí</a></li>
-            <li><a href="#first-team" data-route="first-team">Alejandro Balde</a></li>
-            <li><a href="#first-team" data-route="first-team">Ronald Araujo</a></li>
-            <li><a href="#first-team" data-route="first-team">Iñigo Martínez</a></li>
-            <li><a href="#first-team" data-route="first-team">Andreas Christensen</a></li>
-            <li><a href="#first-team" data-route="first-team">Jules Koundé</a></li>
-            <li><a href="#first-team" data-route="first-team">Eric García</a></li>
+            <li><a href="#programs" data-route="programs">Technical Development</a></li>
+            <li><a href="#programs" data-route="programs">Physical Conditioning</a></li>
+            <li><a href="#programs" data-route="programs">Mental Strength</a></li>
+            <li><a href="#programs" data-route="programs">Social &amp; Personal</a></li>
+            <li><a href="#programs" data-route="programs">Boys &amp; Girls (8–21)</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>MIDFIELDERS</h4>
+          <h4>CORE VALUES</h4>
           <ul>
-            <li><a href="#first-team" data-route="first-team">Gavi</a></li>
-            <li><a href="#first-team" data-route="first-team">Pedri</a></li>
-            <li><a href="#first-team" data-route="first-team">Pablo Torre</a></li>
-            <li><a href="#first-team" data-route="first-team">Fermín López</a></li>
-            <li><a href="#first-team" data-route="first-team">Marc Casadó</a></li>
-            <li><a href="#first-team" data-route="first-team">Dani Olmo</a></li>
-            <li><a href="#first-team" data-route="first-team">Frenkie de Jong</a></li>
+            <li><a href="#about" data-route="about">Discipline</a></li>
+            <li><a href="#about" data-route="about">Respect</a></li>
+            <li><a href="#about" data-route="about">Teamwork</a></li>
+            <li><a href="#about" data-route="about">Integrity</a></li>
+            <li><a href="#about" data-route="about">Commitment</a></li>
+            <li><a href="#about" data-route="about">Inclusivity &amp; Excellence</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>FORWARDS</h4>
+          <h4>ACHIEVEMENTS</h4>
           <ul>
-            <li><a href="#first-team" data-route="first-team">Ferran Torres</a></li>
-            <li><a href="#first-team" data-route="first-team">Robert Lewandowski</a></li>
-            <li><a href="#first-team" data-route="first-team">Ansu Fati</a></li>
-            <li><a href="#first-team" data-route="first-team">Raphinha</a></li>
-            <li><a href="#first-team" data-route="first-team">Pau Víctor</a></li>
-            <li><a href="#first-team" data-route="first-team">Lamine Yamal</a></li>
+            <li><a href="#achievements" data-route="achievements">2026 Pretoria LFA FAP (1st)</a></li>
+            <li><a href="#achievements" data-route="achievements">2023 Pretoria LFA FAP (1st)</a></li>
+            <li><a href="#achievements" data-route="achievements">2023 Shaka Tournament (2nd)</a></li>
+            <li><a href="#coaches" data-route="coaches">Lethabo Mashifane (Polokwane City)</a></li>
+            <li><a href="#coaches" data-route="coaches">3 Tuks Academy Recruits</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>BARÇA PRODUCTS</h4>
+          <h4>TRAINING &amp; VENUE</h4>
           <ul>
-            <li><a href="#culers" data-route="culers">Culers Membership</a></li>
-            <li><a href="#culers" data-route="culers">Barça One</a></li>
-            <li><a href="#tickets" data-route="tickets">Tickets &amp; Museum</a></li>
-            <li><a href="#shop" data-route="shop">Barça App</a></li>
-            <li><a href="#shop" data-route="shop">Online Store</a></li>
-            <li><a href="#club" data-route="club">Barça Academies</a></li>
-            <li><a href="#club" data-route="club">Barça Foundation</a></li>
+            <li><a href="#training" data-route="training">Hillview High School Grounds</a></li>
+            <li><a href="#training" data-route="training">Wednesdays: 16:00 – 18:30</a></li>
+            <li><a href="#training" data-route="training">Fridays: 16:00 – 18:30</a></li>
+            <li><a href="#training" data-route="training">72 Franscina St, Roseville</a></li>
+            <li><a href="#training" data-route="training">Pretoria, 0084, SA</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>CLUB</h4>
+          <h4>COACHING &amp; KITS</h4>
           <ul>
-            <li><a href="#club" data-route="club">Spotify Camp Nou</a></li>
-            <li><a href="#club" data-route="club">Espai Barça</a></li>
-            <li><a href="#club" data-route="club">History</a></li>
-            <li><a href="#club" data-route="club">Identity</a></li>
-            <li><a href="#club" data-route="club">Work at Barça</a></li>
-            <li><a href="#club" data-route="club">Press</a></li>
+            <li><a href="#coaches" data-route="coaches">Coaching Opportunities</a></li>
+            <li><a href="#coaches" data-route="coaches">D-License Requirement</a></li>
+            <li><a href="#kits" data-route="kits">Official Match Kits</a></li>
+            <li><a href="#kits" data-route="kits">Training Apparel</a></li>
+            <li><a href="#kits" data-route="kits">Equipment &amp; Gear</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>HISTORY</h4>
+          <h4>PARTNERSHIPS</h4>
           <ul>
-            <li><a href="#club" data-route="club">2015-2026. Era of Renewal</a></li>
-            <li><a href="#club" data-route="club">2008-2015. The Best Years</a></li>
-            <li><a href="#club" data-route="club">1996-2008. Centenary</a></li>
-            <li><a href="#club" data-route="club">1988-1996. Dream Team</a></li>
-            <li><a href="#club" data-route="club">1978-1988. Núñez Era</a></li>
-            <li><a href="#club" data-route="club">1899-1922. Foundation</a></li>
+            <li><a href="#partners" data-route="partners">Corporate Sponsorship</a></li>
+            <li><a href="#partners" data-route="partners">Kit &amp; Equipment Support</a></li>
+            <li><a href="#partners" data-route="partners">Player Transport &amp; Bursaries</a></li>
+            <li><a href="#partners" data-route="partners">Schools &amp; Clubs</a></li>
+            <li><a href="#contact" data-route="contact">Contact Us</a></li>
           </ul>
         </div>
       </div>
@@ -2764,21 +3131,21 @@
       <div class="footer-bottom">
         <div class="footer-brand-row">
           <div class="footer-brand-left">
-            <img src="logo.png" alt="FC Barcelona" />
-            <span class="footer-brand-name">FC BARCELONA</span>
+            <img src="logo.png" alt="TGT Discovery Academy" />
+            <span class="footer-brand-name">TGT DISCOVERY ACADEMY / NPC</span>
           </div>
-          <span style="font-family:var(--font-display);font-weight:900;letter-spacing:0.06em;color:#fff;">BARÇA</span>
+          <span style="font-family:var(--font-display);font-weight:900;letter-spacing:0.06em;color:var(--tgt-yellow);">UNLEASHING RAW TALENT. DEVELOPING FUTURE STARS.</span>
         </div>
 
         <div class="footer-legal-row">
-          <span>© Copyright FC Barcelona Official website of FC Barcelona</span>
+          <span>© TGT Discovery Academy / NPC • Registration No: K2025221297 • Hillview High School, 72 Franscina Street, Roseville, Pretoria, 0084</span>
           <div class="footer-legal-links">
-            <a href="#club" data-route="club">Legal Terms</a>
-            <a href="#club" data-route="club">Privacy Policy</a>
-            <a href="#club" data-route="club">Cookies</a>
-            <a href="#club" data-route="club">Accessibility</a>
-            <a href="#club" data-route="club">Contact Us</a>
-            <a href="#club" data-route="club">Support/FAQs</a>
+            <a href="#about" data-route="about">About Us</a>
+            <a href="#programs" data-route="programs">Programmes</a>
+            <a href="#training" data-route="training">Schedule</a>
+            <a href="#achievements" data-route="achievements">Achievements</a>
+            <a href="#partners" data-route="partners">Partnerships</a>
+            <a href="#contact" data-route="contact">Contact</a>
           </div>
         </div>
       </div>
@@ -2786,33 +3153,33 @@
   </footer>
 
   <!-- ========================================================================
-       INTERACTIVE MODALS (AUTH, ARTICLE READER, TICKET/STORE RESERVATION)
+       INTERACTIVE MODALS (REGISTRATION, COACHING, PARTNERSHIP & ARTICLE READER)
        ======================================================================== -->
   <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 id="authModalTitle">CULER ACCOUNT LOGIN</h3>
+        <h3 id="authModalTitle">PLAYER REGISTRATION</h3>
         <button type="button" class="modal-close" onclick="closeModal('authModal')" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <form id="authForm" onsubmit="handleAuthSubmit(event)">
-          <div class="form-group" id="nameFieldGroup" style="display:none;">
-            <label for="culerName">Full Name</label>
-            <input type="text" id="culerName" class="form-control" placeholder="Enter your full name" />
+          <div class="form-group" id="nameFieldGroup">
+            <label for="applicantName" id="nameLabel">Player / Applicant Full Name</label>
+            <input type="text" id="applicantName" class="form-control" placeholder="Enter full name" required />
+          </div>
+          <div class="form-group" id="detailFieldGroup">
+            <label for="applicantDetail" id="detailLabel">Age Group (8–21) or Qualification</label>
+            <input type="text" id="applicantDetail" class="form-control" placeholder="e.g., U15 Player or D-License Coach" required />
           </div>
           <div class="form-group">
-            <label for="culerEmail">Email Address</label>
-            <input type="email" id="culerEmail" class="form-control" placeholder="culer@fcbarcelona.cat" required />
+            <label for="applicantEmail">Contact Email or Phone</label>
+            <input type="text" id="applicantEmail" class="form-control" placeholder="Enter email address or phone number" required />
           </div>
-          <div class="form-group">
-            <label for="culerPassword">Password</label>
-            <input type="password" id="culerPassword" class="form-control" placeholder="Minimum 6 characters" required />
-          </div>
-          <button type="submit" class="btn-tickets-gold" id="authSubmitBtn">SIGN IN</button>
+          <button type="submit" class="btn-tickets-gold" id="authSubmitBtn">SUBMIT APPLICATION</button>
           <div id="authFeedback" class="form-feedback"></div>
         </form>
         <p style="font-size:11px;color:var(--text-muted);margin-top:14px;">
-          Note: Frontend authentication interface ready for FC Barcelona SSO / backend API integration.
+          Training takes place Wednesdays &amp; Fridays (16:00 – 18:30) at Hillview High School Grounds, 72 Franscina Street, Roseville, Pretoria.
         </p>
       </div>
     </div>
@@ -2821,7 +3188,7 @@
   <div class="modal-backdrop" id="articleModal" role="dialog" aria-modal="true" aria-labelledby="articleModalTitle">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 id="articleModalTitle">BARÇA NEWS</h3>
+        <h3 id="articleModalTitle">TGT DISCOVERY ACADEMY</h3>
         <button type="button" class="modal-close" onclick="closeModal('articleModal')" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
@@ -2836,13 +3203,13 @@
        VANILLA JAVASCRIPT (ROUTING, COUNTDOWN, CAROUSELS, FORMS)
        ======================================================================== -->
   <script>
-    // 1. Players Roster Data for Interactive Carousel
+    // 1. Academy Pathway Stars & Coaching Personnel Data for Interactive Carousel
     const playersData = [
-      { number: '11', name: 'RAPHINHA', pos: 'Forward', img: 'images23.jpg' },
-      { number: '19', name: 'LAMINE YAMAL', pos: 'Forward', img: 'images24.jpg' },
-      { number: '21', name: 'FRENKIE DE JONG', pos: 'Midfielder', img: 'images25.jpg' },
-      { number: '08', name: 'PEDRI', pos: 'Midfielder', img: 'images03.jpg' },
-      { number: '09', name: 'ROBERT LEWANDOWSKI', pos: 'Forward', img: 'images05.jpg' }
+      { number: 'GK / CAPT', name: 'LETHABO MASHIFANE', pos: 'Former U19 Captain • Signed with Polokwane City (DDC DSTV)', img: 'images23.jpg' },
+      { number: '3 RECRUITS', name: 'TUKS ACADEMY RECRUITS', pos: 'Three TGT Players Recently Recruited by Tuks', img: 'images24.jpg' },
+      { number: 'D-LICENSE', name: 'YOUTH COACHING STAFF', pos: 'Qualified Coaches • Technical, Physical & Mental Development', img: 'images25.jpg' },
+      { number: '2023 & 2026', name: 'U19 CHAMPIONS', pos: 'Two-Time Pretoria LFA FAP League First-Place Winners', img: 'images03.jpg' },
+      { number: 'U13 SILVER', name: 'SHAKA TOURNAMENT SQUAD', pos: '2023 Shaka Tournament Runners-Up & Silver Medallists', img: 'images05.jpg' }
     ];
     let playerOffset = 0;
 
@@ -2854,7 +3221,7 @@
         const p = playersData[(playerOffset + i) % playersData.length];
         const card = document.createElement('article');
         card.className = 'player-card';
-        card.onclick = () => navigateTo('first-team');
+        card.onclick = () => navigateTo('coaches');
         card.innerHTML = `
           <img src="${p.img}" alt="${p.name}" />
           <div class="player-card-overlay"></div>
@@ -2873,7 +3240,7 @@
       renderPlayers();
     }
 
-    // 2. Tickets Grid Shift
+    // 2. Programmes Grid Shift
     function shiftTickets(dir) {
       const grid = document.getElementById('ticketsGrid');
       if (!grid) return;
@@ -2885,10 +3252,34 @@
       }
     }
 
-    // 3. Live Match Countdown Timer (01 : 20 : 28 : 11 initial matching screenshot)
-    let remainingSeconds = (1 * 86400) + (20 * 3600) + (28 * 60) + 11;
+    // 3. Live Next Training Session Countdown Timer (Wednesday / Friday 16:00 SAST)
+    function getSecondsUntilNextTraining() {
+      const now = new Date();
+      // Training days: Wednesday (3) and Friday (5) at 16:00
+      const trainingDays = [3, 5];
+      let nearestDiff = null;
+
+      trainingDays.forEach(day => {
+        const target = new Date(now);
+        const diffDays = (day - now.getDay() + 7) % 7;
+        target.setDate(now.getDate() + diffDays);
+        target.setHours(16, 0, 0, 0);
+        if (target <= now) {
+          target.setDate(target.getDate() + 7);
+        }
+        const diffSec = Math.floor((target - now) / 1000);
+        if (nearestDiff === null || diffSec < nearestDiff) {
+          nearestDiff = diffSec;
+        }
+      });
+      return nearestDiff || 86400;
+    }
+
+    let remainingSeconds = getSecondsUntilNextTraining();
     function updateCountdown() {
-      if (remainingSeconds <= 0) return;
+      if (remainingSeconds <= 0) {
+        remainingSeconds = getSecondsUntilNextTraining();
+      }
       remainingSeconds--;
       const d = Math.floor(remainingSeconds / 86400);
       const h = Math.floor((remainingSeconds % 86400) / 3600);
@@ -2907,7 +3298,7 @@
     setInterval(updateCountdown, 1000);
 
     // 4. Hash-Based Multi-Page SPA Router
-    const validRoutes = ['home', 'first-team', 'tickets', 'shop', 'club', 'culers', 'news'];
+    const validRoutes = ['home', 'about', 'programs', 'training', 'kits', 'coaches', 'achievements', 'partners', 'contact'];
 
     function navigateTo(routeName) {
       const target = validRoutes.includes(routeName) ? routeName : 'home';
@@ -2956,62 +3347,82 @@
       e.preventDefault();
       const q = document.getElementById('siteSearchInput').value.trim();
       if (!q) return;
-      openArticleModal('Search Results for "' + q + '"', 'Showing official FC Barcelona matches, news articles, and store items matching "' + q + '".', 'images01.jpg');
+      openArticleModal('Search Results for "' + q + '"', 'Showing TGT Discovery Academy programmes (ages 8–21), training schedules at Hillview High School Grounds (Wed & Fri 16:00–18:30), achievements, and partnership opportunities matching "' + q + '".', 'images01.jpg');
       document.getElementById('searchBarOverlay').classList.remove('open');
     }
 
     // 6. Modals & Form Validation
-    let currentAuthMode = 'login';
+    let currentAuthMode = 'register';
     function openAuthModal(mode) {
       currentAuthMode = mode;
       const modal = document.getElementById('authModal');
       const title = document.getElementById('authModalTitle');
-      const nameGroup = document.getElementById('nameFieldGroup');
+      const nameLabel = document.getElementById('nameLabel');
+      const detailLabel = document.getElementById('detailLabel');
+      const detailInput = document.getElementById('applicantDetail');
       const btn = document.getElementById('authSubmitBtn');
       const fb = document.getElementById('authFeedback');
 
       fb.className = 'form-feedback';
       fb.textContent = '';
 
-      if (mode === 'register') {
-        title.textContent = 'BECOME A CULER';
-        nameGroup.style.display = 'block';
-        btn.textContent = 'CREATE CULER ACCOUNT';
+      if (mode === 'coaching') {
+        title.textContent = 'COACHING APPLICATION (D-LICENSE)';
+        nameLabel.textContent = 'Coach Full Name';
+        detailLabel.textContent = 'Coaching Qualification (Minimum D-License)';
+        detailInput.placeholder = 'e.g., SAFA D-License Certificate';
+        btn.textContent = 'SUBMIT COACHING APPLICATION';
+      } else if (mode === 'partner') {
+        title.textContent = 'PARTNERSHIP & SPONSORSHIP ENQUIRY';
+        nameLabel.textContent = 'Organization / Sponsor Name';
+        detailLabel.textContent = 'Area of Support (Kits, Equipment, Transport, Bursaries)';
+        detailInput.placeholder = 'e.g., Football Kits & Training Equipment';
+        btn.textContent = 'SUBMIT PARTNERSHIP ENQUIRY';
       } else {
-        title.textContent = 'CULER ACCOUNT LOGIN';
-        nameGroup.style.display = 'none';
-        btn.textContent = 'SIGN IN';
+        title.textContent = 'JOIN TGT DISCOVERY ACADEMY (AGES 8–21)';
+        nameLabel.textContent = 'Player Full Name';
+        detailLabel.textContent = 'Player Age & Experience (Beginner / Intermediate / Competitive)';
+        detailInput.placeholder = 'e.g., 14 Years Old • Intermediate';
+        btn.textContent = 'REGISTER FOR TRAINING';
       }
       modal.classList.add('open');
     }
 
     function handleAuthSubmit(e) {
       e.preventDefault();
-      const email = document.getElementById('culerEmail').value.trim();
-      const pass = document.getElementById('culerPassword').value;
-      const name = document.getElementById('culerName').value.trim();
+      const name = document.getElementById('applicantName').value.trim();
+      const detail = document.getElementById('applicantDetail').value.trim();
+      const contact = document.getElementById('applicantEmail').value.trim();
       const fb = document.getElementById('authFeedback');
 
-      if (currentAuthMode === 'register' && name.length < 2) {
+      if (name.length < 2) {
         fb.className = 'form-feedback error';
-        fb.textContent = 'Please enter your full name.';
+        fb.textContent = 'Please enter a valid full name.';
         return;
       }
-      if (!email.includes('@')) {
+      if (detail.length < 2 || contact.length < 4) {
         fb.className = 'form-feedback error';
-        fb.textContent = 'Please enter a valid email address.';
-        return;
-      }
-      if (pass.length < 6) {
-        fb.className = 'form-feedback error';
-        fb.textContent = 'Password must be at least 6 characters.';
+        fb.textContent = 'Please complete all required fields.';
         return;
       }
 
       fb.className = 'form-feedback success';
-      fb.textContent = currentAuthMode === 'register'
-        ? 'Welcome to FC Barcelona, ' + name + '! Your Culer ID request has been validated.'
-        : 'Welcome back! Signed in as ' + email + '.';
+      if (currentAuthMode === 'coaching') {
+        fb.textContent = 'Thank you, ' + name + '! Your coaching application (' + detail + ') has been recorded for TGT Discovery Academy NPC.';
+      } else if (currentAuthMode === 'partner') {
+        fb.textContent = 'Thank you, ' + name + '! Your partnership interest (' + detail + ') has been registered. Our academy team will connect with you.';
+      } else {
+        fb.textContent = 'Welcome, ' + name + '! Your registration (' + detail + ') is noted. Join us at Hillview High School Grounds on Wednesday or Friday (16:00 – 18:30).';
+      }
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const topic = document.getElementById('contactTopic').value;
+      const fb = document.getElementById('contactFeedback');
+      fb.className = 'form-feedback success';
+      fb.textContent = 'Thank you, ' + name + '. Your enquiry regarding "' + topic + '" has been received by TGT Discovery Academy NPC.';
     }
 
     function openArticleModal(title, text, imgSrc) {
@@ -3022,7 +3433,7 @@
     }
 
     function openTicketBooking(itemTitle) {
-      openArticleModal('Reservation: ' + itemTitle, 'Item added to your session summary. Complete checkout via the official FC Barcelona ticketing & e-commerce payment gateway.', 'images05.jpg');
+      openArticleModal(itemTitle, 'Thank you for your interest in supporting TGT Discovery Academy NPC with kits, apparel, or training equipment. Visit our Partnerships page or contact us at Hillview High School, 72 Franscina Street, Roseville, Pretoria.', 'images12.jpg');
     }
 
     function closeModal(id) {
@@ -3038,6 +3449,7 @@
     // Initialize on Load
     document.addEventListener('DOMContentLoaded', () => {
       renderPlayers();
+      updateCountdown();
       const initialHash = window.location.hash.replace('#', '');
       if (initialHash && validRoutes.includes(initialHash)) {
         navigateTo(initialHash);
