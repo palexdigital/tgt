@@ -11,27 +11,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome for Professional Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
     /* ==========================================================================
-       1. CSS VARIABLES & RESET (UPDATED TO TGT DISCOVERY ACADEMY PALETTE)
+       1. CSS VARIABLES & RESET (UPDATED TO EXACT STRICT PALETTE)
        ========================================================================== */
     :root {
       --bg-deep: #080808;
       --bg-navy: #14265B;
       --bg-navy-light: #1c3375;
       --bg-white: #ffffff;
-      --bg-offwhite: #f7f8f5;
+      --bg-offwhite: #FFF8B5; /* Background — Cream */
       --bg-card-gray: #ebede8;
 
-      --tgt-navy: #14265B;
-      --tgt-green: #80A92F;
-      --tgt-green-hover: #6d9126;
-      --tgt-red: #B51F32;
-      --tgt-crimson: #B51F32;
-      --tgt-yellow: #F5D927;
-      --tgt-yellow-hover: #dfc316;
-      --tgt-cream: #FFF8B5;
-      --tgt-black: #080808;
+      --tgt-navy: #14265B;    /* Secondary — Navy Blue */
+      --tgt-green: #80A92F;   /* Primary — Green */
+      --tgt-red: #B51F32;     /* Accent — Red */
+      --tgt-yellow: #F5D927;  /* Highlight — Yellow */
+      --tgt-cream: #FFF8B5;   /* Background — Cream */
+      --tgt-black: #080808;   /* Text — Black */
 
       --text-dark: #080808;
       --text-muted: #4a5060;
@@ -119,14 +119,14 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: var(--bg-navy);
+      background-color: var(--tgt-navy);
       color: var(--text-light);
       box-shadow: 0 4px 20px rgba(8, 8, 8, 0.4);
     }
 
     /* Top Utility Bar */
     .top-bar {
-      background-color: var(--bg-deep);
+      background-color: var(--tgt-black);
       border-bottom: 1px solid var(--border-dark);
       font-size: 11px;
       font-weight: 600;
@@ -157,7 +157,7 @@
 
     .promo-badge {
       background: var(--tgt-yellow);
-      color: #080808;
+      color: var(--tgt-black);
       font-weight: 800;
       padding: 1px 6px;
       border-radius: 3px;
@@ -212,7 +212,7 @@
     }
 
     .lang-selector option {
-      background: var(--bg-navy);
+      background: var(--tgt-navy);
       color: #fff;
     }
 
@@ -316,7 +316,7 @@
       top: 100%;
       left: 0;
       min-width: 230px;
-      background: var(--bg-navy);
+      background: var(--tgt-navy);
       border: 1px solid var(--border-dark);
       border-top: 2px solid var(--tgt-yellow);
       border-radius: 0 0 6px 6px;
@@ -388,7 +388,7 @@
 
     .icon-btn:hover {
       background: var(--tgt-yellow);
-      color: var(--bg-deep);
+      color: var(--tgt-black);
     }
 
     .mobile-toggle {
@@ -405,7 +405,7 @@
     /* Search Drawer */
     .search-bar-overlay {
       display: none;
-      background: var(--bg-deep);
+      background: var(--tgt-black);
       padding: 14px 24px;
       border-bottom: 1px solid var(--border-dark);
     }
@@ -437,7 +437,7 @@
 
     .search-submit-btn {
       background: var(--tgt-yellow);
-      color: var(--bg-deep);
+      color: var(--tgt-black);
       font-weight: 800;
       font-family: var(--font-display);
       text-transform: uppercase;
@@ -452,7 +452,7 @@
        ========================================================================== */
     .hero-section {
       position: relative;
-      background-color: var(--bg-deep);
+      background-color: var(--tgt-black);
       color: #fff;
       overflow: hidden;
     }
@@ -558,7 +558,7 @@
       position: relative;
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      background: #14265B;
+      background: var(--tgt-navy);
     }
 
     .hero-subcard-thumb img {
@@ -613,7 +613,7 @@
       justify-content: center;
       gap: 32px;
       flex-wrap: wrap;
-      background: #080808;
+      background: var(--tgt-black);
     }
 
     .partner-mini-label {
@@ -966,7 +966,7 @@
       width: 100%;
       padding: 9px 14px;
       background: var(--tgt-yellow);
-      color: var(--bg-deep);
+      color: var(--tgt-black);
       font-family: var(--font-display);
       font-size: 15px;
       font-weight: 800;
@@ -977,7 +977,7 @@
     }
 
     .btn-tickets-gold:hover {
-      background: var(--tgt-yellow-hover);
+      background: #e2c41f;
     }
 
     .btn-match-ghost {
@@ -1037,7 +1037,7 @@
     }
 
     /* ==========================================================================
-       7. ACADEMY KITS, APPAREL & EQUIPMENT
+       7. ACADEMY KITS, APPAREL & EQUIPMENT (UPDATED: INCREASED KIT DISPLAY SPACE)
        ========================================================================== */
     .store-grid {
       display: grid;
@@ -1056,15 +1056,19 @@
     }
 
     .store-banner {
-      height: 135px;
+      height: 260px; /* Increased height for larger display area */
       overflow: hidden;
       background: var(--tgt-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
     }
 
     .store-banner img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Prevents cropping, maintains aspect ratio */
       transition: transform 0.35s ease;
     }
 
@@ -1080,8 +1084,8 @@
     }
 
     .store-cutout {
-      width: 72px;
-      height: 82px;
+      width: 82px;
+      height: 96px;
       object-fit: contain;
       flex-shrink: 0;
       background: var(--tgt-cream);
@@ -1315,82 +1319,102 @@
     }
 
     /* ==========================================================================
-       11. COACHES, PERSONNEL & PLAYER PATHWAY CAROUSEL SECTION
+       11. COACHES SECTION — EXACTLY FOUR IMAGE SPACES (NO TEXT/BIO)
        ========================================================================== */
-    .players-grid {
+    .coaches-four-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+      margin-bottom: 32px;
     }
 
-    .player-card {
+    .coach-image-slot {
       position: relative;
       border-radius: 8px;
       overflow: hidden;
-      aspect-ratio: 4 / 4.3;
-      background: linear-gradient(135deg, var(--tgt-navy) 0%, var(--tgt-green) 100%);
-      color: #fff;
+      aspect-ratio: 3 / 4;
+      background: #e8ebf0;
+      border: 2px dashed #cbd2e0;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
     }
 
-    .player-card img {
-      position: absolute;
-      inset: 0;
+    .coach-image-slot img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
-      transition: transform 0.35s ease;
     }
 
-    .player-card:hover img {
-      transform: scale(1.04);
-    }
-
-    .player-card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(8,8,8,0.05) 40%, rgba(8,8,8,0.95) 100%);
-    }
-
-    .player-card-info {
-      position: relative;
-      z-index: 2;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .player-number-bg {
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 900;
-      color: rgba(255, 248, 181, 0.25);
-      line-height: 0.9;
-      text-transform: uppercase;
-    }
-
-    .player-name {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      line-height: 1.05;
-      margin-top: -6px;
-    }
-
-    .player-pos {
-      font-size: 12px;
+    .coach-slot-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 13px;
       font-weight: 600;
-      color: var(--tgt-yellow);
-      margin-top: 4px;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .coach-slot-placeholder i {
+      font-size: 28px;
+      color: var(--tgt-navy);
     }
 
     /* ==========================================================================
-       12. ACHIEVEMENTS & HONOURS SHOWCASE STRIP
+       12. NEW GALLERY SECTION (PLAYERS, TRAINING, MATCHES, ACTIVITIES)
+       ========================================================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 16 / 11;
+      background: #e8ebf0;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .gallery-placeholder i {
+      font-size: 28px;
+      color: var(--tgt-green);
+    }
+
+    /* ==========================================================================
+       13. ACHIEVEMENTS & HONOURS SHOWCASE STRIP
        ========================================================================== */
     .trophies-section {
       background-color: var(--tgt-navy);
@@ -1435,7 +1459,7 @@
     }
 
     /* ==========================================================================
-       13. PARTNERSHIP OPPORTUNITIES & SOCIAL BAR
+       14. PARTNERSHIP OPPORTUNITIES & SOCIAL BAR
        ========================================================================== */
     .partners-footer-band {
       background-color: var(--bg-deep);
@@ -1522,18 +1546,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }
 
     .social-circle:hover {
       background: var(--tgt-yellow);
-      color: var(--bg-deep);
+      color: var(--tgt-black);
       transform: translateY(-2px);
     }
 
     /* ==========================================================================
-       14. MULTI-COLUMN SITE FOOTER
+       15. MULTI-COLUMN SITE FOOTER (WITH MANDATORY CREDIT)
        ========================================================================== */
     .site-footer {
       background-color: var(--tgt-navy);
@@ -1631,8 +1655,30 @@
       color: var(--tgt-yellow);
     }
 
+    /* Mandatory Footer Credit Styling */
+    .footer-credit-row {
+      text-align: center;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #e2e6f5;
+    }
+
+    .footer-credit-row a {
+      color: var(--tgt-yellow);
+      font-weight: 700;
+      text-decoration: underline;
+      margin-left: 4px;
+    }
+
+    .footer-credit-row a:hover {
+      color: #fff;
+    }
+
     /* ==========================================================================
-       15. SPA SUB-PAGES, STRUCTURED CARDS & MODALS
+       16. SPA SUB-PAGES, STRUCTURED CARDS & MODALS
        ========================================================================== */
     .page-view {
       display: none;
@@ -1734,6 +1780,24 @@
       left: 0;
       color: var(--tgt-green);
       font-weight: 900;
+    }
+
+    /* Google Map Container Styling */
+    .map-container-wrapper {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+    }
+
+    .map-container-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* Modal System */
@@ -1860,7 +1924,7 @@
     }
 
     /* ==========================================================================
-       16. RESPONSIVE BREAKPOINTS
+       17. RESPONSIVE BREAKPOINTS
        ========================================================================== */
     @media (max-width: 1120px) {
       .tickets-grid {
@@ -1873,6 +1937,10 @@
 
       .footer-columns {
         grid-template-columns: repeat(4, 1fr);
+      }
+
+      .coaches-four-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -1891,7 +1959,8 @@
       .store-grid,
       .players-grid,
       .info-grid-2,
-      .info-grid-3 {
+      .info-grid-3,
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1923,7 +1992,8 @@
 
       .matches-grid,
       .news-grid,
-      .trophies-grid {
+      .trophies-grid,
+      .coaches-four-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1945,26 +2015,26 @@
 <body>
 
   <!-- ========================================================================
-       HEADER & NAVIGATION
+       HEADER & NAVIGATION (ICONS REPLACING EMOJIS)
        ======================================================================== -->
   <header class="site-header">
     <!-- Top Utility Bar -->
     <div class="top-bar">
       <div class="top-bar-inner">
         <a href="#training" class="promo-pill" data-route="training">
-          <span>⚽</span>
+          <i class="fa-solid fa-futbol" style="color:var(--tgt-yellow);"></i>
           <span>TRAINING: WEDNESDAYS &amp; FRIDAYS • 16:00 – 18:30 (HILLVIEW HIGH SCHOOL)</span>
           <span class="promo-badge">AGES 8–21</span>
         </a>
 
         <div class="top-actions">
           <button type="button" class="top-link" onclick="openAuthModal('coaching')">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+            <i class="fa-solid fa-user-tie"></i>
             <span>Coach Application</span>
           </button>
 
           <button type="button" class="btn-culer-top" onclick="openAuthModal('register')">
-            <span>★</span>
+            <i class="fa-solid fa-star"></i>
             <span>Join Academy</span>
           </button>
 
@@ -1991,7 +2061,7 @@
           <nav aria-label="Primary Navigation">
             <ul class="nav-menu">
               <li class="nav-item">
-                <a href="#programs" class="nav-link" data-route="programs">Development ▾</a>
+                <a href="#programs" class="nav-link" data-route="programs">Development <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
                 <div class="dropdown-panel">
                   <a href="#programs" data-route="programs">Player Development Pillars</a>
                   <a href="#programs" data-route="programs">Age Groups (8–21 Years)</a>
@@ -2000,7 +2070,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a href="#about" class="nav-link" data-route="about">About Us ▾</a>
+                <a href="#about" class="nav-link" data-route="about">About Us <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
                 <div class="dropdown-panel">
                   <a href="#about" data-route="about">Our Story &amp; Registration</a>
                   <a href="#about" data-route="about">Vision &amp; Mission</a>
@@ -2009,12 +2079,15 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a href="#coaches" class="nav-link" data-route="coaches">Coaches &amp; Stars ▾</a>
+                <a href="#coaches" class="nav-link" data-route="coaches">Coaches &amp; Stars <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
                 <div class="dropdown-panel">
                   <a href="#coaches" data-route="coaches">Coaching Opportunities</a>
                   <a href="#coaches" data-route="coaches">Academy Graduates &amp; Recruits</a>
                   <a href="#achievements" data-route="achievements">Honours &amp; Achievements</a>
                 </div>
+              </li>
+              <li class="nav-item">
+                <a href="#gallery" class="nav-link" data-route="gallery">Gallery</a>
               </li>
               <li class="nav-item">
                 <a href="#achievements" class="nav-link" data-route="achievements">Achievements</a>
@@ -2032,11 +2105,11 @@
           </div>
 
           <button type="button" class="icon-btn" id="searchToggleBtn" aria-label="Search site">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
 
           <button type="button" class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
       </div>
@@ -2044,7 +2117,7 @@
       <!-- Search Drawer -->
       <div class="search-bar-overlay" id="searchBarOverlay">
         <form class="search-form-inner" onsubmit="handleSiteSearch(event)">
-          <input type="search" id="siteSearchInput" class="search-input" placeholder="Search age groups, training hours, achievements, kits, partnerships..." required />
+          <input type="search" id="siteSearchInput" class="search-input" placeholder="Search age groups, training hours, achievements, kits, partnerships, gallery..." required />
           <button type="submit" class="search-submit-btn">Search</button>
         </form>
       </div>
@@ -2057,6 +2130,7 @@
         <a href="#training" data-route="training">Training &amp; Venue</a>
         <a href="#kits" data-route="kits">Kits &amp; Apparel</a>
         <a href="#coaches" data-route="coaches">Coaches &amp; Player Pathways</a>
+        <a href="#gallery" data-route="gallery">Photo Gallery</a>
         <a href="#achievements" data-route="achievements">Achievements &amp; Honours</a>
         <a href="#partners" data-route="partners">Partnerships &amp; Sponsorship</a>
         <a href="#contact" data-route="contact">Contact Us</a>
@@ -2065,7 +2139,7 @@
   </header>
 
   <!-- ========================================================================
-       PAGE 1: HOMEPAGE VIEW (PRIMARY STRUCTURE PRESERVED)
+       PAGE 1: HOMEPAGE VIEW
        ======================================================================== -->
   <main id="page-home" class="page-view active">
 
@@ -2133,10 +2207,10 @@
       <div class="hero-partners-strip">
         <span class="partner-mini-label">DEVELOPMENT PILLARS</span>
         <div class="partner-mini-logos">
-          <span style="font-weight:800;letter-spacing:0.05em;">TECHNICAL</span>
-          <span style="font-weight:800;letter-spacing:0.05em;">PHYSICAL</span>
-          <span style="font-weight:800;letter-spacing:0.05em;">MENTAL</span>
-          <span style="font-weight:800;letter-spacing:0.05em;">SOCIAL &amp; PERSONAL</span>
+          <span style="font-weight:800;letter-spacing:0.05em;"><i class="fa-solid fa-dumbbell" style="color:var(--tgt-green);margin-right:5px;"></i> TECHNICAL</span>
+          <span style="font-weight:800;letter-spacing:0.05em;"><i class="fa-solid fa-person-running" style="color:var(--tgt-green);margin-right:5px;"></i> PHYSICAL</span>
+          <span style="font-weight:800;letter-spacing:0.05em;"><i class="fa-solid fa-brain" style="color:var(--tgt-green);margin-right:5px;"></i> MENTAL</span>
+          <span style="font-weight:800;letter-spacing:0.05em;"><i class="fa-solid fa-users" style="color:var(--tgt-green);margin-right:5px;"></i> SOCIAL &amp; PERSONAL</span>
         </div>
       </div>
     </section>
@@ -2147,8 +2221,8 @@
         <div class="section-header-center">
           <h2 class="section-title">ACADEMY PROGRAMMES &amp; PATHWAYS</h2>
           <div class="carousel-controls">
-            <button type="button" class="carousel-arrow" onclick="shiftTickets(-1)" aria-label="Previous programme">‹</button>
-            <button type="button" class="carousel-arrow" onclick="shiftTickets(1)" aria-label="Next programme">›</button>
+            <button type="button" class="carousel-arrow" onclick="shiftTickets(-1)" aria-label="Previous programme"><i class="fa-solid fa-chevron-left"></i></button>
+            <button type="button" class="carousel-arrow" onclick="shiftTickets(1)" aria-label="Next programme"><i class="fa-solid fa-chevron-right"></i></button>
           </div>
         </div>
 
@@ -2158,7 +2232,7 @@
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
               <div class="ticket-card-title">TECHNICAL MASTERY</div>
-              <div class="ticket-card-sub">Control, Passing &amp; Finishing →</div>
+              <div class="ticket-card-sub">Control, Passing &amp; Finishing <i class="fa-solid fa-arrow-right"></i></div>
             </div>
           </a>
 
@@ -2167,7 +2241,7 @@
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
               <div class="ticket-card-title">PHYSICAL FITNESS</div>
-              <div class="ticket-card-sub">Speed, Agility &amp; Strength →</div>
+              <div class="ticket-card-sub">Speed, Agility &amp; Strength <i class="fa-solid fa-arrow-right"></i></div>
             </div>
           </a>
 
@@ -2176,7 +2250,7 @@
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
               <div class="ticket-card-title">MENTAL STRENGTH</div>
-              <div class="ticket-card-sub">Discipline &amp; Resilience →</div>
+              <div class="ticket-card-sub">Discipline &amp; Resilience <i class="fa-solid fa-arrow-right"></i></div>
             </div>
           </a>
 
@@ -2185,7 +2259,7 @@
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
               <div class="ticket-card-title">BOYS &amp; GIRLS 8–21</div>
-              <div class="ticket-card-sub">Beginner to Competitive →</div>
+              <div class="ticket-card-sub">Beginner to Competitive <i class="fa-solid fa-arrow-right"></i></div>
             </div>
           </a>
 
@@ -2194,7 +2268,7 @@
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
               <div class="ticket-card-title">LEAGUE COMPETITION</div>
-              <div class="ticket-card-sub">Pretoria LFA FAP League →</div>
+              <div class="ticket-card-sub">Pretoria LFA FAP League <i class="fa-solid fa-arrow-right"></i></div>
             </div>
           </a>
 
@@ -2203,7 +2277,7 @@
             <div class="ticket-card-gradient"></div>
             <div class="ticket-card-info">
               <div class="ticket-card-title">D-LICENSE COACHING</div>
-              <div class="ticket-card-sub">Join Our Technical Staff →</div>
+              <div class="ticket-card-sub">Join Our Technical Staff <i class="fa-solid fa-arrow-right"></i></div>
             </div>
           </a>
         </div>
@@ -2231,7 +2305,7 @@
             </div>
           </div>
 
-          <a href="#training" class="btn-outline-pill" data-route="training">VENUE &amp; DIRECTIONS →</a>
+          <a href="#training" class="btn-outline-pill" data-route="training">VENUE &amp; DIRECTIONS <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="matches-grid">
@@ -2253,8 +2327,8 @@
                 <div class="match-comp">Midweek Development • Technical &amp; Fitness</div>
                 <div class="match-fixture-name">Wednesday Academy Training</div>
                 <div class="match-details-list">
-                  <span>📅 Every Wednesday • 16:00 – 18:30</span>
-                  <span>📍 Hillview High School Grounds, Roseville</span>
+                  <span><i class="fa-regular fa-calendar" style="color:var(--tgt-green);margin-right:4px;"></i> Every Wednesday • 16:00 – 18:30</span>
+                  <span><i class="fa-solid fa-location-dot" style="color:var(--tgt-red);margin-right:4px;"></i> Hillview High School Grounds, Roseville</span>
                 </div>
               </div>
               <button type="button" class="btn-match-ghost" onclick="openArticleModal('Wednesday Training Session (16:00 – 18:30)', 'Structured technical mastery, ball control, passing, physical conditioning and tactical awareness at Hillview High School Grounds, 72 Franscina Street, Roseville, Pretoria.', 'images01.jpg')">SESSION DETAILS</button>
@@ -2279,8 +2353,8 @@
                 <div class="match-comp">Match Prep • Tactical &amp; Competitive Play</div>
                 <div class="match-fixture-name">Friday Academy Training</div>
                 <div class="match-details-list">
-                  <span>📅 Every Friday • 16:00 – 18:30</span>
-                  <span>📍 Hillview High School Grounds, Roseville</span>
+                  <span><i class="fa-regular fa-calendar" style="color:var(--tgt-green);margin-right:4px;"></i> Every Friday • 16:00 – 18:30</span>
+                  <span><i class="fa-solid fa-location-dot" style="color:var(--tgt-red);margin-right:4px;"></i> Hillview High School Grounds, Roseville</span>
                 </div>
               </div>
               <button type="button" class="btn-match-ghost" onclick="openArticleModal('Friday Training Session (16:00 – 18:30)', 'Focused on match preparation, finishing, teamwork, communication and game intelligence ahead of weekend Pretoria LFA FAP League and tournament fixtures.', 'images02.jpg')">SESSION DETAILS</button>
@@ -2305,8 +2379,8 @@
                 <div class="match-comp">Beginner, Intermediate &amp; Competitive</div>
                 <div class="match-fixture-name">Open Registration (Ages 8–21)</div>
                 <div class="match-details-list">
-                  <span>📅 Boys &amp; Girls Welcome</span>
-                  <span>📍 72 Franscina Street, Roseville, Pretoria, 0084</span>
+                  <span><i class="fa-solid fa-user-check" style="color:var(--tgt-green);margin-right:4px;"></i> Boys &amp; Girls Welcome</span>
+                  <span><i class="fa-solid fa-map-pin" style="color:var(--tgt-red);margin-right:4px;"></i> 72 Franscina Street, Roseville, Pretoria</span>
                 </div>
               </div>
               <button type="button" class="btn-tickets-gold" onclick="openAuthModal('register')">REGISTER PLAYER</button>
@@ -2328,12 +2402,12 @@
       </div>
     </section>
 
-    <!-- 4. ACADEMY KITS, APPAREL & TRAINING GEAR -->
+    <!-- 4. ACADEMY KITS, APPAREL & EQUIPMENT (ENLARGED DISPLAY SPACE) -->
     <section class="section-block">
       <div class="container">
         <div class="section-header-row">
           <h2 class="section-title">ACADEMY KITS, APPAREL &amp; EQUIPMENT</h2>
-          <a href="#kits" class="btn-blue-pill" data-route="kits">VIEW KITS &amp; GEAR</a>
+          <a href="#kits" class="btn-blue-pill" data-route="kits">VIEW KITS &amp; GEAR <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="store-grid">
@@ -2346,7 +2420,7 @@
               <div class="store-info">
                 <h3>OFFICIAL MATCH KITS</h3>
                 <p>Representing TGT Discovery Academy in Navy Blue, Green, Red &amp; Yellow across Pretoria LFA leagues.</p>
-                <a href="#kits" class="store-cta-link" data-route="kits">EXPLORE KITS →</a>
+                <a href="#kits" class="store-cta-link" data-route="kits">EXPLORE KITS <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -2360,7 +2434,7 @@
               <div class="store-info">
                 <h3>TRAINING APPAREL</h3>
                 <p>Structured training wear designed for Wednesday and Friday sessions at Hillview High School Grounds.</p>
-                <a href="#kits" class="store-cta-link" data-route="kits">VIEW APPAREL →</a>
+                <a href="#kits" class="store-cta-link" data-route="kits">VIEW APPAREL <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -2374,7 +2448,7 @@
               <div class="store-info">
                 <h3>KIT &amp; GEAR SUPPORT</h3>
                 <p>Partner with our NPC to equip underserved youth players with match kits, footballs and cones.</p>
-                <a href="#partners" class="store-cta-link" data-route="partners">SPONSOR KITS →</a>
+                <a href="#partners" class="store-cta-link" data-route="partners">SPONSOR KITS <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -2534,48 +2608,31 @@
       </div>
     </section>
 
-    <!-- 8. COACHES, GRADUATES & PERSONNEL CAROUSEL -->
-    <section class="section-block section-block-gray">
-      <div class="container">
-        <div class="section-header-center">
-          <h2 class="section-title">PATHWAY STARS &amp; COACHING STAFF</h2>
-          <div class="carousel-controls">
-            <button type="button" class="carousel-arrow" onclick="rotatePlayers(-1)" aria-label="Previous profile">‹</button>
-            <button type="button" class="carousel-arrow" onclick="rotatePlayers(1)" aria-label="Next profile">›</button>
-          </div>
-        </div>
-
-        <div class="players-grid" id="playersGrid">
-          <!-- Rendered dynamically via JS so carousel arrows cycle smoothly -->
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. ACHIEVEMENTS & HONOURS SHOWCASE STRIP -->
+    <!-- 8. ACHIEVEMENTS & HONOURS SHOWCASE STRIP -->
     <section class="trophies-section" aria-label="Academy Honours">
       <div class="container">
         <div class="trophies-grid">
           <div class="trophy-banner">
             <span class="trophy-label">PRETORIA LFA FAP LEAGUE (U19)</span>
-            <span style="font-size:22px;">🏆</span>
+            <span style="font-size:22px;"><i class="fa-solid fa-trophy" style="color:var(--tgt-yellow);"></i></span>
             <span class="trophy-count">2x (2023 &amp; 2026)</span>
           </div>
 
           <div class="trophy-banner">
             <span class="trophy-label">SHAKA TOURNAMENT (U13)</span>
-            <span style="font-size:22px;">🥈</span>
+            <span style="font-size:22px;"><i class="fa-solid fa-medal" style="color:#e2e6f5;"></i></span>
             <span class="trophy-count">2ND PLACE</span>
           </div>
 
           <div class="trophy-banner">
             <span class="trophy-label">POLOKWANE CITY DDC SIGNING</span>
-            <span style="font-size:22px;">⚽</span>
+            <span style="font-size:22px;"><i class="fa-solid fa-futbol" style="color:var(--tgt-yellow);"></i></span>
             <span class="trophy-count">1 CAPTAIN</span>
           </div>
 
           <div class="trophy-banner">
             <span class="trophy-label">TUKS ACADEMY RECRUITS</span>
-            <span style="font-size:22px;">⭐</span>
+            <span style="font-size:22px;"><i class="fa-solid fa-star" style="color:var(--tgt-yellow);"></i></span>
             <span class="trophy-count">3 PLAYERS</span>
           </div>
         </div>
@@ -2584,7 +2641,7 @@
   </main>
 
   <!-- ========================================================================
-       SECONDARY SPA VIEWS (ALL NAVIGATION LINKS FUNCTIONAL)
+       SECONDARY SPA VIEWS
        ======================================================================== -->
 
   <!-- PAGE: ABOUT US, HISTORY, VISION, MISSION & VALUES -->
@@ -2650,7 +2707,7 @@
           </div>
         </div>
 
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
@@ -2716,21 +2773,32 @@
           <button type="button" class="btn-tickets-gold" style="max-width:260px;" onclick="openAuthModal('register')">REGISTER A PLAYER</button>
         </div>
 
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
 
-  <!-- PAGE: TRAINING FACILITIES, SCHEDULE & VENUE -->
+  <!-- PAGE: TRAINING FACILITIES, SCHEDULE & GOOGLE MAP VIEW LOCATION -->
   <section id="page-training" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>TRAINING FACILITIES &amp; SCHEDULE</h1>
+        <h1>TRAINING FACILITIES &amp; VIEW LOCATION</h1>
         <p>Structured training sessions held twice weekly at Hillview High School Grounds in Roseville, Pretoria.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
+        <!-- Google Map Integration -->
+        <div class="map-container-wrapper" aria-label="Hillview High School Location Map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.428751996515!2d28.1672!3d-25.7061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec957405103a8f5%3A0x6b4f74d0089e832!2sHillview%20High%20School!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hillview High School Location Map">
+          </iframe>
+        </div>
+
         <div class="info-grid-2">
           <div class="info-panel accent-green">
             <h3>WEEKLY TRAINING TIMETABLE</h3>
@@ -2757,12 +2825,12 @@
             <button type="button" class="btn-tickets-gold" style="max-width:260px;" onclick="openAuthModal('register')">BOOK A TRIAL / ENQUIRE</button>
           </div>
         </div>
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
 
-  <!-- PAGE: KITS & APPAREL -->
+  <!-- PAGE: KITS & APPAREL (ENLARGED DISPLAY SPACE) -->
   <section id="page-kits" class="page-view">
     <div class="subpage-hero">
       <div class="container">
@@ -2774,7 +2842,7 @@
       <div class="container">
         <div class="store-grid" style="margin-bottom:28px;">
           <div class="store-card">
-            <div class="store-banner"><img src="images12.jpg" alt="TGT Discovery Academy Match Kit" /></div>
+            <div class="store-banner" style="height:320px;"><img src="images12.jpg" alt="TGT Discovery Academy Match Kit" /></div>
             <div class="store-product-row">
               <img src="images13.jpg" alt="Academy Match Jersey" class="store-cutout" />
               <div class="store-info">
@@ -2785,7 +2853,7 @@
             </div>
           </div>
           <div class="store-card">
-            <div class="store-banner"><img src="images14.jpg" alt="Academy Training Kit" /></div>
+            <div class="store-banner" style="height:320px;"><img src="images14.jpg" alt="Academy Training Kit" /></div>
             <div class="store-product-row">
               <img src="images15.jpg" alt="Training Apparel" class="store-cutout" />
               <div class="store-info">
@@ -2796,7 +2864,7 @@
             </div>
           </div>
           <div class="store-card">
-            <div class="store-banner"><img src="images16.jpg" alt="Training Equipment & Balls" /></div>
+            <div class="store-banner" style="height:320px;"><img src="images16.jpg" alt="Training Equipment & Balls" /></div>
             <div class="store-product-row">
               <img src="images17.jpg" alt="Footballs and Cones" class="store-cutout" />
               <div class="store-info">
@@ -2807,55 +2875,60 @@
             </div>
           </div>
         </div>
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
 
-  <!-- PAGE: COACHES, PERSONNEL & PLAYER PATHWAYS -->
+  <!-- PAGE: COACHES (EXACTLY FOUR IMAGE SPACES, NO TEXT/NAMES/BIO) -->
   <section id="page-coaches" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>COACHES, PERSONNEL &amp; PATHWAY GRADUATES</h1>
-        <p>Dedicated coaching leadership and standout academy players progressing into professional and university football structures.</p>
+        <h1>COACHES &amp; TECHNICAL PERSONNEL</h1>
+        <p>Dedicated coaching leadership at TGT Discovery Academy. Insert your four coach photographs below.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
-        <div class="players-grid" style="margin-bottom:32px;">
-          <div class="player-card">
-            <img src="images23.jpg" alt="Lethabo Mashifane" />
-            <div class="player-card-overlay"></div>
-            <div class="player-card-info">
-              <div class="player-number-bg">GK / CAPT</div>
-              <div class="player-name">LETHABO MASHIFANE</div>
-              <div class="player-pos">Former U19 Captain • Signed with Polokwane City (DDC DSTV)</div>
+        <!-- Exactly Four Coach Image Spaces (No text, no bios, no fictional names) -->
+        <div class="coaches-four-grid">
+          <div class="coach-image-slot" onclick="triggerPhotoUpload('coach1')">
+            <div class="coach-slot-placeholder" id="coach1-placeholder">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Click to Add Coach 1 Image</span>
             </div>
+            <img id="coach1-img" src="" alt="" style="display:none;" />
           </div>
-          <div class="player-card">
-            <img src="images24.jpg" alt="Tuks Recruited Players" />
-            <div class="player-card-overlay"></div>
-            <div class="player-card-info">
-              <div class="player-number-bg">3 RECRUITS</div>
-              <div class="player-name">TUKS ACADEMY RECRUITS</div>
-              <div class="player-pos">Three TGT Players Recently Recruited by Tuks</div>
+
+          <div class="coach-image-slot" onclick="triggerPhotoUpload('coach2')">
+            <div class="coach-slot-placeholder" id="coach2-placeholder">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Click to Add Coach 2 Image</span>
             </div>
+            <img id="coach2-img" src="" alt="" style="display:none;" />
           </div>
-          <div class="player-card">
-            <img src="images25.jpg" alt="TGT Coaching Staff" />
-            <div class="player-card-overlay"></div>
-            <div class="player-card-info">
-              <div class="player-number-bg">D-LICENSE</div>
-              <div class="player-name">TECHNICAL &amp; COACHING STAFF</div>
-              <div class="player-pos">Qualified Youth Development Coaches • Roseville</div>
+
+          <div class="coach-image-slot" onclick="triggerPhotoUpload('coach3')">
+            <div class="coach-slot-placeholder" id="coach3-placeholder">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Click to Add Coach 3 Image</span>
             </div>
+            <img id="coach3-img" src="" alt="" style="display:none;" />
+          </div>
+
+          <div class="coach-image-slot" onclick="triggerPhotoUpload('coach4')">
+            <div class="coach-slot-placeholder" id="coach4-placeholder">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Click to Add Coach 4 Image</span>
+            </div>
+            <img id="coach4-img" src="" alt="" style="display:none;" />
           </div>
         </div>
 
         <div class="info-panel accent-green" style="margin-bottom:28px;">
-          <h3>COACHING OPPORTUNITIES AT TGT DISCOVERY ACADEMY</h3>
+          <h3>COACHING REQUIREMENTS &amp; OPPORTUNITIES</h3>
           <p>
-            TGT Discovery Academy recognizes the importance of qualified and committed coaches in developing young football talent. We welcome individuals who are passionate about football, youth development and making a positive contribution to the community.
+            TGT Discovery Academy recognizes the importance of qualified and committed coaches in developing young football talent. We welcome individuals who are passionate about youth development and making a positive contribution to the community.
           </p>
           <ul class="styled-list" style="margin-bottom:16px;">
             <li><strong>Minimum Coaching Requirement:</strong> D-License Coaching Certificate.</li>
@@ -2864,7 +2937,67 @@
           <button type="button" class="btn-tickets-gold" style="max-width:280px;" onclick="openAuthModal('coaching')">APPLY FOR COACHING ROLE</button>
         </div>
 
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: GALLERY (PLAYERS, TRAINING, MATCHES, ACTIVITIES) -->
+  <section id="page-gallery" class="page-view">
+    <div class="subpage-hero">
+      <div class="container">
+        <h1>ACADEMY PHOTO GALLERY</h1>
+        <p>Explore photographs of our players, training sessions, matches, team activities, and sporting moments.</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <div class="container">
+        <div class="section-header-row" style="margin-bottom:16px;">
+          <h2 class="section-title">TEAM &amp; ACTION PHOTOGRAPHS</h2>
+          <button type="button" class="btn-blue-pill" onclick="addNewGalleryItem()"><i class="fa-solid fa-plus" style="margin-right:6px;"></i> ADD PHOTOGRAPH</button>
+        </div>
+
+        <!-- Dynamic Gallery Grid accommodating multiple photographs -->
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Match Action Photo</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Training Session Photo</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Team Squad Photo</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Tournament Milestone</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Community Activity</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Player Development</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
@@ -2908,7 +3041,7 @@
           </ul>
         </div>
 
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
@@ -2954,7 +3087,7 @@
         </div>
 
         <button type="button" class="btn-tickets-gold" style="max-width:280px;margin-bottom:20px;display:block;" onclick="openAuthModal('partner')">BECOME A SPONSOR / PARTNER</button>
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
@@ -3008,13 +3141,13 @@
             </form>
           </div>
         </div>
-        <a href="#home" class="btn-blue-pill" data-route="home">← BACK TO HOME</a>
+        <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================
-       10. PARTNERSHIP OPPORTUNITIES & COMMUNITY BAND
+       13. PARTNERSHIP OPPORTUNITIES & COMMUNITY BAND
        ======================================================================== -->
   <section class="partners-footer-band">
     <div class="container">
@@ -3033,18 +3166,18 @@
       <div class="social-row">
         <div class="social-label">Connect with TGT Discovery Academy NPC • Roseville, Pretoria</div>
         <div class="social-icons">
-          <a href="#contact" class="social-circle" data-route="contact" aria-label="Location">📍</a>
-          <a href="#training" class="social-circle" data-route="training" aria-label="Training">⚽</a>
-          <a href="#achievements" class="social-circle" data-route="achievements" aria-label="Honours">🏆</a>
-          <a href="#partners" class="social-circle" data-route="partners" aria-label="Partnerships">🤝</a>
-          <a href="#coaches" class="social-circle" data-route="coaches" aria-label="Coaching">📋</a>
+          <a href="#contact" class="social-circle" data-route="contact" aria-label="Location"><i class="fa-solid fa-location-dot"></i></a>
+          <a href="#training" class="social-circle" data-route="training" aria-label="Training"><i class="fa-solid fa-futbol"></i></a>
+          <a href="#achievements" class="social-circle" data-route="achievements" aria-label="Honours"><i class="fa-solid fa-trophy"></i></a>
+          <a href="#partners" class="social-circle" data-route="partners" aria-label="Partnerships"><i class="fa-solid fa-handshake"></i></a>
+          <a href="#coaches" class="social-circle" data-route="coaches" aria-label="Coaching"><i class="fa-solid fa-clipboard-user"></i></a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================
-       11. MULTI-COLUMN SITE FOOTER
+       14. MULTI-COLUMN SITE FOOTER (WITH MANDATORY CREDIT)
        ======================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -3148,12 +3281,17 @@
             <a href="#contact" data-route="contact">Contact</a>
           </div>
         </div>
+
+        <!-- Mandatory Exact Footer Credit -->
+        <div class="footer-credit-row">
+          Developed By <a href="https://palexdigital.pages.dev/" target="_blank" rel="noopener noreferrer">paléXdigital</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================================
-       INTERACTIVE MODALS (REGISTRATION, COACHING, PARTNERSHIP & ARTICLE READER)
+       INTERACTIVE MODALS & FILE UPLOAD HANDLERS
        ======================================================================== -->
   <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
     <div class="modal-box">
@@ -3199,48 +3337,14 @@
     </div>
   </div>
 
+  <!-- Hidden file input for interactive coach / gallery photo uploads -->
+  <input type="file" id="hiddenFileInput" accept="image/*" style="display:none;" onchange="handleFileSelected(event)" />
+
   <!-- ========================================================================
-       VANILLA JAVASCRIPT (ROUTING, COUNTDOWN, CAROUSELS, FORMS)
+       VANILLA JAVASCRIPT
        ======================================================================== -->
   <script>
-    // 1. Academy Pathway Stars & Coaching Personnel Data for Interactive Carousel
-    const playersData = [
-      { number: 'GK / CAPT', name: 'LETHABO MASHIFANE', pos: 'Former U19 Captain • Signed with Polokwane City (DDC DSTV)', img: 'images23.jpg' },
-      { number: '3 RECRUITS', name: 'TUKS ACADEMY RECRUITS', pos: 'Three TGT Players Recently Recruited by Tuks', img: 'images24.jpg' },
-      { number: 'D-LICENSE', name: 'YOUTH COACHING STAFF', pos: 'Qualified Coaches • Technical, Physical & Mental Development', img: 'images25.jpg' },
-      { number: '2023 & 2026', name: 'U19 CHAMPIONS', pos: 'Two-Time Pretoria LFA FAP League First-Place Winners', img: 'images03.jpg' },
-      { number: 'U13 SILVER', name: 'SHAKA TOURNAMENT SQUAD', pos: '2023 Shaka Tournament Runners-Up & Silver Medallists', img: 'images05.jpg' }
-    ];
-    let playerOffset = 0;
-
-    function renderPlayers() {
-      const grid = document.getElementById('playersGrid');
-      if (!grid) return;
-      grid.innerHTML = '';
-      for (let i = 0; i < 3; i++) {
-        const p = playersData[(playerOffset + i) % playersData.length];
-        const card = document.createElement('article');
-        card.className = 'player-card';
-        card.onclick = () => navigateTo('coaches');
-        card.innerHTML = `
-          <img src="${p.img}" alt="${p.name}" />
-          <div class="player-card-overlay"></div>
-          <div class="player-card-info">
-            <div class="player-number-bg">${p.number}</div>
-            <div class="player-name">${p.name}</div>
-            <div class="player-pos">${p.pos}</div>
-          </div>
-        `;
-        grid.appendChild(card);
-      }
-    }
-
-    function rotatePlayers(dir) {
-      playerOffset = (playerOffset + dir + playersData.length) % playersData.length;
-      renderPlayers();
-    }
-
-    // 2. Programmes Grid Shift
+    // 1. Programmes Grid Shift
     function shiftTickets(dir) {
       const grid = document.getElementById('ticketsGrid');
       if (!grid) return;
@@ -3252,11 +3356,10 @@
       }
     }
 
-    // 3. Live Next Training Session Countdown Timer (Wednesday / Friday 16:00 SAST)
+    // 2. Live Next Training Session Countdown Timer (Wednesday / Friday 16:00 SAST)
     function getSecondsUntilNextTraining() {
       const now = new Date();
-      // Training days: Wednesday (3) and Friday (5) at 16:00
-      const trainingDays = [3, 5];
+      const trainingDays = [3, 5]; // Wednesday (3) and Friday (5) at 16:00
       let nearestDiff = null;
 
       trainingDays.forEach(day => {
@@ -3297,8 +3400,8 @@
     }
     setInterval(updateCountdown, 1000);
 
-    // 4. Hash-Based Multi-Page SPA Router
-    const validRoutes = ['home', 'about', 'programs', 'training', 'kits', 'coaches', 'achievements', 'partners', 'contact'];
+    // 3. Hash-Based Multi-Page SPA Router
+    const validRoutes = ['home', 'about', 'programs', 'training', 'kits', 'coaches', 'gallery', 'achievements', 'partners', 'contact'];
 
     function navigateTo(routeName) {
       const target = validRoutes.includes(routeName) ? routeName : 'home';
@@ -3330,7 +3433,7 @@
       navigateTo(hashRoute);
     });
 
-    // 5. Header Controls (Search & Mobile Menu)
+    // 4. Header Controls (Search & Mobile Menu)
     document.getElementById('searchToggleBtn').addEventListener('click', () => {
       const bar = document.getElementById('searchBarOverlay');
       bar.classList.toggle('open');
@@ -3347,8 +3450,48 @@
       e.preventDefault();
       const q = document.getElementById('siteSearchInput').value.trim();
       if (!q) return;
-      openArticleModal('Search Results for "' + q + '"', 'Showing TGT Discovery Academy programmes (ages 8–21), training schedules at Hillview High School Grounds (Wed & Fri 16:00–18:30), achievements, and partnership opportunities matching "' + q + '".', 'images01.jpg');
+      openArticleModal('Search Results for "' + q + '"', 'Showing TGT Discovery Academy programmes (ages 8–21), training schedules at Hillview High School Grounds (Wed & Fri 16:00–18:30), achievements, gallery photographs, and partnership opportunities matching "' + q + '".', 'images01.jpg');
       document.getElementById('searchBarOverlay').classList.remove('open');
+    }
+
+    // 5. Interactive Upload Handler for Coach Slots & Gallery
+    let activeUploadTarget = null;
+    function triggerPhotoUpload(targetId) {
+      activeUploadTarget = targetId;
+      document.getElementById('hiddenFileInput').click();
+    }
+
+    function addNewGalleryItem() {
+      activeUploadTarget = 'new_gallery_item';
+      document.getElementById('hiddenFileInput').click();
+    }
+
+    function handleFileSelected(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const imageUrl = evt.target.result;
+        if (activeUploadTarget && activeUploadTarget.startsWith('coach')) {
+          const imgEl = document.getElementById(activeUploadTarget + '-img');
+          const placeholderEl = document.getElementById(activeUploadTarget + '-placeholder');
+          if (imgEl && placeholderEl) {
+            imgEl.src = imageUrl;
+            imgEl.style.display = 'block';
+            placeholderEl.style.display = 'none';
+          }
+        } else if (activeUploadTarget === 'new_gallery_item') {
+          const galleryGrid = document.getElementById('galleryGrid');
+          if (galleryGrid) {
+            const newItem = document.createElement('div');
+            newItem.className = 'gallery-item';
+            newItem.innerHTML = `<img src="${imageUrl}" alt="Gallery photograph" />`;
+            galleryGrid.prepend(newItem);
+          }
+        }
+      };
+      reader.readAsDataURL(file);
+      e.target.value = '';
     }
 
     // 6. Modals & Form Validation
@@ -3448,7 +3591,6 @@
 
     // Initialize on Load
     document.addEventListener('DOMContentLoaded', () => {
-      renderPlayers();
       updateCountdown();
       const initialHash = window.location.hash.replace('#', '');
       if (initialHash && validRoutes.includes(initialHash)) {
