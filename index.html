@@ -14,6 +14,28 @@
   <!-- Font Awesome for Professional Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <script>
+    function hideCharityImage(img) {
+      if (!img) return;
+      var media = document.getElementById('charityMedia');
+      img.style.display = 'none';
+      if (media && !media.querySelector('.charity-pending')) {
+        var msg = document.createElement('div');
+        msg.className = 'charity-pending';
+        msg.textContent = 'Layim NPC Charity Tournament photograph pending (' + (img.getAttribute('src') || 'images30.jpg') + ').';
+        media.appendChild(msg);
+      }
+    }
+
+    function showMatchResultPending(img) {
+      if (!img) return;
+      img.style.display = 'none';
+      var slot = img.closest('.match-result-slot');
+      var pending = slot ? slot.querySelector('.match-result-pending') : null;
+      if (pending) pending.hidden = false;
+    }
+  </script>
+
   <style>
     /* ==========================================================================
        1. CSS VARIABLES & RESET (UPDATED TO EXACT STRICT PALETTE)
@@ -1413,6 +1435,212 @@
       color: var(--tgt-green);
     }
 
+    .gallery-item {
+      cursor: pointer;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .leadership-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-top: 4px solid var(--tgt-green);
+      border-radius: 8px;
+      padding: 22px 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .leadership-role {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--tgt-red);
+      margin-bottom: 8px;
+    }
+
+    .leadership-card h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--tgt-navy);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .leadership-card a {
+      font-weight: 700;
+      color: var(--tgt-navy);
+    }
+
+    .leadership-card a:hover {
+      color: var(--tgt-red);
+    }
+
+    .match-results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .match-result-slot {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .match-result-slot img {
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
+    }
+
+    .match-result-pending {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.45;
+      padding: 24px 12px;
+    }
+
+    .form-feedback a {
+      color: inherit;
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    .wa-feedback-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-wa-open {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: #1d7a38;
+      color: #fff !important;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none !important;
+    }
+
+    .btn-wa-open:hover {
+      background: #155c29;
+    }
+
+    .wa-fallback-note {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .charity-pending {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+      line-height: 1.5;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-box {
+      background: #0d1220;
+      color: #fff;
+      border-radius: 10px;
+      max-width: 920px;
+      width: 100%;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .lightbox-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #080808;
+      padding: 16px 56px;
+      min-height: 260px;
+      max-height: 70vh;
+    }
+
+    .lightbox-stage img {
+      max-width: 100%;
+      max-height: 64vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(20, 38, 91, 0.85);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--tgt-yellow);
+      color: var(--tgt-black);
+    }
+
+    .lightbox-prev {
+      left: 12px;
+    }
+
+    .lightbox-next {
+      right: 12px;
+    }
+
+    .lightbox-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 20px;
+      background: var(--tgt-navy);
+      font-size: 13px;
+      font-weight: 600;
+      color: #e4e8f5;
+    }
+
     /* ==========================================================================
        13. ACHIEVEMENTS & HONOURS SHOWCASE STRIP
        ========================================================================== */
@@ -1823,6 +2051,9 @@
       border-radius: 10px;
       max-width: 540px;
       width: 100%;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
     }
@@ -1835,6 +2066,7 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 3px solid var(--tgt-yellow);
+      flex-shrink: 0;
     }
 
     .modal-header h3 {
@@ -1852,6 +2084,7 @@
 
     .modal-body {
       padding: 24px;
+      overflow-y: auto;
     }
 
     .form-group {
@@ -1939,7 +2172,9 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .coaches-four-grid {
+      .coaches-four-grid,
+      .leadership-grid,
+      .match-results-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -1993,7 +2228,9 @@
       .matches-grid,
       .news-grid,
       .trophies-grid,
-      .coaches-four-grid {
+      .coaches-four-grid,
+      .leadership-grid,
+      .match-results-grid {
         grid-template-columns: 1fr;
       }
 
@@ -2008,6 +2245,28 @@
 
       .partners-top-row {
         flex-direction: column;
+      }
+
+      .top-bar-inner,
+      .main-nav-inner {
+        padding: 0 14px;
+      }
+
+      .top-actions {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .top-bar-inner {
+        height: auto;
+        min-height: 36px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .lightbox-stage {
+        padding: 12px 44px;
       }
     }
   </style>
@@ -2073,6 +2332,10 @@
                 <a href="#about" class="nav-link" data-route="about">About Us <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
                 <div class="dropdown-panel">
                   <a href="#about" data-route="about">Our Story &amp; Registration</a>
+                  <a href="#ceo-intro" data-route="ceo-intro">CEO Introduction</a>
+                  <a href="#club-leadership" data-route="club-leadership">Club Leadership</a>
+                  <a href="#layim-charity" data-route="layim-charity">Layim Charity Tournament</a>
+                  <a href="#match-results" data-route="match-results">Match Results</a>
                   <a href="#about" data-route="about">Vision &amp; Mission</a>
                   <a href="#about" data-route="about">Core Values</a>
                   <a href="#about" data-route="about">Community Development</a>
@@ -2099,7 +2362,7 @@
         <div class="nav-right">
           <div class="nav-secondary-links">
             <a href="#training" class="nav-sec-link" data-route="training">Training &amp; Venue</a>
-            <a href="#kits" class="nav-sec-link" data-route="kits">Kits &amp; Apparel</a>
+            <a href="#kits" class="nav-sec-link" data-route="kits">Squad Kits</a>
             <a href="#partners" class="nav-sec-link" data-route="partners">Partnerships</a>
             <a href="#contact" class="nav-sec-link" data-route="contact">Contact</a>
           </div>
@@ -2128,7 +2391,11 @@
         <a href="#about" data-route="about">About Us &amp; Values</a>
         <a href="#programs" data-route="programs">Development Programme (8–21)</a>
         <a href="#training" data-route="training">Training &amp; Venue</a>
-        <a href="#kits" data-route="kits">Kits &amp; Apparel</a>
+        <a href="#kits" data-route="kits">Squad Kits</a>
+        <a href="#ceo-intro" data-route="ceo-intro">About TGT Discovery Talent Search</a>
+        <a href="#club-leadership" data-route="club-leadership">Club Leadership</a>
+        <a href="#layim-charity" data-route="layim-charity">Layim Charity Tournament</a>
+        <a href="#match-results" data-route="match-results">Match Results</a>
         <a href="#coaches" data-route="coaches">Coaches &amp; Player Pathways</a>
         <a href="#gallery" data-route="gallery">Photo Gallery</a>
         <a href="#achievements" data-route="achievements">Achievements &amp; Honours</a>
@@ -2406,51 +2673,38 @@
     <section class="section-block">
       <div class="container">
         <div class="section-header-row">
-          <h2 class="section-title">ACADEMY KITS, APPAREL &amp; EQUIPMENT</h2>
-          <a href="#kits" class="btn-blue-pill" data-route="kits">VIEW KITS &amp; GEAR <i class="fa-solid fa-arrow-right"></i></a>
+          <h2 class="section-title">ACADEMY KITS</h2>
+          <a href="#kits" class="btn-blue-pill" data-route="kits">VIEW SQUAD KITS <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="store-grid">
           <article class="store-card">
-            <div class="store-banner">
-              <img src="images12.jpg" alt="TGT Discovery Academy Match Kits" />
-            </div>
-            <div class="store-product-row">
-              <img src="images13.jpg" alt="Official Academy Match Jersey" class="store-cutout" />
-              <div class="store-info">
-                <h3>OFFICIAL MATCH KITS</h3>
-                <p>Representing TGT Discovery Academy in Navy Blue, Green, Red &amp; Yellow across Pretoria LFA leagues.</p>
-                <a href="#kits" class="store-cta-link" data-route="kits">EXPLORE KITS <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <div class="store-banner"><img src="kits/images19.jpg" alt="Senior Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>Senior Kit</h3><a href="#kits" class="store-cta-link" data-route="kits">VIEW KIT <i class="fa-solid fa-arrow-right"></i></a></div></div>
           </article>
-
           <article class="store-card">
-            <div class="store-banner">
-              <img src="images14.jpg" alt="Training Apparel & Conditioning Gear" />
-            </div>
-            <div class="store-product-row">
-              <img src="images15.jpg" alt="Academy Training Apparel" class="store-cutout" />
-              <div class="store-info">
-                <h3>TRAINING APPAREL</h3>
-                <p>Structured training wear designed for Wednesday and Friday sessions at Hillview High School Grounds.</p>
-                <a href="#kits" class="store-cta-link" data-route="kits">VIEW APPAREL <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <div class="store-banner"><img src="kits/images20.jpg" alt="U19 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U19 Kit</h3><a href="#kits" class="store-cta-link" data-route="kits">VIEW KIT <i class="fa-solid fa-arrow-right"></i></a></div></div>
           </article>
-
           <article class="store-card">
-            <div class="store-banner">
-              <img src="images16.jpg" alt="Equipment & Kit Sponsorship" />
-            </div>
-            <div class="store-product-row">
-              <img src="images17.jpg" alt="Footballs, Cones & Training Gear" class="store-cutout" />
-              <div class="store-info">
-                <h3>KIT &amp; GEAR SUPPORT</h3>
-                <p>Partner with our NPC to equip underserved youth players with match kits, footballs and cones.</p>
-                <a href="#partners" class="store-cta-link" data-route="partners">SPONSOR KITS <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <div class="store-banner"><img src="kits/images21.jpg" alt="U17 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U17 Kit</h3><a href="#kits" class="store-cta-link" data-route="kits">VIEW KIT <i class="fa-solid fa-arrow-right"></i></a></div></div>
+          </article>
+          <article class="store-card">
+            <div class="store-banner"><img src="kits/images22.jpg" alt="U15 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U15 Kit</h3><a href="#kits" class="store-cta-link" data-route="kits">VIEW KIT <i class="fa-solid fa-arrow-right"></i></a></div></div>
+          </article>
+          <article class="store-card">
+            <div class="store-banner"><img src="kits/images23.jpg" alt="U15 Second Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U15 Second Kit</h3><a href="#kits" class="store-cta-link" data-route="kits">VIEW KIT <i class="fa-solid fa-arrow-right"></i></a></div></div>
+          </article>
+          <article class="store-card">
+            <div class="store-banner"><img src="kits/images24.jpg" alt="U11 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U11 Kit</h3><a href="#kits" class="store-cta-link" data-route="kits">VIEW KIT <i class="fa-solid fa-arrow-right"></i></a></div></div>
+          </article>
+          <article class="store-card">
+            <div class="store-banner"><img src="kits/images25.jpg" alt="Team Match Travelling Jersey" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>Team Match Travelling Jersey</h3><a href="#kits" class="store-cta-link" data-route="kits">VIEW KIT <i class="fa-solid fa-arrow-right"></i></a></div></div>
           </article>
         </div>
       </div>
@@ -2635,6 +2889,91 @@
             <span style="font-size:22px;"><i class="fa-solid fa-star" style="color:var(--tgt-yellow);"></i></span>
             <span class="trophy-count">3 PLAYERS</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="ceo-intro">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">ABOUT TGT DISCOVERY TALENT SEARCH</h2>
+        </div>
+        <div class="info-panel">
+          <p>My name is Itumeleng Frederick Mphahlele, CEO of TGT Discovery Talent Search.</p>
+          <p>We are excited to share that our football programme has been affiliated with the Pretoria Local League since 2022.</p>
+          <p>We have the following divisions:</p>
+          <p>U9, U11, U13, U15, U17, U19 and Senior.</p>
+          <p>We are based in Roseville, Pretoria, and our players come from various communities around Pretoria.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block section-block-gray" id="club-leadership">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">CLUB LEADERSHIP &amp; MANAGEMENT</h2>
+        </div>
+        <div class="leadership-grid">
+          <article class="leadership-card">
+            <p class="leadership-role">Chairman</p>
+            <h3>Itumeleng Frederick Mphahlele</h3>
+            <a href="tel:+27724237512">0724237512</a>
+          </article>
+          <article class="leadership-card">
+            <p class="leadership-role">Team Manager</p>
+            <h3>David Nkambule</h3>
+            <a href="tel:+27833992322">0833992322</a>
+          </article>
+          <article class="leadership-card">
+            <p class="leadership-role">Treasurer</p>
+            <h3>Gcobisa Mphahlele</h3>
+            <a href="tel:+27685503507">0685503507</a>
+          </article>
+          <article class="leadership-card">
+            <p class="leadership-role">Secretary</p>
+            <h3>Sello Sebelebele</h3>
+            <a href="tel:+27733930645">0733930645</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="kit-promo-section" id="layim-charity">
+      <div class="container">
+        <div class="kit-promo-card">
+          <div class="kit-promo-media" id="charityMedia">
+            <img src="images30.jpg" alt="Layim NPC Charity Tournament" data-managed="charity" onerror="hideCharityImage(this)" />
+          </div>
+          <div class="kit-promo-body">
+            <h2 class="kit-promo-title" style="text-transform:none;">Layim NPC Charity Tournament – Give Shoes, Change Lives</h2>
+            <p class="kit-promo-text">Layim NPC is proud to be part of the Give Shoes Charity Tournament, an initiative dedicated to making a difference in the lives of underprivileged children. Through the power of sport and community support, the event aims to provide school shoes to 70 children while bringing players and supporters together for a meaningful cause. We invite everyone to join us in supporting this initiative and helping us put smiles on young faces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="match-results">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">MATCH RESULTS</h2>
+        </div>
+        <div class="match-results-grid">
+          <figure class="match-result-slot">
+            <img src="images31.jpg" alt="Match result 1" data-managed="result" onerror="showMatchResultPending(this)" />
+            <figcaption class="match-result-pending" hidden>Match result image 1. Add images31.jpg</figcaption>
+          </figure>
+          <figure class="match-result-slot">
+            <img src="images32.jpg" alt="Match result 2" data-managed="result" onerror="showMatchResultPending(this)" />
+            <figcaption class="match-result-pending" hidden>Match result image 2. Add images32.jpg</figcaption>
+          </figure>
+          <figure class="match-result-slot">
+            <img src="images33.jpg" alt="Match result 3" data-managed="result" onerror="showMatchResultPending(this)" />
+            <figcaption class="match-result-pending" hidden>Match result image 3. Add images33.jpg</figcaption>
+          </figure>
+          <figure class="match-result-slot">
+            <img src="images34.jpg" alt="Match result 4" data-managed="result" onerror="showMatchResultPending(this)" />
+            <figcaption class="match-result-pending" hidden>Match result image 4. Add images34.jpg</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -2834,45 +3173,40 @@
   <section id="page-kits" class="page-view">
     <div class="subpage-hero">
       <div class="container">
-        <h1>OFFICIAL KITS &amp; ACADEMY APPAREL</h1>
-        <p>Match kits, training wear, and essential football equipment supporting TGT Discovery Academy squads.</p>
+        <h1>SQUAD KITS</h1>
+        <p>Match kits for the Senior, U19, U17, U15 and U11 squads, including the team match travelling jersey.</p>
       </div>
     </div>
     <div class="section-block">
       <div class="container">
         <div class="store-grid" style="margin-bottom:28px;">
           <div class="store-card">
-            <div class="store-banner" style="height:320px;"><img src="images12.jpg" alt="TGT Discovery Academy Match Kit" /></div>
-            <div class="store-product-row">
-              <img src="images13.jpg" alt="Academy Match Jersey" class="store-cutout" />
-              <div class="store-info">
-                <h3>COMPETITIVE MATCH KIT</h3>
-                <p>Worn by our Under-13 and Pretoria LFA FAP League Champion Under-19 squads.</p>
-                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Official Academy Match Kit Enquiry')">ENQUIRE / SPONSOR</button>
-              </div>
-            </div>
+            <div class="store-banner" style="height:320px;"><img src="kits/images19.jpg" alt="Senior Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>Senior Kit</h3><button type="button" class="btn-blue-pill" onclick="openTicketBooking('Senior Kit', 'kits/images19.jpg')">ENQUIRE</button></div></div>
           </div>
           <div class="store-card">
-            <div class="store-banner" style="height:320px;"><img src="images14.jpg" alt="Academy Training Kit" /></div>
-            <div class="store-product-row">
-              <img src="images15.jpg" alt="Training Apparel" class="store-cutout" />
-              <div class="store-info">
-                <h3>TRAINING WEAR</h3>
-                <p>Official academy training shirts and shorts for Wednesday &amp; Friday field sessions.</p>
-                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Academy Training Apparel Enquiry')">ENQUIRE / SPONSOR</button>
-              </div>
-            </div>
+            <div class="store-banner" style="height:320px;"><img src="kits/images20.jpg" alt="U19 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U19 Kit</h3><button type="button" class="btn-blue-pill" onclick="openTicketBooking('U19 Kit', 'kits/images20.jpg')">ENQUIRE</button></div></div>
           </div>
           <div class="store-card">
-            <div class="store-banner" style="height:320px;"><img src="images16.jpg" alt="Training Equipment & Balls" /></div>
-            <div class="store-product-row">
-              <img src="images17.jpg" alt="Footballs and Cones" class="store-cutout" />
-              <div class="store-info">
-                <h3>TRAINING EQUIPMENT</h3>
-                <p>Match footballs, agility cones, bibs and conditioning equipment for ages 8–21.</p>
-                <button type="button" class="btn-blue-pill" onclick="openTicketBooking('Training Equipment Support')">DONATE EQUIPMENT</button>
-              </div>
-            </div>
+            <div class="store-banner" style="height:320px;"><img src="kits/images21.jpg" alt="U17 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U17 Kit</h3><button type="button" class="btn-blue-pill" onclick="openTicketBooking('U17 Kit', 'kits/images21.jpg')">ENQUIRE</button></div></div>
+          </div>
+          <div class="store-card">
+            <div class="store-banner" style="height:320px;"><img src="kits/images22.jpg" alt="U15 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U15 Kit</h3><button type="button" class="btn-blue-pill" onclick="openTicketBooking('U15 Kit', 'kits/images22.jpg')">ENQUIRE</button></div></div>
+          </div>
+          <div class="store-card">
+            <div class="store-banner" style="height:320px;"><img src="kits/images23.jpg" alt="U15 Second Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U15 Second Kit</h3><button type="button" class="btn-blue-pill" onclick="openTicketBooking('U15 Second Kit', 'kits/images23.jpg')">ENQUIRE</button></div></div>
+          </div>
+          <div class="store-card">
+            <div class="store-banner" style="height:320px;"><img src="kits/images24.jpg" alt="U11 Kit" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>U11 Kit</h3><button type="button" class="btn-blue-pill" onclick="openTicketBooking('U11 Kit', 'kits/images24.jpg')">ENQUIRE</button></div></div>
+          </div>
+          <div class="store-card">
+            <div class="store-banner" style="height:320px;"><img src="kits/images25.jpg" alt="Team Match Travelling Jersey" /></div>
+            <div class="store-product-row"><div class="store-info"><h3>Team Match Travelling Jersey</h3><button type="button" class="btn-blue-pill" onclick="openTicketBooking('Team Match Travelling Jersey', 'kits/images25.jpg')">ENQUIRE</button></div></div>
           </div>
         </div>
         <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
@@ -2924,6 +3258,7 @@
             <img id="coach4-img" src="" alt="" style="display:none;" />
           </div>
         </div>
+        <p style="font-size:13px;color:var(--text-muted);margin:-12px 0 20px;">Coach photographs added here are shown on this device only and are not submitted to the academy.</p>
 
         <div class="info-panel accent-green" style="margin-bottom:28px;">
           <h3>COACHING REQUIREMENTS &amp; OPPORTUNITIES</h3>
@@ -2956,45 +3291,32 @@
           <h2 class="section-title">TEAM &amp; ACTION PHOTOGRAPHS</h2>
           <button type="button" class="btn-blue-pill" onclick="addNewGalleryItem()"><i class="fa-solid fa-plus" style="margin-right:6px;"></i> ADD PHOTOGRAPH</button>
         </div>
+        <p style="font-size:13px;color:var(--text-muted);margin:-8px 0 16px;">Photographs you add here appear on this device only. They are not sent to the academy.</p>
 
-        <!-- Dynamic Gallery Grid accommodating multiple photographs -->
         <div class="gallery-grid" id="galleryGrid">
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <i class="fa-solid fa-camera"></i>
-              <span>Match Action Photo</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <i class="fa-solid fa-camera"></i>
-              <span>Training Session Photo</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <i class="fa-solid fa-camera"></i>
-              <span>Team Squad Photo</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <i class="fa-solid fa-camera"></i>
-              <span>Tournament Milestone</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <i class="fa-solid fa-camera"></i>
-              <span>Community Activity</span>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <i class="fa-solid fa-camera"></i>
-              <span>Player Development</span>
-            </div>
-          </div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g01.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g01.jpg')"><img src="g01.jpg" alt="Academy gallery photograph 01" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g02.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g02.jpg')"><img src="g02.jpg" alt="Academy gallery photograph 02" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g03.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g03.jpg')"><img src="g03.jpg" alt="Academy gallery photograph 03" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g04.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g04.jpg')"><img src="g04.jpg" alt="Academy gallery photograph 04" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g05.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g05.jpg')"><img src="g05.jpg" alt="Academy gallery photograph 05" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g06.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g06.jpg')"><img src="g06.jpg" alt="Academy gallery photograph 06" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g07.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g07.jpg')"><img src="g07.jpg" alt="Academy gallery photograph 07" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g08.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g08.jpg')"><img src="g08.jpg" alt="Academy gallery photograph 08" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g09.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g09.jpg')"><img src="g09.jpg" alt="Academy gallery photograph 09" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g10.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g10.jpg')"><img src="g10.jpg" alt="Academy gallery photograph 10" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g11.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g11.jpg')"><img src="g11.jpg" alt="Academy gallery photograph 11" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g12.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g12.jpg')"><img src="g12.jpg" alt="Academy gallery photograph 12" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g13.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g13.jpg')"><img src="g13.jpg" alt="Academy gallery photograph 13" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g14.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g14.jpg')"><img src="g14.jpg" alt="Academy gallery photograph 14" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g15.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g15.jpg')"><img src="g15.jpg" alt="Academy gallery photograph 15" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g16.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g16.jpg')"><img src="g16.jpg" alt="Academy gallery photograph 16" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g17.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g17.jpg')"><img src="g17.jpg" alt="Academy gallery photograph 17" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g18.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g18.jpg')"><img src="g18.jpg" alt="Academy gallery photograph 18" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g19.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g19.jpg')"><img src="g19.jpg" alt="Academy gallery photograph 19" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g20.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g20.jpg')"><img src="g20.jpg" alt="Academy gallery photograph 20" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g21.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g21.jpg')"><img src="g21.jpg" alt="Academy gallery photograph 21" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g22.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g22.jpg')"><img src="g22.jpg" alt="Academy gallery photograph 22" onerror="this.parentElement.remove()" /></div>
+          <div class="gallery-item" role="button" tabindex="0" onclick="openGalleryImage('g23.jpg')" onkeydown="if(event.key==='Enter')openGalleryImage('g23.jpg')"><img src="g23.jpg" alt="Academy gallery photograph 23" onerror="this.parentElement.remove()" /></div>
         </div>
 
         <a href="#home" class="btn-blue-pill" data-route="home"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i> BACK TO HOME</a>
@@ -3128,9 +3450,18 @@
                 <select id="contactTopic" class="form-control">
                   <option>Player Registration (Ages 8–21)</option>
                   <option>Coaching Opportunity (D-License)</option>
-                  <option>Partnership &amp; Sponsorship</option>
+                  <option>Sponsorship Enquiry</option>
+                  <option>Partnership Enquiry</option>
                   <option>General Academy Enquiry</option>
                 </select>
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Contact Number</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="Contact number" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email (optional)</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="Email address" />
               </div>
               <div class="form-group">
                 <label for="contactMessage">Message</label>
@@ -3243,9 +3574,9 @@
           <ul>
             <li><a href="#coaches" data-route="coaches">Coaching Opportunities</a></li>
             <li><a href="#coaches" data-route="coaches">D-License Requirement</a></li>
-            <li><a href="#kits" data-route="kits">Official Match Kits</a></li>
-            <li><a href="#kits" data-route="kits">Training Apparel</a></li>
-            <li><a href="#kits" data-route="kits">Equipment &amp; Gear</a></li>
+            <li><a href="#kits" data-route="kits">Senior Kit</a></li>
+            <li><a href="#kits" data-route="kits">U19, U17, U15 &amp; U11 Kits</a></li>
+            <li><a href="#kits" data-route="kits">Team Match Travelling Jersey</a></li>
           </ul>
         </div>
 
@@ -3301,23 +3632,65 @@
       </div>
       <div class="modal-body">
         <form id="authForm" onsubmit="handleAuthSubmit(event)">
+          <div class="form-group" id="partnerTypeGroup" style="display:none;">
+            <label for="partnerType">Enquiry Type</label>
+            <select id="partnerType" class="form-control" onchange="updatePartnerLabels()">
+              <option value="sponsorship">Sponsorship</option>
+              <option value="partnership">Partnership</option>
+            </select>
+          </div>
           <div class="form-group" id="nameFieldGroup">
             <label for="applicantName" id="nameLabel">Player / Applicant Full Name</label>
             <input type="text" id="applicantName" class="form-control" placeholder="Enter full name" required />
           </div>
-          <div class="form-group" id="detailFieldGroup">
-            <label for="applicantDetail" id="detailLabel">Age Group (8–21) or Qualification</label>
-            <input type="text" id="applicantDetail" class="form-control" placeholder="e.g., U15 Player or D-License Coach" required />
+          <div id="playerFieldsGroup">
+            <div class="form-group">
+              <label for="playerDob">Date of Birth</label>
+              <input type="date" id="playerDob" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="playerAgeGroup">Age Group / Division</label>
+              <select id="playerAgeGroup" class="form-control" required>
+                <option value="">Select division</option>
+                <option value="U9">U9</option>
+                <option value="U11">U11</option>
+                <option value="U13">U13</option>
+                <option value="U15">U15</option>
+                <option value="U17">U17</option>
+                <option value="U19">U19</option>
+                <option value="Senior">Senior</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="guardianName">Parent / Guardian Name (if applicable)</label>
+              <input type="text" id="guardianName" class="form-control" placeholder="Parent or guardian full name" />
+            </div>
+          </div>
+          <div class="form-group" id="contactPersonGroup" style="display:none;">
+            <label for="contactPerson">Contact Person</label>
+            <input type="text" id="contactPerson" class="form-control" placeholder="Contact person name" />
           </div>
           <div class="form-group">
-            <label for="applicantEmail">Contact Email or Phone</label>
-            <input type="text" id="applicantEmail" class="form-control" placeholder="Enter email address or phone number" required />
+            <label for="applicantEmail" id="contactLabel">Contact Number</label>
+            <input type="tel" id="applicantEmail" class="form-control" placeholder="e.g., 072 423 7512" required />
+          </div>
+          <div class="form-group" id="partnerEmailGroup" style="display:none;">
+            <label for="partnerEmail">Email Address</label>
+            <input type="email" id="partnerEmail" class="form-control" placeholder="name@organisation.co.za" />
+          </div>
+          <div class="form-group" id="detailFieldGroup">
+            <label for="applicantDetail" id="detailLabel">Additional Information</label>
+            <input type="text" id="applicantDetail" class="form-control" placeholder="Playing position, experience, or notes" />
+          </div>
+          <div class="form-group" id="partnerNotesGroup" style="display:none;">
+            <label for="partnerNotes">Additional Details (optional)</label>
+            <textarea id="partnerNotes" class="form-control" rows="2" placeholder="Any extra details or questions"></textarea>
           </div>
           <button type="submit" class="btn-tickets-gold" id="authSubmitBtn">SUBMIT APPLICATION</button>
-          <div id="authFeedback" class="form-feedback"></div>
+          <div id="authFeedback" class="form-feedback" aria-live="polite"></div>
         </form>
         <p style="font-size:11px;color:var(--text-muted);margin-top:14px;">
-          Training takes place Wednesdays &amp; Fridays (16:00 – 18:30) at Hillview High School Grounds, 72 Franscina Street, Roseville, Pretoria.
+          Training takes place Wednesdays &amp; Fridays (16:00 – 18:30) at Hillview High School Grounds, 72 Franscina Street, Roseville, Pretoria. Official WhatsApp: <a href="tel:+27724237512" style="color:var(--tgt-navy);font-weight:700;">+27 72 423 7512</a>.
         </p>
       </div>
     </div>
@@ -3330,9 +3703,34 @@
         <button type="button" class="modal-close" onclick="closeModal('articleModal')" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
-        <img id="articleModalImg" src="images01.jpg" alt="" style="width:100%;height:190px;object-fit:cover;border-radius:6px;margin-bottom:14px;" />
+        <img id="articleModalImg" src="logo.png" alt="" style="width:100%;height:190px;object-fit:cover;border-radius:6px;margin-bottom:14px;" onerror="this.src='logo.png';this.style.objectFit='contain';" />
         <p id="articleModalText" style="font-size:14px;color:var(--text-dark);line-height:1.6;margin-bottom:18px;"></p>
-        <button type="button" class="btn-blue-pill" onclick="closeModal('articleModal')">CLOSE</button>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+          <button type="button" class="btn-tickets-gold" id="articleModalActionBtn" style="display:none;width:auto;padding:9px 18px;"></button>
+          <button type="button" class="btn-blue-pill" onclick="closeModal('articleModal')">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="galleryLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <div class="lightbox-box">
+      <div class="modal-header">
+        <h3 id="lightboxTitle">ACADEMY GALLERY</h3>
+        <button type="button" class="modal-close" onclick="closeModal('galleryLightbox')" aria-label="Close lightbox">&times;</button>
+      </div>
+      <div class="lightbox-stage">
+        <button type="button" class="lightbox-nav lightbox-prev" onclick="stepGalleryLightbox(-1)" aria-label="Previous image">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <img id="lightboxImg" src="logo.png" alt="Expanded academy gallery photograph" />
+        <button type="button" class="lightbox-nav lightbox-next" onclick="stepGalleryLightbox(1)" aria-label="Next image">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="lightbox-footer">
+        <span id="lightboxCaption">TGT Discovery Talent Search</span>
+        <span id="lightboxCounter">1 / 1</span>
       </div>
     </div>
   </div>
@@ -3344,6 +3742,52 @@
        VANILLA JAVASCRIPT
        ======================================================================== -->
   <script>
+    const WHATSAPP_NUMBER = '27724237512';
+    const WHATSAPP_DISPLAY = '+27 72 423 7512';
+    const homeSectionAnchors = ['ceo-intro', 'club-leadership', 'layim-charity', 'match-results'];
+
+    // Graceful missing-image fallback sweep for legacy root images & post-load check
+    function initMissingImageFallbacks() {
+      document.querySelectorAll('img').forEach(img => {
+        if (img.dataset.managed || img.id === 'articleModalImg' || img.id === 'lightboxImg') return;
+        const applyFallback = () => {
+          if (img.classList.contains('hero-bg-media') || img.classList.contains('culer-banner-img') || img.closest('.best-games-card')) {
+            img.style.display = 'none';
+            return;
+          }
+          if (img.closest('.hero-subcard-thumb') || img.closest('.ticket-card') || img.closest('.kit-promo-media')) {
+            img.onerror = null;
+            img.src = 'logo.png';
+            img.style.objectFit = 'contain';
+            img.style.padding = '16px';
+            return;
+          }
+          if (img.closest('.gallery-item')) {
+            const item = img.closest('.gallery-item');
+            if (item) item.remove();
+            return;
+          }
+          img.style.display = 'none';
+        };
+        img.addEventListener('error', applyFallback);
+        if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) {
+          applyFallback();
+        }
+      });
+
+      document.querySelectorAll('img[data-managed="charity"]').forEach(img => {
+        if (img.complete && img.naturalWidth === 0) hideCharityImage(img);
+      });
+      document.querySelectorAll('img[data-managed="result"]').forEach(img => {
+        if (img.complete && img.naturalWidth === 0) {
+          showMatchResultPending(img);
+        } else {
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', () => openGalleryImage(img.getAttribute('src')));
+        }
+      });
+    }
+
     // 1. Programmes Grid Shift
     function shiftTickets(dir) {
       const grid = document.getElementById('ticketsGrid');
@@ -3400,22 +3844,33 @@
     }
     setInterval(updateCountdown, 1000);
 
-    // 3. Hash-Based Multi-Page SPA Router
+    // 3. Hash-Based Multi-Page SPA Router (supports both SPA pages and home sections)
     const validRoutes = ['home', 'about', 'programs', 'training', 'kits', 'coaches', 'gallery', 'achievements', 'partners', 'contact'];
 
     function navigateTo(routeName) {
-      const target = validRoutes.includes(routeName) ? routeName : 'home';
+      const isHomeAnchor = homeSectionAnchors.includes(routeName);
+      const target = isHomeAnchor ? 'home' : (validRoutes.includes(routeName) ? routeName : 'home');
+
       document.querySelectorAll('.page-view').forEach(sec => sec.classList.remove('active'));
       const activeSection = document.getElementById('page-' + target);
       if (activeSection) activeSection.classList.add('active');
 
       document.querySelectorAll('[data-route]').forEach(link => {
-        link.classList.toggle('active', link.getAttribute('data-route') === target);
+        link.classList.toggle('active', link.getAttribute('data-route') === routeName);
       });
 
       document.getElementById('mobileDrawer').classList.remove('open');
-      if (window.location.hash !== '#' + target) {
-        history.pushState(null, '', '#' + target);
+      const hashTarget = '#' + (isHomeAnchor ? routeName : target);
+      if (window.location.hash !== hashTarget) {
+        history.pushState(null, '', hashTarget);
+      }
+
+      if (isHomeAnchor) {
+        const anchorEl = document.getElementById(routeName);
+        if (anchorEl) {
+          anchorEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -3433,7 +3888,7 @@
       navigateTo(hashRoute);
     });
 
-    // 4. Header Controls (Search & Mobile Menu)
+    // 4. Header Controls (Search, Language, Mobile Menu)
     document.getElementById('searchToggleBtn').addEventListener('click', () => {
       const bar = document.getElementById('searchBarOverlay');
       bar.classList.toggle('open');
@@ -3446,15 +3901,100 @@
       document.getElementById('mobileDrawer').classList.toggle('open');
     });
 
+    document.getElementById('langSelector').addEventListener('change', (e) => {
+      const val = e.target.value;
+      document.documentElement.lang = val === 'ZA' ? 'en-ZA' : 'en';
+    });
+
     function handleSiteSearch(e) {
       e.preventDefault();
       const q = document.getElementById('siteSearchInput').value.trim();
       if (!q) return;
-      openArticleModal('Search Results for "' + q + '"', 'Showing TGT Discovery Academy programmes (ages 8–21), training schedules at Hillview High School Grounds (Wed & Fri 16:00–18:30), achievements, gallery photographs, and partnership opportunities matching "' + q + '".', 'images01.jpg');
+      const lower = q.toLowerCase();
       document.getElementById('searchBarOverlay').classList.remove('open');
+
+      const searchRoutes = [
+        { keys: ['kit', 'jersey', 'senior', 'u19', 'u17', 'u15', 'u11', 'apparel'], route: 'kits', label: 'Squad Kits' },
+        { keys: ['gallery', 'photo', 'picture', 'image'], route: 'gallery', label: 'Academy Photo Gallery' },
+        { keys: ['train', 'schedule', 'wednesday', 'friday', 'hillview', 'venue', 'map', 'roseville'], route: 'training', label: 'Training Schedule & Venue' },
+        { keys: ['program', 'pillar', 'technical', 'physical', 'mental', 'age', '8-21'], route: 'programs', label: 'Development Programme' },
+        { keys: ['coach', 'license', 'd-license', 'staff'], route: 'coaches', label: 'Coaches & Technical Personnel' },
+        { keys: ['achiev', 'trophy', 'league', 'shaka', 'polokwane', 'tuks', 'honour', 'champion'], route: 'achievements', label: 'Achievements & Honours' },
+        { keys: ['partner', 'sponsor', 'support'], route: 'partners', label: 'Partnerships & Sponsorship' },
+        { keys: ['result', 'score', 'match'], route: 'match-results', label: 'Match Results' },
+        { keys: ['charity', 'layim', 'shoe', 'give shoes'], route: 'layim-charity', label: 'Layim NPC Charity Tournament' },
+        { keys: ['leader', 'chairman', 'treasurer', 'secretary', 'manager', 'itumeleng', 'david', 'gcobisa', 'sello'], route: 'club-leadership', label: 'Club Leadership & Management' },
+        { keys: ['ceo', 'talent search', 'division', 'u9', 'u13'], route: 'ceo-intro', label: 'About TGT Discovery Talent Search' },
+        { keys: ['about', 'story', 'vision', 'mission', 'value'], route: 'about', label: 'About Us' },
+        { keys: ['contact', 'enquir', 'whatsapp', 'phone', 'register', 'apply'], route: 'contact', label: 'Contact & Enquiries' }
+      ];
+
+      const match = searchRoutes.find(item => item.keys.some(k => lower.includes(k)));
+      if (match) {
+        navigateTo(match.route);
+        return;
+      }
+
+      openArticleModal(
+        'Search: "' + q + '"',
+        'No direct section matched "' + q + '". You can explore our Squad Kits, Training Schedule (Wednesdays & Fridays, 16:00–18:30 at Hillview High School), Photo Gallery, or send us an enquiry directly via the Contact page.',
+        'logo.png',
+        'GO TO CONTACT PAGE',
+        () => {
+          closeModal('articleModal');
+          navigateTo('contact');
+        }
+      );
     }
 
-    // 5. Interactive Upload Handler for Coach Slots & Gallery
+    // 5. Gallery Lightbox & Interactive Upload Handler
+    let gallerySources = [];
+    let currentGalleryIndex = 0;
+
+    function collectGallerySources() {
+      const imgs = Array.from(document.querySelectorAll('#galleryGrid .gallery-item img'))
+        .filter(img => img.style.display !== 'none' && img.getAttribute('src'));
+      return imgs.map(img => ({
+        src: img.getAttribute('src'),
+        alt: img.getAttribute('alt') || 'Academy gallery photograph'
+      }));
+    }
+
+    function renderGalleryLightbox() {
+      const imgEl = document.getElementById('lightboxImg');
+      const captionEl = document.getElementById('lightboxCaption');
+      const counterEl = document.getElementById('lightboxCounter');
+      const prevBtn = document.querySelector('.lightbox-prev');
+      const nextBtn = document.querySelector('.lightbox-next');
+      if (!gallerySources.length || !imgEl) return;
+
+      const entry = gallerySources[currentGalleryIndex];
+      imgEl.src = entry.src;
+      imgEl.alt = entry.alt;
+      captionEl.textContent = entry.alt;
+      counterEl.textContent = (currentGalleryIndex + 1) + ' / ' + gallerySources.length;
+
+      const hasMultiple = gallerySources.length > 1;
+      if (prevBtn) prevBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
+      if (nextBtn) nextBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
+    }
+
+    function openGalleryImage(src) {
+      gallerySources = collectGallerySources();
+      if (!gallerySources.some(item => item.src === src)) {
+        gallerySources.unshift({ src: src, alt: 'TGT Discovery Talent Search' });
+      }
+      currentGalleryIndex = Math.max(0, gallerySources.findIndex(item => item.src === src));
+      renderGalleryLightbox();
+      document.getElementById('galleryLightbox').classList.add('open');
+    }
+
+    function stepGalleryLightbox(delta) {
+      if (!gallerySources.length) return;
+      currentGalleryIndex = (currentGalleryIndex + delta + gallerySources.length) % gallerySources.length;
+      renderGalleryLightbox();
+    }
+
     let activeUploadTarget = null;
     function triggerPhotoUpload(targetId) {
       activeUploadTarget = targetId;
@@ -3485,7 +4025,19 @@
           if (galleryGrid) {
             const newItem = document.createElement('div');
             newItem.className = 'gallery-item';
-            newItem.innerHTML = `<img src="${imageUrl}" alt="Gallery photograph" />`;
+            newItem.setAttribute('role', 'button');
+            newItem.setAttribute('tabindex', '0');
+            const newImg = document.createElement('img');
+            newImg.src = imageUrl;
+            newImg.alt = 'Added gallery photograph';
+            newItem.appendChild(newImg);
+            newItem.addEventListener('click', () => openGalleryImage(imageUrl));
+            newItem.addEventListener('keydown', (ev) => {
+              if (ev.key === 'Enter' || ev.key === ' ') {
+                ev.preventDefault();
+                openGalleryImage(imageUrl);
+              }
+            });
             galleryGrid.prepend(newItem);
           }
         }
@@ -3494,39 +4046,162 @@
       e.target.value = '';
     }
 
-    // 6. Modals & Form Validation
+    // 6. WhatsApp Integration Helpers
+    function buildWhatsAppUrl(message) {
+      return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+    }
+
+    function renderWhatsAppFeedback(fb, prepText, waUrl, popupBlocked) {
+      fb.className = 'form-feedback success';
+      fb.innerHTML = '';
+
+      const p = document.createElement('p');
+      p.textContent = popupBlocked
+        ? prepText + ' If WhatsApp did not open automatically, use the button below to open it and review before sending.'
+        : prepText;
+      fb.appendChild(p);
+
+      const actions = document.createElement('div');
+      actions.className = 'wa-feedback-actions';
+
+      const openBtn = document.createElement('a');
+      openBtn.href = waUrl;
+      openBtn.target = '_blank';
+      openBtn.rel = 'noopener noreferrer';
+      openBtn.className = 'btn-wa-open';
+      openBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Open / Retry WhatsApp';
+      actions.appendChild(openBtn);
+
+      fb.appendChild(actions);
+
+      const fallback = document.createElement('span');
+      fallback.className = 'wa-fallback-note';
+      fallback.appendChild(document.createTextNode('Alternative contact — WhatsApp/Contact Number: '));
+      const telLink = document.createElement('a');
+      telLink.href = 'tel:+' + WHATSAPP_NUMBER;
+      telLink.textContent = WHATSAPP_DISPLAY;
+      fallback.appendChild(telLink);
+      fb.appendChild(fallback);
+    }
+
+    function launchWhatsApp(fb, message, prepText) {
+      const waUrl = buildWhatsAppUrl(message);
+      let openedWin = null;
+      try {
+        openedWin = window.open(waUrl, '_blank', 'noopener,noreferrer');
+      } catch (err) {
+        openedWin = null;
+      }
+      const popupBlocked = !openedWin || openedWin.closed || typeof openedWin.closed === 'undefined';
+      renderWhatsAppFeedback(fb, prepText, waUrl, popupBlocked);
+    }
+
+    // 7. Modals, Form Validation & WhatsApp Submissions
     let currentAuthMode = 'register';
-    function openAuthModal(mode) {
+    let selectedKitItem = '';
+
+    function updatePartnerLabels() {
+      if (currentAuthMode !== 'partner') return;
+      const type = document.getElementById('partnerType').value;
+      const nameLabel = document.getElementById('nameLabel');
+      const nameInput = document.getElementById('applicantName');
+      const detailLabel = document.getElementById('detailLabel');
+      const detailInput = document.getElementById('applicantDetail');
+
+      if (type === 'partnership') {
+        nameLabel.textContent = 'Organisation Name';
+        nameInput.placeholder = 'Enter organisation name';
+        detailLabel.textContent = 'Partnership Proposal';
+        detailInput.placeholder = 'Describe your partnership proposal';
+      } else {
+        nameLabel.textContent = 'Organisation / Business Name';
+        nameInput.placeholder = 'Enter organisation or business name';
+        detailLabel.textContent = 'Sponsorship Interest (Kits, Equipment, Transport, Bursaries)';
+        detailInput.placeholder = 'e.g., Football Kits & Training Equipment';
+      }
+    }
+
+    function openAuthModal(mode, prefillItem) {
       currentAuthMode = mode;
+      selectedKitItem = prefillItem || '';
+
       const modal = document.getElementById('authModal');
       const title = document.getElementById('authModalTitle');
       const nameLabel = document.getElementById('nameLabel');
+      const nameInput = document.getElementById('applicantName');
+      const playerGroup = document.getElementById('playerFieldsGroup');
+      const partnerTypeGroup = document.getElementById('partnerTypeGroup');
+      const contactPersonGroup = document.getElementById('contactPersonGroup');
+      const partnerEmailGroup = document.getElementById('partnerEmailGroup');
+      const partnerNotesGroup = document.getElementById('partnerNotesGroup');
       const detailLabel = document.getElementById('detailLabel');
       const detailInput = document.getElementById('applicantDetail');
+      const contactLabel = document.getElementById('contactLabel');
+      const contactInput = document.getElementById('applicantEmail');
+      const dobInput = document.getElementById('playerDob');
+      const ageGroupSelect = document.getElementById('playerAgeGroup');
+      const contactPersonInput = document.getElementById('contactPerson');
+      const partnerEmailInput = document.getElementById('partnerEmail');
       const btn = document.getElementById('authSubmitBtn');
       const fb = document.getElementById('authFeedback');
 
       fb.className = 'form-feedback';
-      fb.textContent = '';
+      fb.innerHTML = '';
+
+      playerGroup.style.display = 'none';
+      partnerTypeGroup.style.display = 'none';
+      contactPersonGroup.style.display = 'none';
+      partnerEmailGroup.style.display = 'none';
+      partnerNotesGroup.style.display = 'none';
+
+      dobInput.required = false;
+      ageGroupSelect.required = false;
+      contactPersonInput.required = false;
+      partnerEmailInput.required = false;
+      detailInput.required = true;
+      contactLabel.textContent = 'Contact Number';
+      contactInput.type = 'tel';
+      contactInput.placeholder = 'e.g., 072 423 7512';
 
       if (mode === 'coaching') {
         title.textContent = 'COACHING APPLICATION (D-LICENSE)';
         nameLabel.textContent = 'Coach Full Name';
+        nameInput.placeholder = 'Enter full name';
         detailLabel.textContent = 'Coaching Qualification (Minimum D-License)';
         detailInput.placeholder = 'e.g., SAFA D-License Certificate';
-        btn.textContent = 'SUBMIT COACHING APPLICATION';
+        if (detailInput.value.startsWith('Kit Enquiry:')) detailInput.value = '';
+        btn.textContent = 'PREPARE WHATSAPP APPLICATION';
       } else if (mode === 'partner') {
         title.textContent = 'PARTNERSHIP & SPONSORSHIP ENQUIRY';
-        nameLabel.textContent = 'Organization / Sponsor Name';
-        detailLabel.textContent = 'Area of Support (Kits, Equipment, Transport, Bursaries)';
-        detailInput.placeholder = 'e.g., Football Kits & Training Equipment';
-        btn.textContent = 'SUBMIT PARTNERSHIP ENQUIRY';
+        partnerTypeGroup.style.display = 'block';
+        contactPersonGroup.style.display = 'block';
+        partnerEmailGroup.style.display = 'block';
+        partnerNotesGroup.style.display = 'block';
+        contactPersonInput.required = true;
+        partnerEmailInput.required = true;
+        if (detailInput.value.startsWith('Kit Enquiry:')) detailInput.value = '';
+        updatePartnerLabels();
+        btn.textContent = 'PREPARE WHATSAPP ENQUIRY';
+      } else if (mode === 'kit') {
+        title.textContent = 'KIT ENQUIRY — ' + selectedKitItem.toUpperCase();
+        nameLabel.textContent = 'Your Full Name';
+        nameInput.placeholder = 'Enter full name';
+        detailLabel.textContent = 'Kit Enquiry Details';
+        detailInput.value = selectedKitItem ? ('Kit Enquiry: ' + selectedKitItem) : '';
+        detailInput.placeholder = 'Quantity, sizes, or sponsorship notes';
+        btn.textContent = 'PREPARE WHATSAPP ENQUIRY';
       } else {
         title.textContent = 'JOIN TGT DISCOVERY ACADEMY (AGES 8–21)';
-        nameLabel.textContent = 'Player Full Name';
-        detailLabel.textContent = 'Player Age & Experience (Beginner / Intermediate / Competitive)';
-        detailInput.placeholder = 'e.g., 14 Years Old • Intermediate';
-        btn.textContent = 'REGISTER FOR TRAINING';
+        nameLabel.textContent = 'Applicant Full Name';
+        nameInput.placeholder = 'Enter player full name';
+        playerGroup.style.display = 'block';
+        dobInput.required = true;
+        ageGroupSelect.required = true;
+        detailLabel.textContent = 'Additional Information (optional)';
+        detailInput.required = false;
+        detailInput.placeholder = 'Position, football experience, or notes';
+        if (detailInput.value.startsWith('Kit Enquiry:')) detailInput.value = '';
+        btn.textContent = 'PREPARE WHATSAPP APPLICATION';
       }
       modal.classList.add('open');
     }
@@ -3540,43 +4215,273 @@
 
       if (name.length < 2) {
         fb.className = 'form-feedback error';
-        fb.textContent = 'Please enter a valid full name.';
+        fb.textContent = 'Please enter a valid name.';
         return;
       }
-      if (detail.length < 2 || contact.length < 4) {
+      if (contact.length < 7) {
         fb.className = 'form-feedback error';
-        fb.textContent = 'Please complete all required fields.';
+        fb.textContent = 'Please enter a valid contact number.';
         return;
       }
 
-      fb.className = 'form-feedback success';
+      let message = '';
+      let prepText = '';
+
       if (currentAuthMode === 'coaching') {
-        fb.textContent = 'Thank you, ' + name + '! Your coaching application (' + detail + ') has been recorded for TGT Discovery Academy NPC.';
+        if (detail.length < 2) {
+          fb.className = 'form-feedback error';
+          fb.textContent = 'Please enter your coaching qualification.';
+          return;
+        }
+        message = [
+          'NEW COACHING APPLICATION',
+          '',
+          'Club: TGT Discovery Talent Search',
+          '',
+          'Applicant Name: ' + name,
+          '',
+          'Coaching Qualification: ' + detail,
+          '',
+          'Contact Number: ' + contact,
+          '',
+          'Application Source: TGT Discovery Talent Search Website'
+        ].join('\n');
+        prepText = 'Your coaching application message has been prepared. WhatsApp will open so you can review and send it directly to TGT Discovery Talent Search.';
       } else if (currentAuthMode === 'partner') {
-        fb.textContent = 'Thank you, ' + name + '! Your partnership interest (' + detail + ') has been registered. Our academy team will connect with you.';
+        const partnerType = document.getElementById('partnerType').value;
+        const contactPerson = document.getElementById('contactPerson').value.trim();
+        const partnerEmail = document.getElementById('partnerEmail').value.trim();
+        const partnerNotes = document.getElementById('partnerNotes').value.trim();
+
+        if (contactPerson.length < 2 || !partnerEmail || detail.length < 2) {
+          fb.className = 'form-feedback error';
+          fb.textContent = 'Please complete all required sponsorship/partnership fields.';
+          return;
+        }
+
+        if (partnerType === 'partnership') {
+          message = [
+            'NEW PARTNERSHIP ENQUIRY',
+            '',
+            'Organisation Name: ' + name,
+            '',
+            'Contact Person: ' + contactPerson,
+            '',
+            'Contact Number: ' + contact,
+            '',
+            'Email: ' + partnerEmail,
+            '',
+            'Partnership Proposal: ' + detail,
+            '',
+            'Additional Details: ' + (partnerNotes || 'None provided'),
+            '',
+            'Source: TGT Discovery Talent Search Website'
+          ].join('\n');
+        } else {
+          message = [
+            'NEW SPONSORSHIP ENQUIRY',
+            '',
+            'Organisation/Business Name: ' + name,
+            '',
+            'Contact Person: ' + contactPerson,
+            '',
+            'Contact Number: ' + contact,
+            '',
+            'Email: ' + partnerEmail,
+            '',
+            'Sponsorship Interest: ' + detail,
+            '',
+            'Additional Details: ' + (partnerNotes || 'None provided'),
+            '',
+            'Source: TGT Discovery Talent Search Website'
+          ].join('\n');
+        }
+        prepText = 'Your enquiry message has been prepared. WhatsApp will open so you can review and send it directly to TGT Discovery Talent Search.';
+      } else if (currentAuthMode === 'kit') {
+        if (detail.length < 2) {
+          fb.className = 'form-feedback error';
+          fb.textContent = 'Please enter your kit enquiry details.';
+          return;
+        }
+        message = [
+          'NEW KIT ENQUIRY',
+          '',
+          'Club: TGT Discovery Talent Search',
+          '',
+          'Kit Selected: ' + (selectedKitItem || detail),
+          '',
+          'Name: ' + name,
+          '',
+          'Contact Number: ' + contact,
+          '',
+          'Additional Details: ' + detail,
+          '',
+          'Source: TGT Discovery Talent Search Website'
+        ].join('\n');
+        prepText = 'Your kit enquiry message has been prepared. WhatsApp will open so you can review and send it directly to TGT Discovery Talent Search.';
       } else {
-        fb.textContent = 'Welcome, ' + name + '! Your registration (' + detail + ') is noted. Join us at Hillview High School Grounds on Wednesday or Friday (16:00 – 18:30).';
+        const dob = document.getElementById('playerDob').value.trim();
+        const ageGroup = document.getElementById('playerAgeGroup').value.trim();
+        const guardian = document.getElementById('guardianName').value.trim();
+
+        if (!dob || !ageGroup) {
+          fb.className = 'form-feedback error';
+          fb.textContent = 'Please provide the applicant date of birth and age group.';
+          return;
+        }
+
+        const lines = [
+          'NEW PLAYER APPLICATION',
+          '',
+          'Club: TGT Discovery Talent Search',
+          '',
+          'Applicant Name: ' + name,
+          '',
+          'Date of Birth: ' + dob,
+          '',
+          'Age Group: ' + ageGroup
+        ];
+        if (guardian) {
+          lines.push('', 'Parent/Guardian Name: ' + guardian);
+        }
+        lines.push(
+          '',
+          'Contact Number: ' + contact,
+          '',
+          'Additional Information: ' + (detail || 'None provided'),
+          '',
+          'Application Source: TGT Discovery Talent Search Website'
+        );
+        message = lines.join('\n');
+        prepText = 'Your application message has been prepared. WhatsApp will open so you can review and send it directly to TGT Discovery Talent Search.';
       }
+
+      launchWhatsApp(fb, message, prepText);
     }
 
     function handleContactSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('contactName').value.trim();
       const topic = document.getElementById('contactTopic').value;
+      const phone = document.getElementById('contactPhone').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const bodyMsg = document.getElementById('contactMessage').value.trim();
       const fb = document.getElementById('contactFeedback');
-      fb.className = 'form-feedback success';
-      fb.textContent = 'Thank you, ' + name + '. Your enquiry regarding "' + topic + '" has been received by TGT Discovery Academy NPC.';
+
+      if (name.length < 2 || phone.length < 7 || bodyMsg.length < 3) {
+        fb.className = 'form-feedback error';
+        fb.textContent = 'Please complete your name, contact number, and message.';
+        return;
+      }
+
+      let message = '';
+      let prepText = 'Your enquiry message has been prepared. WhatsApp will open so you can review and send it directly to TGT Discovery Talent Search.';
+
+      if (topic === 'Sponsorship Enquiry') {
+        message = [
+          'NEW SPONSORSHIP ENQUIRY',
+          '',
+          'Contact Person: ' + name,
+          '',
+          'Contact Number: ' + phone,
+          '',
+          'Email: ' + (email || 'Not provided'),
+          '',
+          'Sponsorship Interest: ' + bodyMsg,
+          '',
+          'Source: TGT Discovery Talent Search Website'
+        ].join('\n');
+      } else if (topic === 'Partnership Enquiry') {
+        message = [
+          'NEW PARTNERSHIP ENQUIRY',
+          '',
+          'Contact Person: ' + name,
+          '',
+          'Contact Number: ' + phone,
+          '',
+          'Email: ' + (email || 'Not provided'),
+          '',
+          'Partnership Proposal: ' + bodyMsg,
+          '',
+          'Source: TGT Discovery Talent Search Website'
+        ].join('\n');
+      } else if (topic === 'Player Registration (Ages 8–21)') {
+        const lines = [
+          'NEW PLAYER APPLICATION',
+          '',
+          'Club: TGT Discovery Talent Search',
+          '',
+          'Applicant Name: ' + name,
+          '',
+          'Contact Number: ' + phone
+        ];
+        if (email) lines.push('', 'Email: ' + email);
+        lines.push('', 'Additional Information: ' + bodyMsg, '', 'Application Source: TGT Discovery Talent Search Website');
+        message = lines.join('\n');
+        prepText = 'Your application message has been prepared. WhatsApp will open so you can review and send it directly to TGT Discovery Talent Search.';
+      } else if (topic === 'Coaching Opportunity (D-License)') {
+        const lines = [
+          'NEW COACHING APPLICATION',
+          '',
+          'Club: TGT Discovery Talent Search',
+          '',
+          'Applicant Name: ' + name,
+          '',
+          'Contact Number: ' + phone
+        ];
+        if (email) lines.push('', 'Email: ' + email);
+        lines.push('', 'Coaching Details: ' + bodyMsg, '', 'Application Source: TGT Discovery Talent Search Website');
+        message = lines.join('\n');
+        prepText = 'Your coaching application message has been prepared. WhatsApp will open so you can review and send it directly to TGT Discovery Talent Search.';
+      } else {
+        const lines = [
+          'NEW WEBSITE ENQUIRY',
+          '',
+          'Name: ' + name,
+          '',
+          'Contact Number: ' + phone
+        ];
+        if (email) lines.push('', 'Email: ' + email);
+        lines.push('', 'Subject: ' + topic, '', 'Message: ' + bodyMsg, '', 'Source: TGT Discovery Talent Search Website');
+        message = lines.join('\n');
+      }
+
+      launchWhatsApp(fb, message, prepText);
     }
 
-    function openArticleModal(title, text, imgSrc) {
+    function openArticleModal(title, text, imgSrc, actionLabel, actionHandler) {
       document.getElementById('articleModalTitle').textContent = title;
       document.getElementById('articleModalText').textContent = text;
-      document.getElementById('articleModalImg').src = imgSrc;
+      const img = document.getElementById('articleModalImg');
+      img.style.objectFit = 'cover';
+      img.src = imgSrc || 'logo.png';
+
+      const actionBtn = document.getElementById('articleModalActionBtn');
+      if (actionBtn) {
+        if (actionLabel && typeof actionHandler === 'function') {
+          actionBtn.textContent = actionLabel;
+          actionBtn.style.display = 'inline-flex';
+          actionBtn.onclick = actionHandler;
+        } else {
+          actionBtn.style.display = 'none';
+          actionBtn.onclick = null;
+        }
+      }
       document.getElementById('articleModal').classList.add('open');
     }
 
-    function openTicketBooking(itemTitle) {
-      openArticleModal(itemTitle, 'Thank you for your interest in supporting TGT Discovery Academy NPC with kits, apparel, or training equipment. Visit our Partnerships page or contact us at Hillview High School, 72 Franscina Street, Roseville, Pretoria.', 'images12.jpg');
+    function openTicketBooking(itemTitle, imgSrc) {
+      openArticleModal(
+        itemTitle,
+        'Enquire about the ' + itemTitle + ' or supporting TGT Discovery Talent Search with squad kits and apparel via WhatsApp (+27 72 423 7512).',
+        imgSrc || 'logo.png',
+        'ENQUIRE VIA WHATSAPP',
+        () => {
+          closeModal('articleModal');
+          openAuthModal('kit', itemTitle);
+        }
+      );
+      document.getElementById('articleModalImg').style.objectFit = 'contain';
     }
 
     function closeModal(id) {
@@ -3589,11 +4494,25 @@
       });
     });
 
+    document.addEventListener('keydown', (e) => {
+      const lightbox = document.getElementById('galleryLightbox');
+      if (lightbox && lightbox.classList.contains('open')) {
+        if (e.key === 'Escape') closeModal('galleryLightbox');
+        if (e.key === 'ArrowLeft') stepGalleryLightbox(-1);
+        if (e.key === 'ArrowRight') stepGalleryLightbox(1);
+        return;
+      }
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-backdrop.open').forEach(m => m.classList.remove('open'));
+      }
+    });
+
     // Initialize on Load
     document.addEventListener('DOMContentLoaded', () => {
       updateCountdown();
+      initMissingImageFallbacks();
       const initialHash = window.location.hash.replace('#', '');
-      if (initialHash && validRoutes.includes(initialHash)) {
+      if (initialHash && (validRoutes.includes(initialHash) || homeSectionAnchors.includes(initialHash))) {
         navigateTo(initialHash);
       }
     });
